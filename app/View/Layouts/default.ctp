@@ -1,183 +1,132 @@
 <?php
-/**
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
- * @package       app.View.Layouts
- * @since         CakePHP(tm) v 0.10.0.1076
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
- */
 
-$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
+$cakeDescription = __d('cake_dev', 'CakePHP');
 $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 ?>
 <!DOCTYPE html>
-<html>
-<head>
-	<?php echo $this->Html->charset(); ?>
-	<title>
-		<?php echo $cakeDescription ?>:
-		<?php echo $this->fetch('title'); ?>
-	</title>
-	<?php
-		echo $this->Html->meta('icon');
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <?php echo $this->Html->meta('icon'); ?>
+		<title>
+			->
+			<?php echo $this->fetch('title'); ?>
+		</title>
+		<?php
+	   /* Llamado de los CSS */
+     	echo $this->Html->css(array('bootstrap'));
+       	echo $this->Html->css(array('bootstrap.min'));
+        echo $this->Html->css(array('skel.css'));
+        echo $this->Html->css(array('style.css'));
+        echo $this->Html->css(array('hover.css'));
+      	echo $this->Html->css(array('style-desktop'));
+       	echo $this->Html->css(array('style-wide.css'));
+       	echo $this->Html->css(array('style-wide.css'));
+       /* -------------------------------------------*/
+       echo $this->Html->script(array('bootstrap.min'));
+       echo $this->Html->script(array('jquery.min'));
+       echo $this->Html->script(array('skel.min'));
+       echo $this->Html->script(array('skel-layers.min'));
+       echo $this->Html->script(array('init.js'));
+       echo $this->Html->script(array('docs.min.js'));
 
-		echo $this->Html->css('reset');
-		echo $this->Html->css('text');
-		echo $this->Html->css('grid');
-		echo $this->Html->css('layout');
-		echo $this->Html->css('nav');
 
-		echo $this->fetch('meta');
-		echo $this->fetch('css');
-		echo $this->fetch('script');
-	?>
-</head>
-<body>
-	<div class="container_12">
-			<div class="grid_12 header-repeat">
-					<div id="branding">
-							<div class="floatleft">
-									<img src="img/logo.png" alt="Logo" /></div>
-							<div class="floatright">
-									<div class="floatleft">
-											<img src="img/img-profile.jpg" alt="Profile Pic" /></div>
-									<div class="floatleft marginleft10">
-											<ul class="inline-ul floatleft">
-													<li>Hello Admin</li>
-													<li><a href="#">Config</a></li>
-													<li><a href="#">Logout</a></li>
-											</ul>
-											<br />
-											<span class="small grey">Last Login: 3 hours ago</span>
-									</div>
-							</div>
-							<div class="clear">
-							</div>
+
+		?>
+  </head>
+<body class="left-sidebar">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Content -->
+					<div id="content">
+						<div class="inner">
+
+							<!-- Post -->
+							<center>
+								<article class="box post post-excerpt">
+
+
+									<?php echo $this->Session->flash(); ?>
+									<?php echo $this->fetch('content'); ?>
+
+								</article>
+							</center>
+
+							<!-- Post -->
+
+
+
+						</div>
 					</div>
-			</div>
-			<div class="clear">
-			</div>
-			<div class="grid_12">
-					<ul class="nav main">
-							<li><?php echo $this->Html->link(__(' Inicio'), array('controller' => 'pages', 'action' => 'home'),array('class'=>'ic-dashboard')); ?></li>
-							<li class="ic-form-style"><a href="javascript:"><span>Controls</span></a>
-									<ul>
-											<li><a href="form-controls.html">Forms</a> </li>
-											<li><a href="buttons.html">Buttons</a> </li>
-											<li><a href="form-controls.html">Full Page Example</a> </li>
-											<li><a href="table.html">Page with Sidebar Example</a> </li>
-									</ul>
-							</li>
-							<li class="ic-typography"><a href="typography.html"><span>Typography</span></a></li>
-			<li class="ic-charts"><a href="charts.html"><span>Charts & Graphs</span></a></li>
-							<li class="ic-grid-tables"><a href="table.html"><span>Data Table</span></a></li>
-							<li class="ic-gallery dd"><a href="javascript:"><span>Image Galleries</span></a>
-								 <ul>
-											<li><a href="image-gallery.html">Pretty Photo</a> </li>
-											<li><a href="gallery-with-filter.html">Gallery with Filter</a> </li>
-									</ul>
-							</li>
-							<li class="ic-notifications"><a href="notifications.html"><span>Notifications</span></a></li>
 
-					</ul>
-			</div>
-			<div class="clear">
-			</div>
-			<div class="grid_2">
-					<div class="box sidemenu">
-							<div class="block" id="section-menu">
-									<ul class="section menu">
-											<li><a class="menuitem">Menu 1</a>
-													<ul class="submenu">
-															<li><a>Submenu 1</a> </li>
-															<li><a>Submenu 2</a> </li>
+				<!-- Sidebar -->
+					<div id="sidebar">
 
-													</ul>
-											</li>
-											<li><a class="menuitem">Menu 2</a>
-													<ul class="submenu">
-															<li><a>Submenu 1</a> </li>
-															<li><a>Submenu 2</a> </li>
-															<li><a>Submenu 3</a> </li>
-															<li><a>Submenu 4</a> </li>
-															<li><a>Submenu 5</a> </li>
-													</ul>
-											</li>
-											<li><a class="menuitem">Menu 3</a>
-													<ul class="submenu">
-															<li><a>Submenu 1</a> </li>
-															<li><a>Submenu 2</a> </li>
-															<li><a>Submenu 3</a> </li>
-															<li><a>Submenu 4</a> </li>
-															<li><a>Submenu 5</a> </li>
-															<li><a>Submenu 1</a> </li>
-															<li><a>Submenu 2</a> </li>
-															<li><a>Submenu 3</a> </li>
-															<li><a>Submenu 4</a> </li>
-															<li><a>Submenu 5</a> </li>
-													</ul>
-											</li>
-											<li><a class="menuitem">Menu 4</a>
-													<ul class="submenu">
-															<li><a>Submenu 1</a> </li>
-															<li><a>Submenu 2</a> </li>
-															<li><a>Submenu 3</a> </li>
-															<li><a>Submenu 4</a> </li>
-															<li><a>Submenu 5</a> </li>
-															<li><a>Submenu 6</a> </li>
-															<li><a>Submenu 7</a> </li>
-															<li><a>Submenu 8</a> </li>
-															<li><a>Submenu 9</a> </li>
-															<li><a>Submenu 10</a> </li>
+						<!-- Logo -->
+							<h1 id="logo"><marquee loop="1" SCROLLAMOUNT="7" behavior = "slide" direction="up"><img src="/arte_cristal/app/webroot/img/logo.png" alt="Alcaldia del Estado Guárico" width="189" height="135"></marquee></h1>
 
-													</ul>
-											</li>
-									</ul>
-							</div>
-					</div>
-			</div>
-			<div class="grid_10">
-					<div class="box round first">
+
+						<!-- Nav -->
+							<nav id="nav">
+								<ul>
+									<li >
+									<?php echo $this->Html->link(__(' Inicio'), array('controller' => 'pages', 'action' => 'home')); ?>
+									</li>
+
+									<li>
+									<?php echo $this->Html->link(__('Usuarios'), array('controller' => 'users', 'action' => 'index')); ?>
+									</li>
+									<li >
+									<?php echo $this->Html->link(__('Documentos'), array('controller' => 'documentos', 'action' => 'index')); ?>
+									</li>
+									<!--<li>
+										<A HREF="http://localhost/alcaldia2/solvencias">Solvencias</A>
+
+
+									</li>-->
+									<li >
+									<?php echo $this->Html->link(__(' Solvencias'), array('controller' => 'solvencias', 'action' => 'index')); ?>
+									</li>
+
+									<li>
+									<?php echo $this->Html->link(__('Instituciones'), array('controller' => 'instituciones', 'action' => 'index')); ?>
+									</li>
+									<!-- <li>
+									<A HREF="http://localhost/alcaldia2/estadisticas">Estadisticas</A>
+									</li> -->
+									<li>
+									<?php echo $this->Html->link(__('Estadisticas'), array('controller' => 'estadisticas', 'action' => 'index')); ?>
+									</li>
+									<li>
+									<?php echo $this->Html->link(__('Salir'), array('controller' => 'users', 'action' => 'logout')); ?>
+									</li>
+								</ul>
+
+							</nav>
+
+
+							<!-- Search -->
+								<section class="box search">
+								<form method="post" action="documentos">
+									<input type="text" class="text" name="buscar" placeholder="Buscar por Cedula" />
+								</form>
+							</section>
+					<!-- Creado -->
+							<ul id="copyright">
+								<li>&copy; Creado por :</li><li><a href="">Diana Tovar & Maryelis Ache</a></li>
+							</ul>
 
 					</div>
-					<div class="box round">
-							<?php echo $this->fetch('content'); ?>
-					</div>
-			</div>
-			<div class="grid_5">
-					<div class="box round">
-							<h2>
-									Column on Left</h2>
-							<div class="block">
 
-							</div>
-					</div>
 			</div>
-			<div class="grid_5">
-					<div class="box round">
-							<h2>
-									Right Column</h2>
-							<div class="block">
 
-							</div>
-					</div>
-			</div>
-			<div class="clear">
-			</div>
-	</div>
-	<div class="clear">
-	</div>
-	<div id="site_info">
-			<p>
-					Copyright <a href="#">BlueWhale Admin</a>. All Rights Reserved.
-			</p>
-	</div>
-</body>
+	</body>
+
+
 </html>
