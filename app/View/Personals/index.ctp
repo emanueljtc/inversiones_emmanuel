@@ -54,7 +54,7 @@
 																<?php echo $this->Html->link(__(''), array('action' => 'view', $personal['Personal']['id']), array('class' => 'glyphicon glyphicon-search')); ?>
 																<?php echo $this->Html->link(__(''), array('action' => 'edit', $personal['Personal']['id']), array('class' => 'glyphicon glyphicon-edit')); ?>
 																<!-- <?php echo $this->Form->postLink('<i class="fa fa-trash-o fa-fw"></i> ' . __(''),  array('action' => 'delete', $personal['Personal']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $personal['Personal']['id']))); ?> -->
-																<?php echo $this->Form->postLink('<i class="fa fa-trash-o fa-fw"></i> ' . __(''), array('action' => 'delete', $personal['Personal']['id']), array('escape' => false), __('Seguro quieres eliminar a # %s?', $personal['Personal']['id'])); ?>
+																<?php echo $this->Form->postLink('<i class="fa fa-trash-o fa-fw"></i> ' . __(''), array('action' => 'delete', $personal['Personal']['id']), array('escape' => false), __('Seguro quieres eliminar al empleado %s?', $personal['Personal']['nombres'])); ?>
 															</td>
 														</tr>
 													<?php endforeach; ?>
