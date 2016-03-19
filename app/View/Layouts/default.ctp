@@ -18,9 +18,9 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		</title>
 		<?php
 	   /* Llamado de los CSS */
-     	echo $this->Html->css(array('bootstrap'));
+     	echo $this->Html->css(array('plugins/bootstrap/bootstrap.css'));
        	echo $this->Html->css(array('bootstrap.min'));
-        echo $this->Html->css(array('skel.css'));
+        echo $this->Html->css(array('plugins/jquery-ui/jquery-ui.min.css'));
         echo $this->Html->css(array('style.css'));
         echo $this->Html->css(array('hover.css'));
       	echo $this->Html->css(array('style-desktop'));
