@@ -15,7 +15,12 @@ class PersonalsController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator', 'Flash', 'Session');
+ public $helpers = array('Html','Form','Time','Js');
+ public $components = array('Paginator', 'Session','RequestHandler');
+ public $paginator = array (
+				 'limit' => 5,
+				 'order' => array('Personal.id' => 'desc')
+				 );
 
 /**
  * index method
@@ -24,7 +29,8 @@ class PersonalsController extends AppController {
  */
 	public function index() {
 		$this->Personal->recursive = 0;
-		$this->set('personals', $this->Paginator->paginate());
+		$this->Paginator->settings =$this->paginator;
+				$this->set('personals',$this->paginate());
 	}
 
 /**

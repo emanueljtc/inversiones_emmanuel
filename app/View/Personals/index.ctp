@@ -72,7 +72,19 @@
 		<!-- /#page-wrapper -->
 
 </div>
+<center>
+				<paginador><!-- etiqueta personalidad-->
+						<?php echo $this->element('paginador');?>
+				</paginador>
+				</center>
+		</div>
+<div class="btn-group btn-group-justified">
 
+				<?php echo $this->Html->link(__('Añadir Empleado'), array('action' => 'add'), array('class' => 'btn btn-info')); ?>
+				<?php echo $this->Html->link(__('Lista de Personal'), array('action' => 'index'), array('class' => 'btn btn-danger')); ?>
+				<?php echo $this->Html->link(__('Registrar Pago'), array('controller' => 'documents', 'action' => 'add'), array('class' => 'btn btn-primary')); ?>
+
+</div>
 
 
 <!-- <div class="personals index">
