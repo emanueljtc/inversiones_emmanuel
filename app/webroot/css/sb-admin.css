@@ -5,10 +5,10 @@
  */
 
 /* Global Styles */
-
+* {outline:none !important;}
 body {
     margin-top: 100px;
-    background-color: #222;
+    background-color: #fff;
 }
 
 @media(min-width:768px) {
@@ -224,4 +224,16 @@ ul.alert-dropdown {
 
 .panel-yellow > a:hover {
     color: #df8a13;
+}
+#logo a {
+    color: #D8D8D8;
+    font-family: "Righteous",cursive;
+    display: block;
+    font-size: 40px;
+    line-height: 50px;
+    background: url(../img/logo.png) right 42px no-repeat;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
 }

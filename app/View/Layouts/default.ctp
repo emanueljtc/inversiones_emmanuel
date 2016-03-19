@@ -18,115 +18,246 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		</title>
 		<?php
 	   /* Llamado de los CSS */
-     	echo $this->Html->css(array('plugins/bootstrap/bootstrap.css'));
+
        	echo $this->Html->css(array('bootstrap.min'));
-        echo $this->Html->css(array('plugins/jquery-ui/jquery-ui.min.css'));
-        echo $this->Html->css(array('style.css'));
-        echo $this->Html->css(array('hover.css'));
-      	echo $this->Html->css(array('style-desktop'));
-       	echo $this->Html->css(array('style-wide.css'));
-       	echo $this->Html->css(array('style-wide.css'));
+        echo $this->Html->css(array('sb-admin.css'));
+        echo $this->Html->css(array('plugins/morris.css'));
+        echo $this->Html->css(array('font-awesome.min.css'));
+				echo $this->Html->css(array('http://fonts.googleapis.com/css?family=Righteous'));
+
        /* -------------------------------------------*/
-       echo $this->Html->script(array('bootstrap.min'));
-       echo $this->Html->script(array('jquery.min'));
-       echo $this->Html->script(array('skel.min'));
-       echo $this->Html->script(array('skel-layers.min'));
-       echo $this->Html->script(array('init.js'));
-       echo $this->Html->script(array('docs.min.js'));
+			 /* Llamado de los JS */
+       echo $this->Html->script(array('jquery.js'));
+       echo $this->Html->script(array('bootstrap.min.js'));
+       echo $this->Html->script(array('plugins/morris/raphael.min.js'));
+       echo $this->Html->script(array('plugins/morris/morris.min.js'));
+       echo $this->Html->script(array('plugins/morris/morris-data.js'));
 
 
 
 		?>
   </head>
-<body class="left-sidebar">
+	<body>
+		<div id="wrapper">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+				<!-- Navigation -->
+				<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
+								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+										<span class="sr-only">Toggle navigation</span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+								</button>
+								<div id="logo" class="col-xs-12 col-sm-2">
+									<a href="index.html">S.R.C.P</a>
+							 </div>
+						</div>
+						<!-- Top Menu Items -->
+						<ul class="nav navbar-right top-nav">
+								<li class="dropdown">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
+										<ul class="dropdown-menu message-dropdown">
+												<li class="message-preview">
+														<a href="#">
+																<div class="media">
+																		<span class="pull-left">
+																				<img class="media-object" src="http://placehold.it/50x50" alt="">
+																		</span>
+																		<div class="media-body">
+																				<h5 class="media-heading"><strong>John Smith</strong>
+																				</h5>
+																				<p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+																				<p>Lorem ipsum dolor sit amet, consectetur...</p>
+																		</div>
+																</div>
+														</a>
+												</li>
+												<li class="message-preview">
+														<a href="#">
+																<div class="media">
+																		<span class="pull-left">
+																				<img class="media-object" src="http://placehold.it/50x50" alt="">
+																		</span>
+																		<div class="media-body">
+																				<h5 class="media-heading"><strong>John Smith</strong>
+																				</h5>
+																				<p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+																				<p>Lorem ipsum dolor sit amet, consectetur...</p>
+																		</div>
+																</div>
+														</a>
+												</li>
+												<li class="message-preview">
+														<a href="#">
+																<div class="media">
+																		<span class="pull-left">
+																				<img class="media-object" src="http://placehold.it/50x50" alt="">
+																		</span>
+																		<div class="media-body">
+																				<h5 class="media-heading"><strong>John Smith</strong>
+																				</h5>
+																				<p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+																				<p>Lorem ipsum dolor sit amet, consectetur...</p>
+																		</div>
+																</div>
+														</a>
+												</li>
+												<li class="message-footer">
+														<a href="#">Read All New Messages</a>
+												</li>
+										</ul>
+								</li>
+								<li class="dropdown">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
+										<ul class="dropdown-menu alert-dropdown">
+												<li>
+														<a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
+												</li>
+												<li>
+														<a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
+												</li>
+												<li>
+														<a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
+												</li>
+												<li>
+														<a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
+												</li>
+												<li>
+														<a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
+												</li>
+												<li>
+														<a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
+												</li>
+												<li class="divider"></li>
+												<li>
+														<a href="#">View All</a>
+												</li>
+										</ul>
+								</li>
+								<li class="dropdown">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
+										<ul class="dropdown-menu">
+												<li>
+														<a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+												</li>
+												<li>
+														<a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
+												</li>
+												<li>
+														<a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+												</li>
+												<li class="divider"></li>
+												<li>
+														<a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+												</li>
+										</ul>
+								</li>
+						</ul>
+						<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+						<div class="collapse navbar-collapse navbar-ex1-collapse">
+								<ul class="nav navbar-nav side-nav">
+										<li class="active">
+												<a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Inicio</a>
+										</li>
+										<li>
+												<a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
+										</li>
+										<li>
+												<a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
+										</li>
+										<li>
+												<a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
+										</li>
+										<li>
+												<a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
+										</li>
+										<li>
+												<a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
+										</li>
+										<li>
+												<a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
+												<ul id="demo" class="collapse">
+														<li>
+																<a href="#">Dropdown Item</a>
+														</li>
+														<li>
+																<a href="#">Dropdown Item</a>
+														</li>
+												</ul>
+										</li>
+										<li>
+												<a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
+										</li>
+										<li>
+												<a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
+										</li>
+								</ul>
+						</div>
+						<!-- /.navbar-collapse -->
+				</nav>
 
-				<!-- Content -->
-					<div id="content">
-						<div class="inner">
+				<div id="page-wrapper">
 
-							<!-- Post -->
-							<center>
-								<article class="box post post-excerpt">
+						<div class="container-fluid">
 
+								<!-- Page Heading -->
+								
+								<!-- /.row -->
 
-									<?php echo $this->Session->flash(); ?>
-									<?php echo $this->fetch('content'); ?>
+								<div class="row">
+										<div class="col-lg-12">
+												<!-- <div class="alert alert-info alert-dismissable"> -->
+														<!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+														<!-- <i class="fa fa-info-circle"></i> -->
+														<?php echo $this->Session->flash(); ?> <!--ALERTAS DE CAKE-->
 
-								</article>
-							</center>
+												<!-- </div> -->
+										</div>
+								</div>
+								<!-- /.row -->
 
-							<!-- Post -->
+									  <div class="row">
+														<div class="col-lg-12">
+																<!--CONTENIDO DE CAKE-->
+																<?php echo $this->fetch('content'); ?>
+														</div>
 
+										</div>
+								</div>
+								<!-- /.row -->
 
+								<div class="row">
+										<div class="col-lg-12">
+
+										</div>
+								</div>
+								<!-- /.row -->
+
+								<div class="row">
+										<div class="col-lg-4">
+
+										</div>
+								</div>
+										<div class="col-lg-4">
+
+										</div>
+
+								</div>
+								<!-- /.row -->
 
 						</div>
-					</div>
+						<!-- /.container-fluid -->
 
-				<!-- Sidebar -->
-					<div id="sidebar">
+				</div>
+				<!-- /#page-wrapper -->
 
-						<!-- Logo -->
-							<h1 id="logo"><marquee loop="1" SCROLLAMOUNT="7" behavior = "slide" direction="up"><img src="/arte_cristal/app/webroot/img/logo.png" alt="Alcaldia del Estado Guárico" width="189" height="135"></marquee></h1>
-
-
-						<!-- Nav -->
-							<nav id="nav">
-								<ul>
-									<li >
-									<?php echo $this->Html->link(__(' Inicio'), array('controller' => 'pages', 'action' => 'home')); ?>
-									</li>
-
-									<li>
-									<?php echo $this->Html->link(__('Usuarios'), array('controller' => 'users', 'action' => 'index')); ?>
-									</li>
-									<li >
-									<?php echo $this->Html->link(__('Documentos'), array('controller' => 'documentos', 'action' => 'index')); ?>
-									</li>
-									<!--<li>
-										<A HREF="http://localhost/alcaldia2/solvencias">Solvencias</A>
+		</div>
 
 
-									</li>-->
-									<li >
-									<?php echo $this->Html->link(__(' Solvencias'), array('controller' => 'solvencias', 'action' => 'index')); ?>
-									</li>
 
-									<li>
-									<?php echo $this->Html->link(__('Instituciones'), array('controller' => 'instituciones', 'action' => 'index')); ?>
-									</li>
-									<!-- <li>
-									<A HREF="http://localhost/alcaldia2/estadisticas">Estadisticas</A>
-									</li> -->
-									<li>
-									<?php echo $this->Html->link(__('Estadisticas'), array('controller' => 'estadisticas', 'action' => 'index')); ?>
-									</li>
-									<li>
-									<?php echo $this->Html->link(__('Salir'), array('controller' => 'users', 'action' => 'logout')); ?>
-									</li>
-								</ul>
-
-							</nav>
-
-
-							<!-- Search -->
-								<section class="box search">
-								<form method="post" action="documentos">
-									<input type="text" class="text" name="buscar" placeholder="Buscar por Cedula" />
-								</form>
-							</section>
-					<!-- Creado -->
-							<ul id="copyright">
-								<li>&copy; Creado por :</li><li><a href="">Diana Tovar & Maryelis Ache</a></li>
-							</ul>
-
-					</div>
-
-			</div>
-
-	</body>
+</body>
 
 
 </html>
