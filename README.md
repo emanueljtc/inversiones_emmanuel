@@ -1,5 +1,7 @@
 # CakePHP
 
+[![Join the chat at https://gitter.im/emanueljtc/ArteCristal](https://badges.gitter.im/emanueljtc/ArteCristal.svg)](https://gitter.im/emanueljtc/ArteCristal?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Latest Stable Version](https://poser.pugx.org/cakephp/cakephp/v/stable.svg)](https://packagist.org/packages/cakephp/cakephp)
 [![License](https://poser.pugx.org/cakephp/cakephp/license.svg)](https://packagist.org/packages/cakephp/cakephp)
 [![Bake Status](https://secure.travis-ci.org/cakephp/cakephp.png?branch=master)](http://travis-ci.org/cakephp/cakephp)
