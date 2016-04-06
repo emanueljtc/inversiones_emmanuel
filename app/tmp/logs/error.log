@@ -11904,3 +11904,62 @@ Request URL: /arte_cristal/css/bootstrap.min.css.map
 Stack Trace:
 #0 /var/www/html/arte_cristal/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2016-03-20 00:39:51 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [2002] Can\'t connect to local MySQL server through socket \'/var/run/mysqld/mysqld.sock\' (2)',
+  'enabled' => true,
+)
+Request URL: /arte_cristal/personals
+Stack Trace:
+#0 /var/www/html/arte_cristal/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /var/www/html/arte_cristal/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /var/www/html/arte_cristal/lib/Cake/Model/Model.php(3626): ConnectionManager::getDataSource('default')
+#3 /var/www/html/arte_cristal/lib/Cake/Model/Model.php(1155): Model->setDataSource('default')
+#4 /var/www/html/arte_cristal/lib/Cake/Model/Model.php(3653): Model->setSource('personal')
+#5 /var/www/html/arte_cristal/lib/Cake/Model/Model.php(1387): Model->getDataSource()
+#6 /var/www/html/arte_cristal/lib/Cake/Model/Model.php(1483): Model->schema()
+#7 /var/www/html/arte_cristal/lib/Cake/Controller/Component/PaginatorComponent.php(400): Model->hasField('id')
+#8 /var/www/html/arte_cristal/lib/Cake/Controller/Component/PaginatorComponent.php(142): PaginatorComponent->validateSort(Object(Personal), Array, Array)
+#9 /var/www/html/arte_cristal/lib/Cake/Controller/Controller.php(1089): PaginatorComponent->paginate(NULL, Array, Array)
+#10 /var/www/html/arte_cristal/app/Controller/PersonalsController.php(33): Controller->paginate()
+#11 [internal function]: PersonalsController->index()
+#12 /var/www/html/arte_cristal/lib/Cake/Controller/Controller.php(491): ReflectionMethod->invokeArgs(Object(PersonalsController), Array)
+#13 /var/www/html/arte_cristal/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#14 /var/www/html/arte_cristal/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PersonalsController), Object(CakeRequest))
+#15 /var/www/html/arte_cristal/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2016-03-20 00:44:53 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [2002] Can\'t connect to local MySQL server through socket \'/var/run/mysqld/mysqld.sock\' (2)',
+  'enabled' => true,
+)
+Request URL: /arte_cristal/personals
+Stack Trace:
+#0 /var/www/html/arte_cristal/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /var/www/html/arte_cristal/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /var/www/html/arte_cristal/lib/Cake/Model/Model.php(3626): ConnectionManager::getDataSource('default')
+#3 /var/www/html/arte_cristal/lib/Cake/Model/Model.php(1155): Model->setDataSource('default')
+#4 /var/www/html/arte_cristal/lib/Cake/Model/Model.php(3653): Model->setSource('personal')
+#5 /var/www/html/arte_cristal/lib/Cake/Model/Model.php(1387): Model->getDataSource()
+#6 /var/www/html/arte_cristal/lib/Cake/Model/Model.php(1483): Model->schema()
+#7 /var/www/html/arte_cristal/lib/Cake/Controller/Component/PaginatorComponent.php(400): Model->hasField('id')
+#8 /var/www/html/arte_cristal/lib/Cake/Controller/Component/PaginatorComponent.php(142): PaginatorComponent->validateSort(Object(Personal), Array, Array)
+#9 /var/www/html/arte_cristal/lib/Cake/Controller/Controller.php(1089): PaginatorComponent->paginate(NULL, Array, Array)
+#10 /var/www/html/arte_cristal/app/Controller/PersonalsController.php(33): Controller->paginate()
+#11 [internal function]: PersonalsController->index()
+#12 /var/www/html/arte_cristal/lib/Cake/Controller/Controller.php(491): ReflectionMethod->invokeArgs(Object(PersonalsController), Array)
+#13 /var/www/html/arte_cristal/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#14 /var/www/html/arte_cristal/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PersonalsController), Object(CakeRequest))
+#15 /var/www/html/arte_cristal/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2016-03-20 05:04:00 Error: [MissingControllerException] Controller class Forms.htmlController could not be found.
+Exception Attributes: array (
+  'class' => 'Forms.htmlController',
+  'plugin' => NULL,
+)
+Request URL: /arte_cristal/forms.html
+Stack Trace:
+#0 /var/www/html/arte_cristal/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
