@@ -16,7 +16,7 @@
 														<i class="fa fa-dashboard"></i>  <a href="index.html">Inicio</a>
 												</li>
 												<li class="active">
-														<i class="fa fa-table"></i> Lista del Personal
+														<i class="fa fa-table"></i> Lista de Personas
 												</li>
 										</ol>
 								</div>
