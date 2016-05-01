@@ -12,7 +12,7 @@ class Position extends AppModel {
  *
  * @var string
  */
-	public $displayField = 'id';
+	public $displayField = 'position';
 
 /**
  * Validation rules
