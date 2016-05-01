@@ -11,7 +11,9 @@
 		echo $this->Form->input('born_date');
 		echo $this->Form->input('sex');
 		echo $this->Form->input('age');
-		echo $this->Form->input('cell_phone');
+		echo $this->Form->input('cell_phone', array(
+		'label'=>'','placeholder' => 'Celular','type'=>'text','class'=>'form-control'
+			));
 		echo $this->Form->input('phone');
 		echo $this->Form->input('email');
 		echo $this->Form->input('address');

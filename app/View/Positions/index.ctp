@@ -1,13 +1,40 @@
-<div class="positions index">
-	<h2><?php echo __('Positions'); ?></h2>
-	<table cellpadding="0" cellspacing="0">
-	<thead>
-	<tr>
+<div>
+
+
+		<div id="page-wrapper">
+
+				<div class="container-fluid">
+						<!-- Page Heading -->
+						<div class="row">
+								<div class="col-lg-12">
+										<h1 class="page-header">
+												<?php echo __('Lista de Cargos'); ?>
+										</h1>
+										<ol class="breadcrumb">
+												<li>
+														<i class="fa fa-dashboard"></i>  <a href="index.html">Inicio</a>
+												</li>
+												<li class="active">
+														<i class="fa fa-table"></i> Lista de Cargos
+												</li>
+										</ol>
+								</div>
+						</div>
+
+<!-- /.row -->
+
+						<div class="row">
+								<div class="col-lg-6">
+
+										<div class="table-responsive">
+												<table class="table table-bordered table-hover">
+														<thead>
+																<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('position'); ?></th>
-			<th><?php echo $this->Paginator->sort('day_hour'); ?></th>
-			<th><?php echo $this->Paginator->sort('time_value'); ?></th>
-			<th class="actions"><?php echo __('Actions'); ?></th>
+			<th><?php echo $this->Paginator->sort('cargo'); ?></th>
+			<th><?php echo $this->Paginator->sort('horas trabajada'); ?></th>
+			<th><?php echo $this->Paginator->sort('valor de la Hora'); ?></th>
+			<th class="actions"><?php echo __('Acciones'); ?></th>
 	</tr>
 	</thead>
 	<tbody>
@@ -16,35 +43,40 @@
 		<td><?php echo h($position['Position']['id']); ?>&nbsp;</td>
 		<td><?php echo h($position['Position']['position']); ?>&nbsp;</td>
 		<td><?php echo h($position['Position']['day_hour']); ?>&nbsp;</td>
-		<td><?php echo h($position['Position']['time_value']); ?>&nbsp;</td>
+		<td><?php echo h($position['Position']['time_value']); ?>&nbsp;bs</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $position['Position']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $position['Position']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $position['Position']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $position['Position']['id']))); ?>
+			<?php echo $this->Html->link(__(''), array('action' => 'view', $position['Position']['id']), array('class' => 'glyphicon glyphicon-search')); ?>
+			<?php echo $this->Html->link(__(''), array('action' => 'edit', $position['Position']['id']), array('class' => 'glyphicon glyphicon-edit')); ?>
+			<?php echo $this->Form->postLink('<i class="fa fa-trash-o fa-fw"></i> ' . __(''), array('action' => 'delete', $position['Position']['id']), array('escape' => false), __('Seguro quieres eliminar este Cargo %s?', $position['Position']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
 	</tbody>
 	</table>
-	<p>
-	<?php
-	echo $this->Paginator->counter(array(
-		'format' => __('Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')
-	));
-	?>	</p>
-	<div class="paging">
-	<?php
-		echo $this->Paginator->prev('< ' . __('previous'), array(), null, array('class' => 'prev disabled'));
-		echo $this->Paginator->numbers(array('separator' => ''));
-		echo $this->Paginator->next(__('next') . ' >', array(), null, array('class' => 'next disabled'));
-	?>
-	</div>
 </div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('New Position'), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Personals'), array('controller' => 'personals', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Personal'), array('controller' => 'personals', 'action' => 'add')); ?> </li>
-	</ul>
+								</div>
+
+
+						</div>
+						<!-- /.bloque -->
+
+				</div>
+				<!-- /.contenedor-->
+
+		</div>
+		<!-- /#page-wrapper -->
+
+</div>
+	<center>
+				<paginador><!-- etiqueta personalidad-->
+						<?php echo $this->element('paginador');?>
+				</paginador>
+				</center>
+</div>
+
+<div class="btn-group btn-group-justified">
+
+				<?php echo $this->Html->link(__('Añadir Cargo'), array('action' => 'add'), array('class' => 'btn btn-info')); ?>
+				<?php echo $this->Html->link(__('Lista de Personal'), array('controller' => 'personals', 'action' => 'index'), array('class' => 'btn btn-danger')); ?>
+				<?php echo $this->Html->link(__('Nuevo Personal'), array('controller' => 'personals', 'action' => 'add'), array('class' => 'btn btn-primary')); ?>
 </div>
