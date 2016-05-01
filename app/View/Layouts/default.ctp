@@ -24,21 +24,17 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
         echo $this->Html->css(array('plugins/morris.css'));
         echo $this->Html->css(array('font-awesome.min.css'));
 				echo $this->Html->css(array('http://fonts.googleapis.com/css?family=Righteous'));
-				echo $this->Html->css(array('fullcalendar.css'));
-				echo $this->Html->css(array('jquery-ui.min'));
-				echo $this->Html->css(array('jquery.fancybox'));
+
 
        /* -------------------------------------------*/
 			 /* Llamado de los JS */
 
        echo $this->Html->script(array('jquery.js'));
-			 echo $this->Html->script(array('jquery-ui.min.js'));
-			 echo $this->Html->script(array('jquery.justifiedGallery.min'));
 			 echo $this->Html->script(array('bootstrap.min.js'));
        echo $this->Html->script(array('plugins/morris/raphael.min.js'));
        echo $this->Html->script(array('plugins/morris/morris.min.js'));
        echo $this->Html->script(array('plugins/morris/morris-data.js'));
-			 echo $this->Html->script(array('devoops.js'));
+
 
 
 
