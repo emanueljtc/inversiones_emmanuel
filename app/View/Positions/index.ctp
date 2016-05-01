@@ -32,7 +32,7 @@
 																<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('cargo'); ?></th>
-			<th><?php echo $this->Paginator->sort('horas trabajada'); ?></th>
+			<th><?php echo $this->Paginator->sort('horas diarias'); ?></th>
 			<th><?php echo $this->Paginator->sort('valor de la Hora'); ?></th>
 			<th class="actions"><?php echo __('Acciones'); ?></th>
 	</tr>
