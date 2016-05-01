@@ -5,16 +5,22 @@
 /app/tmp
 /lib/Cake/Console/Templates/skel/tmp/
 /app/tmp/cache/persistent/
-/app/tmp/cache/persistent/myapp_cake_core_cake_dev_es
-/app/tmp/cache/persistent/myapp_cake_core_default_es
-/app/tmp/cache/persistent/myapp_cake_core_file_map
-/app/tmp/logs/error.log
-
+/tmp/cache/models/*
+!/tmp/cache/models/empty
+/tmp/cache/persistent/*
+!/tmp/cache/persistent/empty
+/tmp/cache/views/*
+!/tmp/cache/views/empty
+/tmp/sessions/*
+!/tmp/sessions/empty
+/tmp/tests/*
+!/tmp/tests/empty
 /build
 /dist
 /tags
-*.mo
 
+*.mo
+*.log
 # IDE and editor specific files #
 #################################
 /nbproject
