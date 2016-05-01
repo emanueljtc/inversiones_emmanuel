@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 05-04-2016 a las 22:14:41
--- Versión del servidor: 5.5.47-0ubuntu0.14.04.1
--- Versión de PHP: 5.5.9-1ubuntu4.14
+-- Tiempo de generación: 30-04-2016 a las 23:54:03
+-- Versión del servidor: 5.5.49-0ubuntu0.14.04.1
+-- Versión de PHP: 5.5.9-1ubuntu4.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -23,33 +23,46 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `personal`
+-- Estructura de tabla para la tabla `personals`
 --
 
-CREATE TABLE IF NOT EXISTS `personal` (
+CREATE TABLE IF NOT EXISTS `personals` (
   `id` int(3) NOT NULL AUTO_INCREMENT,
-  `fecha_reg` date NOT NULL,
-  `cedula` int(25) NOT NULL,
-  `nombres` varchar(100) NOT NULL,
-  `apellidos` varchar(250) NOT NULL,
-  `fecha_nac` date NOT NULL,
-  `sexo` int(1) NOT NULL,
-  `edad` int(3) NOT NULL,
-  `celular` int(20) NOT NULL,
-  `telefono_local` int(20) NOT NULL,
-  `correo` varchar(250) NOT NULL,
-  `direccion` varchar(250) NOT NULL,
-  `cargo` varchar(250) NOT NULL,
+  `position_id` int(11) NOT NULL,
+  `date_reg` date NOT NULL,
+  `dni` int(25) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `last_name` varchar(250) NOT NULL,
+  `born_date` date NOT NULL,
+  `sex` int(1) NOT NULL,
+  `age` int(3) NOT NULL,
+  `cell_phone` int(20) NOT NULL,
+  `phone` int(20) NOT NULL,
+  `email` varchar(250) NOT NULL,
+  `address` varchar(250) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
 
 --
--- Volcado de datos para la tabla `personal`
+-- Estructura de tabla para la tabla `positions`
 --
 
-INSERT INTO `personal` (`id`, `fecha_reg`, `cedula`, `nombres`, `apellidos`, `fecha_nac`, `sexo`, `edad`, `celular`, `telefono_local`, `correo`, `direccion`, `cargo`) VALUES
-(1, '2016-03-17', 18971787, 'Emanuel ', 'Torres Clemente', '1996-07-04', 0, 25, 18971787, 2147483647, 'emanueljtc@gmail.com', 'Las palmas ', 'Jefe'),
-(2, '2016-03-19', 18889223, 'Luis', 'Mendez', '2002-03-19', 0, 28, 2147483647, 2147483647, 'luis@gmail.com', 'Pariapan', 'Jefe');
+CREATE TABLE IF NOT EXISTS `positions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `position` varchar(255) NOT NULL,
+  `day_hour` decimal(10,0) NOT NULL,
+  `time_value` decimal(10,0) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Volcado de datos para la tabla `positions`
+--
+
+INSERT INTO `positions` (`id`, `position`, `day_hour`, `time_value`) VALUES
+(1, 'Gerente', 8, 125);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
