@@ -173,9 +173,22 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 													<li>
 														<?php echo $this->Html->link(__(' Nuevo Empleado'), array('controller' => 'personals', 'action' => 'add'), array('class'=>'glyphicon glyphicon-plus')); ?>
 												</li>
-													</li>
+								
 											</ul>
 										</li>
+
+										<li>
+											<a href="javascript:;" data-toggle="collapse" data-target="#demo2"><i class="glyphicon glyphicon-briefcase"></i> Cargo <i class="glyphicon glyphicon-menu-down"></i></a>
+											<ul id="demo2" class="collapse">
+													<li>
+															<?php echo $this->Html->link(__('Listado de Cargos'), array('controller' => 'positions', 'action' => 'index'), array('class'=>'glyphicon glyphicon-list')); ?>
+													</li>
+													<li>
+														<?php echo $this->Html->link(__(' Nuevo Cargo'), array('controller' => 'positions', 'action' => 'add'), array('class'=>'glyphicon glyphicon-plus')); ?>
+												</li>
+											</ul>
+										</li>
+
 										<li>
 												<a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
 										</li>

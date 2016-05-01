@@ -71,7 +71,7 @@ class DATABASE_CONFIG {
 		'persistent' => false,
 		'host' => 'localhost',
 		'login' => 'root',
-		'password' => 'ema18787',
+		'password' => '',
 		'database' => 'arte_cristal',
 		'prefix' => '',
 		//'encoding' => 'utf8',
