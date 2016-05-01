@@ -11963,3 +11963,30 @@ Request URL: /arte_cristal/forms.html
 Stack Trace:
 #0 /var/www/html/arte_cristal/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2016-04-30 19:34:06 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /inversiones_emmanuel/css/bootstrap.min.css.map
+Stack Trace:
+#0 /var/www/html/inversiones_emmanuel/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-04-30 19:34:21 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /inversiones_emmanuel/css/bootstrap.min.css.map
+Stack Trace:
+#0 /var/www/html/inversiones_emmanuel/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-04-30 19:35:25 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /inversiones_emmanuel/css/bootstrap.min.css.map
+Stack Trace:
+#0 /var/www/html/inversiones_emmanuel/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

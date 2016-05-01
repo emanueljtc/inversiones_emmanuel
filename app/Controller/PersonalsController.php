@@ -15,12 +15,7 @@ class PersonalsController extends AppController {
  *
  * @var array
  */
- public $helpers = array('Html','Form','Time','Js');
- public $components = array('Paginator', 'Session','RequestHandler');
- public $paginator = array (
-				 'limit' => 5,
-				 'order' => array('Personal.id' => 'desc')
-				 );
+	public $components = array('Paginator', 'Flash', 'Session');
 
 /**
  * index method
@@ -29,8 +24,7 @@ class PersonalsController extends AppController {
  */
 	public function index() {
 		$this->Personal->recursive = 0;
-		$this->Paginator->settings =$this->paginator;
-				$this->set('personals',$this->paginate());
+		$this->set('personals', $this->Paginator->paginate());
 	}
 
 /**
@@ -63,6 +57,8 @@ class PersonalsController extends AppController {
 				$this->Flash->error(__('The personal could not be saved. Please, try again.'));
 			}
 		}
+		$positions = $this->Personal->Position->find('list');
+		$this->set(compact('positions'));
 	}
 
 /**
@@ -87,6 +83,8 @@ class PersonalsController extends AppController {
 			$options = array('conditions' => array('Personal.' . $this->Personal->primaryKey => $id));
 			$this->request->data = $this->Personal->find('first', $options);
 		}
+		$positions = $this->Personal->Position->find('list');
+		$this->set(compact('positions'));
 	}
 
 /**
