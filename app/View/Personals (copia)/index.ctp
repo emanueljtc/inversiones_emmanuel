@@ -45,11 +45,11 @@
 															<!-- <td><?php echo h($personal['Personal']['id']); ?>&nbsp;</td> -->
 
 
-															<td><?php echo h($personal['Personal']['nombres']); ?>&nbsp;</td>
-															<td><?php echo h($personal['Personal']['apellidos']); ?>&nbsp;</td>
-															<td><?php echo h($personal['Personal']['cedula']); ?>&nbsp;</td>
-															<td><?php echo h($personal['Personal']['celular']);?>&nbsp;</td>
-															<td><?php echo h($personal['Personal']['cargo']); ?>&nbsp;</td>
+															<td><?php echo h($personal['Personal']['name']); ?>&nbsp;</td>
+															<td><?php echo h($personal['Personal']['last_name']); ?>&nbsp;</td>
+															<td><?php echo h($personal['Personal']['dni']); ?>&nbsp;</td>
+															<td><?php echo h($personal['Personal']['cell_phone']);?>&nbsp;</td>
+															<td><?php echo h($personal['Personal']['position_id']); ?>&nbsp;</td>
 															<td class="actions">
 																<?php echo $this->Html->link(__(''), array('action' => 'view', $personal['Personal']['id']), array('class' => 'glyphicon glyphicon-search')); ?>
 																<?php echo $this->Html->link(__(''), array('action' => 'edit', $personal['Personal']['id']), array('class' => 'glyphicon glyphicon-edit')); ?>

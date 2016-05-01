@@ -1,4 +1,94 @@
-<div class="personals index">
+<div>
+
+
+		<div id="page-wrapper">
+
+				<div class="container-fluid">
+
+						<!-- Page Heading -->
+						<div class="row">
+								<div class="col-lg-12">
+										<h1 class="page-header">
+												<?php echo __('Lista del Personal'); ?>
+										</h1>
+										<ol class="breadcrumb">
+												<li>
+														<i class="fa fa-dashboard"></i>  <a href="index.html">Inicio</a>
+												</li>
+												<li class="active">
+														<i class="fa fa-table"></i> Lista de Personas
+												</li>
+										</ol>
+								</div>
+						</div>
+						<!-- /.row -->
+
+						<div class="row">
+								<div class="col-lg-6">
+
+										<div class="table-responsive">
+												<table class="table table-bordered table-hover">
+														<thead>
+																<tr>
+
+																		<th><?php echo $this->Paginator->sort('Nombres'); ?></th>
+																		<th><?php echo $this->Paginator->sort('Apellidos'); ?></th>
+																		<th><?php echo $this->Paginator->sort('Cedula'); ?></th>
+																		<th><?php echo $this->Paginator->sort('Celular'); ?></th>
+																		<th><?php echo $this->Paginator->sort('Cargo');?></th>
+																		<th class="actions"><?php echo __('Acciones'); ?></th>
+																</tr>
+														</thead>
+														<tbody>
+														<?php foreach ($personals as $personal): ?>
+														<tr>
+															<!-- <td><?php echo h($personal['Personal']['id']); ?>&nbsp;</td> -->
+
+
+															<td><?php echo h($personal['Personal']['name']); ?>&nbsp;</td>
+															<td><?php echo h($personal['Personal']['last_name']); ?>&nbsp;</td>
+															<td><?php echo h($personal['Personal']['dni']); ?>&nbsp;</td>
+															<td><?php echo h($personal['Personal']['cell_phone']);?>&nbsp;</td>
+														<td>
+																<?php echo $this->Html->link($personal['Position']['position'], array('controller' => 'positions', 'action' => 'view', $personal['Position']['id'])); ?>
+															</td>
+															<td class="actions">
+																<?php echo $this->Html->link(__(''), array('action' => 'view', $personal['Personal']['id']), array('class' => 'glyphicon glyphicon-search')); ?>
+																<?php echo $this->Html->link(__(''), array('action' => 'edit', $personal['Personal']['id']), array('class' => 'glyphicon glyphicon-edit')); ?>
+																<!-- <?php echo $this->Form->postLink('<i class="fa fa-trash-o fa-fw"></i> ' . __(''),  array('action' => 'delete', $personal['Personal']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $personal['Personal']['id']))); ?> -->
+																<?php echo $this->Form->postLink('<i class="fa fa-trash-o fa-fw"></i> ' . __(''), array('action' => 'delete', $personal['Personal']['id']), array('escape' => false), __('Seguro quieres eliminar al empleado %s?', $personal['Personal']['name'])); ?>
+															</td>
+														</tr>
+													<?php endforeach; ?>
+												</table>
+										</div>
+								</div>
+
+
+						</div>
+						<!-- /.bloque -->
+
+				</div>
+				<!-- /.contenedor-->
+
+		</div>
+		<!-- /#page-wrapper -->
+
+</div>
+<center>
+				<paginador><!-- etiqueta personalidad-->
+						<?php echo $this->element('paginador');?>
+				</paginador>
+				</center>
+		</div>
+<div class="btn-group btn-group-justified">
+
+				<?php echo $this->Html->link(__('Añadir Empleado'), array('action' => 'add'), array('class' => 'btn btn-info')); ?>
+				<?php echo $this->Html->link(__('Lista de Personal'), array('action' => 'index'), array('class' => 'btn btn-danger')); ?>
+				<?php echo $this->Html->link(__('Registrar Pago'), array('controller' => 'documents', 'action' => 'add'), array('class' => 'btn btn-primary')); ?>
+
+</div>
+<!-- <div class="personals index">
 	<h2><?php echo __('Personals'); ?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<thead>
@@ -67,4 +157,4 @@
 		<li><?php echo $this->Html->link(__('List Positions'), array('controller' => 'positions', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Position'), array('controller' => 'positions', 'action' => 'add')); ?> </li>
 	</ul>
-</div>
+</div> -->
