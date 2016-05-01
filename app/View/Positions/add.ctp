@@ -1,7 +1,7 @@
 <div class="positions form">
 <?php echo $this->Form->create('Position'); ?>
 	<fieldset>
-		<legend><?php echo __('Add Position'); ?></legend>
+		<legend><?php echo __('Añadir Cargo'); ?></legend>
 	<?php
 		echo $this->Form->input('position');
 		echo $this->Form->input('day_hour');
