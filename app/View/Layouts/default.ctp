@@ -173,7 +173,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 													<li>
 														<?php echo $this->Html->link(__(' Nuevo Empleado'), array('controller' => 'personals', 'action' => 'add'), array('class'=>'glyphicon glyphicon-plus')); ?>
 												</li>
-								
+
 											</ul>
 										</li>
 
@@ -181,7 +181,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 											<a href="javascript:;" data-toggle="collapse" data-target="#demo2"><i class="glyphicon glyphicon-briefcase"></i> Cargo <i class="glyphicon glyphicon-menu-down"></i></a>
 											<ul id="demo2" class="collapse">
 													<li>
-															<?php echo $this->Html->link(__('Listado de Cargos'), array('controller' => 'positions', 'action' => 'index'), array('class'=>'glyphicon glyphicon-list')); ?>
+															<?php echo $this->Html->link(__(' Listado de Cargos'), array('controller' => 'positions', 'action' => 'index'), array('class'=>'glyphicon glyphicon-list')); ?>
 													</li>
 													<li>
 														<?php echo $this->Html->link(__(' Nuevo Cargo'), array('controller' => 'positions', 'action' => 'add'), array('class'=>'glyphicon glyphicon-plus')); ?>
@@ -190,34 +190,31 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 										</li>
 
 										<li>
-												<a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
+											<a href="javascript:;" data-toggle="collapse" data-target="#demo3"><i class="glyphicon glyphicon-usd"></i> Salarios <i class="glyphicon glyphicon-menu-down"></i></a>
+											<ul id="demo3" class="collapse">
+													<li>
+															<?php echo $this->Html->link(__(' Listado de Salarios'), array('controller' => 'wakes', 'action' => 'index'), array('class'=>'glyphicon glyphicon-list')); ?>
+													</li>
+													<li>
+														<?php echo $this->Html->link(__(' Nuevo Pago'), array('controller' => 'wakes', 'action' => 'add'), array('class'=>'glyphicon glyphicon-plus')); ?>
+												</li>
+											</ul>
 										</li>
+
 										<li>
-												<a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
+											<a href="javascript:;" data-toggle="collapse" data-target="#demo4"><i class="glyphicon glyphicon-lock"></i> Usuarios <i class="glyphicon glyphicon-menu-down"></i></a>
+											<ul id="demo4" class="collapse">
+													<li>
+															<?php echo $this->Html->link(__(' Listado de Usuarios'), array('controller' => 'users', 'action' => 'index'), array('class'=>'glyphicon glyphicon-list')); ?>
+													</li>
+													<li>
+														<?php echo $this->Html->link(__(' Nuevo Usuario'), array('controller' => 'users', 'action' => 'add'), array('class'=>'glyphicon glyphicon-plus')); ?>
+												</li>
+											</ul>
 										</li>
-										<li>
-												<a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
-										</li>
-										<li>
-												<a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
-										</li>
-										<li>
-												<a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
-												<ul id="demo" class="collapse">
-														<li>
-																<a href="#">Dropdown Item</a>
-														</li>
-														<li>
-																<a href="#">Dropdown Item</a>
-														</li>
-												</ul>
-										</li>
-										<li>
-												<a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
-										</li>
-										<li>
-												<a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
-										</li>
+
+
+
 								</ul>
 						</div>
 						<!-- /.navbar-collapse -->

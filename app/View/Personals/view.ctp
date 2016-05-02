@@ -1,4 +1,47 @@
-<div class="personals view">
+<div class="panel panel-primary">
+				<div class="panel-heading">
+					<center>
+						<h4>Datos del Empleado</h4>
+
+					</center>
+				</div>
+			<div class="bloque">
+				<div class="row">
+					<div class="col col-sm-7">
+						<?php //echo $this->Html->image('../files/Personal/foto/'. $Personal['Personal']['foto_dir'].'/'.'vga_'.$Personal['Personal']['foto']); ?>
+					</div>
+					<div class="clol col-sm-5">
+								<br>
+
+							<strong>Fecha de Ingreso : <?php echo h($personal['Personal']['date_reg']); ?> </strong>
+
+							<br>
+							<strong>Nombre : <?php echo h($personal['Personal']['name']); ?> </strong>
+							<br>
+							<strong>Apellido : <?php echo h($personal['Personal']['last_name']); ?> </strong>
+							<br>
+							<strong>Cedula : <?php echo h($personal['Personal']['dni']); ?></strong>
+							<br>
+							<strong>Sexo : <?php echo h($personal['Personal']['sex']); ?></strong>
+							<br>
+							<strong>Edad : <?php echo h($personal['Personal']['age']); ?></strong>
+							<br>
+							<strong>Nacimiento : <?php echo h($personal['Personal']['born_date']); ?></strong>
+							<br>
+							<strong>Email : <?php echo h($personal['Personal']['email']); ?></strong>
+							<br>
+							<strong>Direccion : <?php echo h($personal['Personal']['address']); ?></strong>
+							<br><br>
+
+					</div>
+
+		  </div>
+
+
+		</div>
+
+</div>
+<!-- <div class="personals view">
 <h2><?php echo __('Personal'); ?></h2>
 	<dl>
 		<dt><?php echo __('Id'); ?></dt>
@@ -78,4 +121,4 @@
 		<li><?php echo $this->Html->link(__('List Positions'), array('controller' => 'positions', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Position'), array('controller' => 'positions', 'action' => 'add')); ?> </li>
 	</ul>
-</div>
+</div> -->
