@@ -41,6 +41,13 @@
 		</div>
 
 </div>
+<div class="btn-group btn-group-justified">
+
+				<?php echo $this->Html->link(__('Añadir Empleado'), array('action' => 'add'), array('class' => 'btn btn-info')); ?>
+				<?php echo $this->Html->link(__('Lista de Personal'), array('action' => 'index'), array('class' => 'btn btn-danger')); ?>
+				<?php echo $this->Html->link(__('Registrar Pago'), array('controller' => 'wakes', 'action' => 'add'), array('class' => 'btn btn-primary')); ?>
+
+</div>
 <!-- <div class="personals view">
 <h2><?php echo __('Personal'); ?></h2>
 	<dl>

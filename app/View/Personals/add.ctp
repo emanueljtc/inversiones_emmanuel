@@ -136,14 +136,12 @@
   			</fieldset>
   		<?php echo $this->Form->end(__('Submit')); ?> -->
   		</div>
-  		<div class="actions">
-  			<h3><?php echo __('Actions'); ?></h3>
-  			<ul>
+      <div class="btn-group btn-group-justified">
 
-  				<li><?php echo $this->Html->link(__('List Personals'), array('action' => 'index')); ?></li>
-  				<li><?php echo $this->Html->link(__('List Positions'), array('controller' => 'positions', 'action' => 'index')); ?> </li>
-  				<li><?php echo $this->Html->link(__('New Position'), array('controller' => 'positions', 'action' => 'add')); ?> </li>
-  			</ul>
-  		</div>
+      				<?php echo $this->Html->link(__('Añadir Empleado'), array('action' => 'add'), array('class' => 'btn btn-info')); ?>
+      				<?php echo $this->Html->link(__('Lista de Personal'), array('action' => 'index'), array('class' => 'btn btn-danger')); ?>
+      				<?php echo $this->Html->link(__('Registrar Pago'), array('controller' => 'wakes', 'action' => 'add'), array('class' => 'btn btn-primary')); ?>
+
+      </div>
 
 </div>
