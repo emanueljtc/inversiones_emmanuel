@@ -69,7 +69,7 @@ input[name="slider-select-element"] {
 }
 
 .element-foto1 {
-    background-image: url('../img/foto1.jpg');
+    background-image: url('../inversiones_emmanuel/app/webroot/img/foto1.jpg');
 }
 
 .slider-element {
@@ -170,11 +170,12 @@ input[name="slider-select-element"] {
 </style>
 
 
- <marquee loop="1" SCROLLAMOUNT="25" behavior = "slide" direction="right"><img src="../img/barnner.png" alt="Alcadia del Estado Guárico" width="780" height="129"></marquee>
- <br> <br> <br>
+ <marquee loop="1" SCROLLAMOUNT="25" behavior = "slide" direction="left">
+
         <Titulo>
-            <h2>Sistema Control de Pagos</h2><hr>
+            <h3>Sistema Control de Pagos Inversiones Emmanuel</h3><hr>
         </Titulo>
+				</marquee>
 			 <div id="page">
 			            <section>
 

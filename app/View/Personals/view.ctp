@@ -7,8 +7,9 @@
 				</div>
 			<div class="bloque">
 				<div class="row">
-					<div class="col col-sm-7">
+					<div class="col col-sm-4">
 						<?php //echo $this->Html->image('../files/Personal/foto/'. $Personal['Personal']['foto_dir'].'/'.'vga_'.$Personal['Personal']['foto']); ?>
+						<?php echo $this->Html->image('../img/hombre.png'); ?>
 					</div>
 					<div class="clol col-sm-5">
 								<br>
