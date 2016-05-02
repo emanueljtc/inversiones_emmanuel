@@ -18,7 +18,7 @@
 /build
 /dist
 /tags
-.gitignore
+
 *.mo
 *.log
 # IDE and editor specific files #
