@@ -1,13 +1,13 @@
 <?php
 App::uses('AppModel', 'Model');
 /**
- * Position Model
+ * DhExtra Model
  *
- * @property DhExtra $DhExtra
  * @property Personal $Personal
+ * @property Position $Position
  * @property Wake $Wake
  */
-class Position extends AppModel {
+class DhExtra extends AppModel {
 
 /**
  * Display field
@@ -22,9 +22,9 @@ class Position extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'position' => array(
-			'notBlank' => array(
-				'rule' => array('notBlank'),
+		'personal_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -32,7 +32,37 @@ class Position extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'hour_worked' => array(
+		'position_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'n_day' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'n_hour' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'amount' => array(
 			'decimal' => array(
 				'rule' => array('decimal'),
 				//'message' => 'Your custom message here',
@@ -50,35 +80,9 @@ class Position extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'time_value' => array(
-			'decimal' => array(
-				'rule' => array('decimal'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-			'numeric' => array(
-				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'daily_salary' => array(
-			'decimal' => array(
-				'rule' => array('decimal'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-			'numeric' => array(
-				'rule' => array('numeric'),
+		'payment_day' => array(
+			'date' => array(
+				'rule' => array('date'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -91,40 +95,36 @@ class Position extends AppModel {
 	// The Associations below have been created with all possible keys, those that are not needed can be removed
 
 /**
+ * belongsTo associations
+ *
+ * @var array
+ */
+	public $belongsTo = array(
+		'Personal' => array(
+			'className' => 'Personal',
+			'foreignKey' => 'personal_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
+		'Position' => array(
+			'className' => 'Position',
+			'foreignKey' => 'position_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		)
+	);
+
+/**
  * hasMany associations
  *
  * @var array
  */
 	public $hasMany = array(
-		'DhExtra' => array(
-			'className' => 'DhExtra',
-			'foreignKey' => 'position_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		),
-		'Personal' => array(
-			'className' => 'Personal',
-			'foreignKey' => 'position_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		),
 		'Wake' => array(
 			'className' => 'Wake',
-			'foreignKey' => 'position_id',
+			'foreignKey' => 'dh_extra_id',
 			'dependent' => false,
 			'conditions' => '',
 			'fields' => '',

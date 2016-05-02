@@ -32,8 +32,9 @@
 																<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('cargo'); ?></th>
-			<th><?php echo $this->Paginator->sort('horas diarias'); ?></th>
+			<th><?php echo $this->Paginator->sort('horas trabajadas'); ?></th>
 			<th><?php echo $this->Paginator->sort('valor de la Hora'); ?></th>
+			<th><?php echo $this->Paginator->sort('Salario Diario'); ?></th>
 			<th class="actions"><?php echo __('Acciones'); ?></th>
 	</tr>
 	</thead>
@@ -42,8 +43,9 @@
 	<tr>
 		<td><?php echo h($position['Position']['id']); ?>&nbsp;</td>
 		<td><?php echo h($position['Position']['position']); ?>&nbsp;</td>
-		<td><?php echo h($position['Position']['day_hour']); ?>&nbsp;</td>
+		<td><?php echo h($position['Position']['hour_worked']); ?>&nbsp;</td>
 		<td><?php echo h($position['Position']['time_value']); ?>&nbsp;bs</td>
+		<td><?php echo h($position['Position']['daily_salary']); ?>&nbsp;bs</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__(''), array('action' => 'view', $position['Position']['id']), array('class' => 'glyphicon glyphicon-search')); ?>
 			<?php echo $this->Html->link(__(''), array('action' => 'edit', $position['Position']['id']), array('class' => 'glyphicon glyphicon-edit')); ?>
