@@ -55,16 +55,9 @@ function Multi(){
 
 	</fieldset>
 </div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
+<div class="btn-group btn-group-justified">
 
-		<li><?php echo $this->Html->link(__('Listado de Cargos'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Dh Extras'), array('controller' => 'dh_extras', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Dh Extra'), array('controller' => 'dh_extras', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('Lista Personal'), array('controller' => 'personals', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('Nuevo Personal'), array('controller' => 'personals', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('Lista Salario'), array('controller' => 'wakes', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('Nuevo Salario'), array('controller' => 'wakes', 'action' => 'add')); ?> </li>
-	</ul>
+				<?php echo $this->Html->link(__('Lista de Cargos'), array('action' => 'index'), array('class' => 'btn btn-info')); ?>
+				<?php echo $this->Html->link(__('Lista de Personal'), array('controller' => 'personals', 'action' => 'index'), array('class' => 'btn btn-danger')); ?>
+				<?php echo $this->Html->link(__('Nuevo Personal'), array('controller' => 'personals', 'action' => 'add'), array('class' => 'btn btn-primary')); ?>
 </div>
