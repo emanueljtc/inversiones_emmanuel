@@ -51,10 +51,10 @@ class PersonalsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Personal->create();
 			if ($this->Personal->save($this->request->data)) {
-				$this->Flash->success(__('The personal has been saved.'));
+				$this->Flash->success(__('El empleado ha sido Guardado con exito.'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Flash->error(__('The personal could not be saved. Please, try again.'));
+				$this->Flash->error(__('El personal no ha podido guardarse. Por favo, intente de nuevo.'));
 			}
 		}
 		$positions = $this->Personal->Position->find('list');
@@ -74,10 +74,10 @@ class PersonalsController extends AppController {
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Personal->save($this->request->data)) {
-				$this->Flash->success(__('The personal has been saved.'));
+				$this->Flash->success(__('El empleado ha sido Actualizado con exito.'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Flash->error(__('The personal could not be saved. Please, try again.'));
+				$this->Flash->error(__('El empleado no pudo ser Actualizado. Por favor, intente de nuevo.'));
 			}
 		} else {
 			$options = array('conditions' => array('Personal.' . $this->Personal->primaryKey => $id));
@@ -101,9 +101,9 @@ class PersonalsController extends AppController {
 		}
 		$this->request->allowMethod('post', 'delete');
 		if ($this->Personal->delete()) {
-			$this->Flash->success(__('The personal has been deleted.'));
+			$this->Flash->success(__('El empleado ha sido eliminado con exito.'));
 		} else {
-			$this->Flash->error(__('The personal could not be deleted. Please, try again.'));
+			$this->Flash->error(__('El empleado no pudo ser eliminado.Por favor, intente de nuevo'));
 		}
 		return $this->redirect(array('action' => 'index'));
 	}
