@@ -14,6 +14,7 @@ class Position extends AppModel {
  *
  * @var string
  */
+ public $virtualfields = 'daily_salary';
 
 	public $displayField = 'position';
 
@@ -97,19 +98,7 @@ class Position extends AppModel {
  * @var array
  */
 	public $hasMany = array(
-		'DhExtra' => array(
-			'className' => 'DhExtra',
-			'foreignKey' => 'position_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		),
+
 		'Personal' => array(
 			'className' => 'Personal',
 			'foreignKey' => 'position_id',

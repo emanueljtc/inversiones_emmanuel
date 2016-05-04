@@ -15,9 +15,15 @@
 							 <div class="col-xs-7">
 								 <?php echo $this->Form->input('personal_id', array('label'=>'','placeholder' => 'Ingrese posición','class'=>'form-control','id'=>'cargo')); ?>
 							</div>
+							<label class="control-label col-xs-3" >Dias Feriados:</label>
+ 					<div class="col-xs-7">
+ 						<?php echo $this->Form->input('holiday', array(
+ 						'label'=>'','placeholder' => 'Ingrese Numero de Dias Feriados Trabajados','class'=>'form-control','id'=>'vhoras','onkeyup'=>'Multi();'
+ 							)); ?>
+ 					</div>
  			        <label class="control-label col-xs-3" >Horas Extras:</label>
  					<div class="col-xs-7">
- 						<?php echo $this->Form->input('Horas Extras', array(
+ 						<?php echo $this->Form->input('extra_hours', array(
  						'label'=>'','placeholder' => 'Ingrese Numero de Horas Extras Trabajadas','class'=>'form-control','id'=>'vhoras','onkeyup'=>'Multi();'
  							)); ?>
  					</div>
