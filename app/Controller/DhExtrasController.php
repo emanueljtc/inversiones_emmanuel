@@ -15,7 +15,12 @@ class DhExtrasController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator', 'Flash', 'Session');
+ public $helpers = array('Html','Form','Time','Js');
+ public $components = array('Paginator', 'Session','RequestHandler');
+ public $paginate = array (
+		'limit' => 5,
+		'order' => array('dhExtras.personal_id' => 'asc')
+		);
 
 /**
  * index method
@@ -24,7 +29,8 @@ class DhExtrasController extends AppController {
  */
 	public function index() {
 		$this->DhExtra->recursive = 0;
-		$this->set('dhExtras', $this->Paginator->paginate());
+		$this->Paginator->settings = $this->paginate;
+			$this->set('dhExtras', $this->paginate());
 	}
 
 /**
@@ -36,7 +42,7 @@ class DhExtrasController extends AppController {
  */
 	public function view($id = null) {
 		if (!$this->DhExtra->exists($id)) {
-			throw new NotFoundException(__('Invalid dh extra'));
+			throw new NotFoundException(__('Error Intente de Nuevo'));
 		}
 		$options = array('conditions' => array('DhExtra.' . $this->DhExtra->primaryKey => $id));
 		$this->set('dhExtra', $this->DhExtra->find('first', $options));
@@ -51,10 +57,10 @@ class DhExtrasController extends AppController {
 		if ($this->request->is('post')) {
 			$this->DhExtra->create();
 			if ($this->DhExtra->save($this->request->data)) {
-				$this->Flash->success(__('The dh extra has been saved.'));
+				$this->Flash->success(__('El Bono ha sido Guardado.'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Flash->error(__('The dh extra could not be saved. Please, try again.'));
+				$this->Flash->error(__('El Bono no ha sido Guardado. Por favor, Intente de Nuevo.'));
 			}
 		}
 		$personals = $this->DhExtra->Personal->find('list');
@@ -71,14 +77,14 @@ class DhExtrasController extends AppController {
  */
 	public function edit($id = null) {
 		if (!$this->DhExtra->exists($id)) {
-			throw new NotFoundException(__('Invalid dh extra'));
+			throw new NotFoundException(__('Error Intente de Nuevo'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->DhExtra->save($this->request->data)) {
-				$this->Flash->success(__('The dh extra has been saved.'));
+				$this->Flash->success(__('El Bono ha sido Modificado.'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Flash->error(__('The dh extra could not be saved. Please, try again.'));
+				$this->Flash->error(__('El Bono no ha sido Modificado. Por favor, Intente de Nuevo.'));
 			}
 		} else {
 			$options = array('conditions' => array('DhExtra.' . $this->DhExtra->primaryKey => $id));
@@ -99,13 +105,13 @@ class DhExtrasController extends AppController {
 	public function delete($id = null) {
 		$this->DhExtra->id = $id;
 		if (!$this->DhExtra->exists()) {
-			throw new NotFoundException(__('Invalid dh extra'));
+			throw new NotFoundException(__('Error Intente de Nuevo'));
 		}
 		$this->request->allowMethod('post', 'delete');
 		if ($this->DhExtra->delete()) {
-			$this->Flash->success(__('The dh extra has been deleted.'));
+			$this->Flash->success(__('El Bono ha sido Eliminado.'));
 		} else {
-			$this->Flash->error(__('The dh extra could not be deleted. Please, try again.'));
+			$this->Flash->error(__('El Bono no ha sido Eliminado. Por favor, Intente de Nuevo.'));
 		}
 		return $this->redirect(array('action' => 'index'));
 	}
