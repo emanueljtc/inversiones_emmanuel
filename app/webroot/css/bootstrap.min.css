@@ -85,7 +85,8 @@ sup
   font: inherit;
   vertical-align: baseline;
   box-shadow: 0px 4px 18px #000000;
-}svg:not(:root)
+}
+svg:not(:root)
 {
     overflow: hidden;
 }figure
