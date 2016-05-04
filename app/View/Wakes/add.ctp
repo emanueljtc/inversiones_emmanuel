@@ -1,20 +1,118 @@
-<div class="wakes form">
-<?php echo $this->Form->create('Wake'); ?>
-	<fieldset>
-		<legend><?php echo __('Add Wake'); ?></legend>
-	<?php
-		echo $this->Form->input('personal_id');
-		echo $this->Form->input('position_id');
-		echo $this->Form->input('dh_extra_id');
-		echo $this->Form->input('payment_day');
-		echo $this->Form->input('amount');
-		echo $this->Form->input('payment_type');
-		echo $this->Form->input('start');
-		echo $this->Form->input('end');
-	?>
-	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
+<div id="general">
+
+<div class="panel panel-primary">
+		<div class="panel-heading">
+			<center>
+				<h4>Nuevo Pago de Personal</h4>
+
+			</center>
+		</div>
+		<br>
+		<div class="form-horizontal">
+ 			<?php echo $this->Form->create('Wake', array('type'=>'file', 'novalidate'=>'novalidate' )); ?>
+ 			 <div class="form-group">
+							 <label class="control-label col-xs-3" >Nombre del Empleado:</label>
+							 <div class="col-xs-7">
+								 <?php echo $this->Form->input('personal_id', array('label'=>'','placeholder' => 'Ingrese posición','class'=>'form-control','id'=>'cargo')); ?>
+							</div>
+ 			        <label class="control-label col-xs-3" >Cargo:</label>
+ 			        <div class="col-xs-7">
+		 						<?php echo $this->Form->input('position_id', array('class'=>'form-control')); ?>
+ 					   </div>
+ 					<label class="control-label col-xs-3" >Dia Feriados:</label>
+ 					<div class="col-xs-7">
+ 						<?php echo $this->Form->input('dh_extra_id', array(
+ 						'label'=>'','placeholder' => 'Ingrese valor de la hora','class'=>'form-control','id'=>'vhoras','onkeyup'=>'Multi();'
+ 							)); ?>
+ 					</div>
+ 					<label class="control-label col-xs-3" >Horas Extras:</label>
+ 					<div class="col-xs-7">
+ 						<?php echo $this->Form->input('Horas Extras', array(
+ 						'label'=>'','placeholder' => 'Ingrese valor de la hora','class'=>'form-control','id'=>'vhoras','onkeyup'=>'Multi();'
+ 							)); ?>
+ 					</div>
+	
+ 					<label class="control-label col-xs-3" >Monto:</label>
+ 					<div class="col-xs-7">
+ 						<?php echo $this->Form->input('amount', array('label'=>'','placeholder' => 'Ingrese Monto','class'=>'form-control','id'=>'salario')); ?>
+ 					</div>
+ 					<label class="control-label col-xs-3" >Tipo de Pago:</label>
+ 					<div class="col-xs-7">
+ 						<?php
+ 							 echo $this->Form->input('payment_type',array('class'=>'form-control','label'=>'','type'=>'select','options'=>array(''=>'[SELECCIONE TIPO]','Salario Basico'=>'Salario Basico','Bono Vacacional'=>'Bono Vacacional')));
+ 						  ?>
+ 					</div>
+
+ 					
+ 					<label class="control-label col-xs-3" >Inicio:</label>
+ 					<div class="col-xs-2">
+ 						<?php
+   								$meses = array(
+   									'01'=>'Enero',
+   									'02'=>'Febrero',
+   									'03'=>'Marzo',
+   									'04'=>'Abril',
+   									'05'=>'Mayo',
+   									'06'=>'Junio',
+   									'07'=>'Julio',
+   									'08'=>'Agosto',
+   									'09'=>'Septiembre',
+   									'10'=>'Octubre',
+   									'11'=>'Noviembre',
+   									'12'=>'Diciembre',
+   									);
+   								echo $this->Form->input('end', array(
+   									    'label' => ' ',
+   									    'class'=>'form-control',
+   									    'dateFormat' => 'DMY',
+   									    'minYear' => date('Y') - 95,//aqui se configura la edad limite de miembro
+   									    'maxYear' => date('Y') - 0,
+   									    'monthNames' => $meses
+   									));
+   							?>
+ 					</div>
+ 					<div class="col-xs-7">
+ 					
+ 					</div>
+ 					<label class="control-label col-xs-3" >Fin:</label>
+ 					<div class="col-xs-2">
+ 						<?php
+   								$meses = array(
+   									'01'=>'Enero',
+   									'02'=>'Febrero',
+   									'03'=>'Marzo',
+   									'04'=>'Abril',
+   									'05'=>'Mayo',
+   									'06'=>'Junio',
+   									'07'=>'Julio',
+   									'08'=>'Agosto',
+   									'09'=>'Septiembre',
+   									'10'=>'Octubre',
+   									'11'=>'Noviembre',
+   									'12'=>'Diciembre',
+   									);
+   								echo $this->Form->input('end', array(
+   									    'label' => ' ',
+   									    'class'=>'form-control',
+   									    'dateFormat' => 'DMY',
+   									    'minYear' => date('Y') - 95,//aqui se configura la edad limite de miembro
+   									    'maxYear' => date('Y') - 0,
+   									    'monthNames' => $meses
+   									));
+   							?>
+
+ 					</div>
+
+ 			</div>
+ 					<br>
+ 					</div>
+
+ 			<center><input type="submit" value="Guardar" class="btn btn-info">
+ 			<input type="reset" value="Limpiar" class="btn btn-danger"></center>
+			<br>
+ 	</div>
 </div>
+
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
