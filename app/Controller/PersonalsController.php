@@ -57,17 +57,12 @@ class PersonalsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Personal->create();
 			if ($this->Personal->save($this->request->data)) {
-<<<<<<< HEAD
-				$this->Flash->success(__('El Empleado ha sido registrado.'));
+
+				$this->Flash->success(__('El Empleado ha sido Registrado.'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Flash->error(__('El Empleado no ha sido Registrado. Por favor, Intente de Nuevo.'));
-=======
-				$this->Flash->success(__('El empleado ha sido Guardado con exito.'));
-				return $this->redirect(array('action' => 'index'));
-			} else {
-				$this->Flash->error(__('El personal no ha podido guardarse. Por favo, intente de nuevo.'));
->>>>>>> f2362b0b560301121efe25d7c5f944d567644ba6
+
 			}
 		}
 		$positions = $this->Personal->Position->find('list');
@@ -87,17 +82,12 @@ class PersonalsController extends AppController {
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Personal->save($this->request->data)) {
-<<<<<<< HEAD
-				$this->Flash->success(__('Datos del Empleado han sido Modificado'));
-				return $this->redirect(array('action' => 'index'));
-			} else {
-				$this->Flash->error(__('Datos del Empleado no han sido Modificado. Por favor, Intente de Nuevo.'));
-=======
+
 				$this->Flash->success(__('El empleado ha sido Actualizado con exito.'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Flash->error(__('El empleado no pudo ser Actualizado. Por favor, intente de nuevo.'));
->>>>>>> f2362b0b560301121efe25d7c5f944d567644ba6
+
 			}
 		} else {
 			$options = array('conditions' => array('Personal.' . $this->Personal->primaryKey => $id));
@@ -121,15 +111,11 @@ class PersonalsController extends AppController {
 		}
 		$this->request->allowMethod('post', 'delete');
 		if ($this->Personal->delete()) {
-<<<<<<< HEAD
+
 			$this->Flash->success(__('El Empleado ha sido Eliminado.'));
 		} else {
 			$this->Flash->error(__('EL Personal no ha sido Eliminado. Por favor, intente de nuevo.'));
-=======
-			$this->Flash->success(__('El empleado ha sido eliminado con exito.'));
-		} else {
-			$this->Flash->error(__('El empleado no pudo ser eliminado.Por favor, intente de nuevo'));
->>>>>>> f2362b0b560301121efe25d7c5f944d567644ba6
+
 		}
 		return $this->redirect(array('action' => 'index'));
 	}

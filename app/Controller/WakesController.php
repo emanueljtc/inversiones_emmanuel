@@ -59,8 +59,7 @@ class WakesController extends AppController {
 		}
 		$personals = $this->Wake->Personal->find('list');
 		$positions = $this->Wake->Position->find('list');
-		$dhExtras = $this->Wake->DhExtra->find('list');
-		$this->set(compact('personals', 'positions', 'dhExtras'));
+		$this->set(compact('personals', 'positions'));
 	}
 
 /**
@@ -87,8 +86,7 @@ class WakesController extends AppController {
 		}
 		$personals = $this->Wake->Personal->find('list');
 		$positions = $this->Wake->Position->find('list');
-		$dhExtras = $this->Wake->DhExtra->find('list');
-		$this->set(compact('personals', 'positions', 'dhExtras'));
+		$this->set(compact('personals', 'positions'));
 	}
 
 /**

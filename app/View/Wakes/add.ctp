@@ -15,23 +15,16 @@
 							 <div class="col-xs-7">
 								 <?php echo $this->Form->input('personal_id', array('label'=>'','placeholder' => 'Ingrese posición','class'=>'form-control','id'=>'cargo')); ?>
 							</div>
- 			        <label class="control-label col-xs-3" >Cargo:</label>
- 			        <div class="col-xs-7">
-		 						<?php echo $this->Form->input('position_id', array('class'=>'form-control')); ?>
- 					   </div>
- 					<label class="control-label col-xs-3" >Dia Feriados:</label>
- 					<div class="col-xs-7">
- 						<?php echo $this->Form->input('dh_extra_id', array(
- 						'label'=>'','placeholder' => 'Ingrese valor de la hora','class'=>'form-control','id'=>'vhoras','onkeyup'=>'Multi();'
- 							)); ?>
- 					</div>
- 					<label class="control-label col-xs-3" >Horas Extras:</label>
+ 			        <label class="control-label col-xs-3" >Horas Extras:</label>
  					<div class="col-xs-7">
  						<?php echo $this->Form->input('Horas Extras', array(
- 						'label'=>'','placeholder' => 'Ingrese valor de la hora','class'=>'form-control','id'=>'vhoras','onkeyup'=>'Multi();'
+ 						'label'=>'','placeholder' => 'Ingrese Numero de Horas Extras Trabajadas','class'=>'form-control','id'=>'vhoras','onkeyup'=>'Multi();'
  							)); ?>
  					</div>
-	
+					<label class="control-label col-xs-3" >Salario Diario:</label>
+					<div class="col-xs-7">
+						<?php echo $this->Form->input('position_id', array('label'=>'','class'=>'form-control')); ?>
+				 </div>
  					<label class="control-label col-xs-3" >Monto:</label>
  					<div class="col-xs-7">
  						<?php echo $this->Form->input('amount', array('label'=>'','placeholder' => 'Ingrese Monto','class'=>'form-control','id'=>'salario')); ?>
@@ -43,7 +36,7 @@
  						  ?>
  					</div>
 
- 					
+
  					<label class="control-label col-xs-3" >Inicio:</label>
  					<div class="col-xs-2">
  						<?php
@@ -72,7 +65,7 @@
    							?>
  					</div>
  					<div class="col-xs-7">
- 					
+
  					</div>
  					<label class="control-label col-xs-3" >Fin:</label>
  					<div class="col-xs-2">

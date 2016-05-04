@@ -14,6 +14,7 @@ class Wake extends AppModel {
  *
  * @var string
  */
+
 	public $displayField = 'id';
 
 /**
@@ -134,12 +135,6 @@ class Wake extends AppModel {
 			'fields' => '',
 			'order' => ''
 		),
-		'DhExtra' => array(
-			'className' => 'DhExtra',
-			'foreignKey' => 'dh_extra_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		)
+
 	);
 }

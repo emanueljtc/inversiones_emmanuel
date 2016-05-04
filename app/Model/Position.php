@@ -14,6 +14,7 @@ class Position extends AppModel {
  *
  * @var string
  */
+
 	public $displayField = 'position';
 
 /**
