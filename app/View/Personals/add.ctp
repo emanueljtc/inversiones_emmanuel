@@ -11,6 +11,33 @@
   		<div class="form-horizontal">
    			<?php echo $this->Form->create('Personal', array('type'=>'file', 'novalidate'=>'novalidate' )); ?>
    			 <div class="form-group">
+                 <label class="control-label col-xs-3">Fecha de Ingreso</label>
+                  <div class="col-xs-9">
+                  <br>
+                     <?php
+                      $meses = array(
+                        '01'=>'Enero',
+                        '02'=>'Febrero',
+                        '03'=>'Marzo',
+                        '04'=>'Abril',
+                        '05'=>'Mayo',
+                        '06'=>'Junio',
+                        '07'=>'Julio',
+                        '08'=>'Agosto',
+                        '09'=>'Septiembre',
+                        '10'=>'Octubre',
+                        '11'=>'Noviembre',
+                        '12'=>'Diciembre',
+                        );
+                      echo $this->Form->input('date_reg', array(
+                            'label' => ' ',
+                            'dateFormat' => 'DMY',
+                            'minYear' => date('Y') - 95,//aqui se configura la edad limite de miembro
+                            'maxYear' => date('Y') - 0,
+                            'monthNames' => $meses
+                        ));
+                    ?>
+                  </div>
   							 <label class="control-label col-xs-3" >Cargo:</label>
   							 <div class="col-xs-7">
 

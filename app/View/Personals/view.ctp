@@ -8,18 +8,19 @@
 			<div class="bloque">
 				<div class="row">
 					<div class="col col-sm-4">
-						<?php if($personal['Personal']['sex']==0){
+						<?php if($personal['Personal']['sex']=='Femenino'){
 								echo $this->Html->image('../img/mujer.png');
 
-						}else if($personal['Personal']['sex']==1){
+						}else if($personal['Personal']['sex']=='Masculino'){
 								echo $this->Html->image('../img/hombre.jpg');
 						} ?>
 					</div>
 					<div class="clol col-sm-5">
-								<br>
+							<br>
 
 							<strong>Fecha de Ingreso : <?php echo h($personal['Personal']['date_reg']); ?> </strong>
-
+							<br>
+							<strong>Cargo : <?php echo $this->Html->link($personal['Position']['position'], array('controller' => 'positions', 'action' => 'view', $personal['Position']['id'])); ?></strong>
 							<br>
 							<strong>Nombre : <?php echo h($personal['Personal']['name']); ?> </strong>
 							<br>
