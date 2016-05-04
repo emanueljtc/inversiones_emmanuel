@@ -31,7 +31,6 @@
 												<table class="table table-bordered table-hover">
 														<thead>
 																<tr>
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('cargo'); ?></th>
 			<th><?php echo $this->Paginator->sort('horas trabajadas'); ?></th>
 			<th><?php echo $this->Paginator->sort('valor de la Hora'); ?></th>
@@ -42,9 +41,9 @@
 	<tbody>
 	<?php foreach ($positions as $position): ?>
 	<tr>
-		<td><?php echo h($position['Position']['id']); ?>&nbsp;</td>
+
 		<td><?php echo h($position['Position']['position']); ?>&nbsp;</td>
-		<td><?php echo h($position['Position']['hour_worked']); ?>&nbsp;</td>
+		<td><?php echo h($position['Position']['hour_worked']); ?>&nbsp;Horas</td>
 		<td><?php echo h($position['Position']['time_value']); ?>&nbsp;bs</td>
 		<td><?php echo h($position['Position']['daily_salary']); ?>&nbsp;bs</td>
 		<td class="actions">
