@@ -1,14 +1,5 @@
 <style type="text/css">
-img {
-	margin: -3px;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-	 box-shadow: 0px 10px 29px #000000;
 
-}
 {
     box-sizing: border-box;
 }
@@ -53,22 +44,25 @@ input[name="slider-select-element"] {
 .element-foto2,
 .element-foto1 {
     min-height: 400px;
-    max-height: 100%;
-    width: 100%;
+    max-height: 500px;
+		min-width: 180px;
+		max-width: 800px;
+
+
 
 }
 
-.element-foto3 {
+.element-foto1 {
     /*background: blue;*/
-    background-image: url('../img/foto3.jpg');
+    background-image: url('../inversiones_emmanuel/app/webroot/img/foto1.jpg');
 }
 
 .element-foto2 {
     /*background: green;*/
-    background-image: url('../img/foto2.jpg');
+    background-image: url('../inversiones_emmanuel/app/webroot/img/foto2.jpg');
 }
 
-.element-foto1 {
+.element-foto3 {
     background-image: url('../inversiones_emmanuel/app/webroot/img/foto1.jpg');
 }
 
