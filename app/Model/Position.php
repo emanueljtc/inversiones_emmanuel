@@ -14,9 +14,12 @@ class Position extends AppModel {
  *
  * @var string
  */
- public $virtualfields = 'daily_salary';
+ public $virtualFields = array(
+        'salario' => 'CONCAT(daily_salary)',
+        'cargo' => 'CONCAT(position)'
+    );
 
-	public $displayField = 'position';
+	public $displayField = 'salario';
 
 /**
  * Validation rules
