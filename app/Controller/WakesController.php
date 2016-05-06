@@ -36,7 +36,7 @@ class WakesController extends AppController {
  */
 	public function view($id = null) {
 		if (!$this->Wake->exists($id)) {
-			throw new NotFoundException(__('Invalid wake'));
+			throw new NotFoundException(__('Error Intente de Nuevo'));
 		}
 		$options = array('conditions' => array('Wake.' . $this->Wake->primaryKey => $id));
 		$this->set('wake', $this->Wake->find('first', $options));
@@ -71,7 +71,7 @@ class WakesController extends AppController {
  */
 	public function edit($id = null) {
 		if (!$this->Wake->exists($id)) {
-			throw new NotFoundException(__('Invalid wake'));
+			throw new NotFoundException(__('Error, Salario Invalido Por Favor Intente de Nuevo'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Wake->save($this->request->data)) {
@@ -99,7 +99,7 @@ class WakesController extends AppController {
 	public function delete($id = null) {
 		$this->Wake->id = $id;
 		if (!$this->Wake->exists()) {
-			throw new NotFoundException(__('Invalid wake'));
+			throw new NotFoundException(__('Error, Salario Invalido Por Favor Intente de Nuevo'));
 		}
 		$this->request->allowMethod('post', 'delete');
 		if ($this->Wake->delete()) {
