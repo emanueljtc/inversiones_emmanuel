@@ -9,17 +9,17 @@ App::uses('AppModel', 'Model');
  */
 class Position extends AppModel {
 
-/**
- * Display field
- *
- * @var string
- */
- public $virtualFields = array(
-        'salario' => 'CONCAT(daily_salary)',
-        'cargo' => 'CONCAT(position)'
-    );
-
+    /**
+     * Display field
+     *
+     * @var string
+     */
 	public $displayField = 'salario';
+
+    public $virtualFields = array(
+        'salario'   => 'Position.daily_salary',
+        'cargo'     => 'Position.position'
+    );
 
 /**
  * Validation rules
