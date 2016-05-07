@@ -13,7 +13,7 @@
  			 <div class="form-group">
 							 <label class="control-label col-xs-3" >Nombre del Empleado:</label>
 							 <div class="col-xs-7">
-								 <?php echo $this->Form->input('personal_id', array('label'=>'','placeholder' => 'Ingrese posición','class'=>'form-control','id'=>'cargo')); ?>
+								 <?php echo $this->Form->input('daily_salary', array('label'=>'','placeholder' => 'Ingrese posición','class'=>'form-control','id'=>'cargo')); ?>
 							</div>
 							<label class="control-label col-xs-3" >Dias Feriados:</label>
  					<div class="col-xs-7">
