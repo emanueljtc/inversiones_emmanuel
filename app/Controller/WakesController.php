@@ -58,7 +58,15 @@ class WakesController extends AppController {
 			}
 		}
 		$personals = $this->Wake->Personal->find('list');
-		$positions = $this->Wake->Position->find('list');
+
+        $positions = $this->Wake->Position->find('all', [
+            'recursive' => 0,
+            'fields' => [
+                'Position.cargo',
+                'Position.salario'
+            ]
+        ]);
+
 		$this->set(compact('personals', 'positions'));
 	}
 

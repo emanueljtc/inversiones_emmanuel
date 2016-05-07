@@ -1,3 +1,5 @@
+<?php //debug($positions); ?>
+
 <div id="general">
 
 <div class="panel panel-primary">
