@@ -36,7 +36,7 @@ class PositionsController extends AppController {
  */
 	public function view($id = null) {
 		if (!$this->Position->exists($id)) {
-			throw new NotFoundException(__('Invalid position'));
+			throw new NotFoundException(__('Error Intente de Nuevo'));
 		}
 		$options = array('conditions' => array('Position.' . $this->Position->primaryKey => $id));
 		$this->set('position', $this->Position->find('first', $options));
@@ -68,7 +68,7 @@ class PositionsController extends AppController {
  */
 	public function edit($id = null) {
 		if (!$this->Position->exists($id)) {
-			throw new NotFoundException(__('Invalid position'));
+			throw new NotFoundException(__('Error Intente de Nuevo'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Position->save($this->request->data)) {
