@@ -250,7 +250,7 @@ th
 {font-family: 'Glyphicons Halflings';font-weight: 400;font-style: normal;line-height: 1;
 
     position: relative;top: 1px;display: inline-block;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;
-  
+
 }.glyphicon-asterisk:before
 {
     content: '\002a';
@@ -1050,7 +1050,7 @@ th
     font-size: 10px;-webkit-tap-highlight-color: rgba(0,0,0,0);
 }body
 {
-    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;font-size: 14px;line-height: 1.42857143;color: #333;
+    font-family: 'Source Sans Pro', sans-serif;font-size: 14px;line-height: 1.42857143;color: #333;
 }button,
 input,
 select,
@@ -3854,10 +3854,26 @@ textarea.input-group-sm > .input-group-btn > .btn
 }.navbar-nav
 {
     margin: 7.5px -15px;
-}.navbar-nav > li > a
-{line-height: 20px;
+}
+.navbar-nav> li.header{
+  color: #4b646f;
+  background: #1a2226
+  overflow:hidden;
+  text-overflow: clip;
+  white-space: nowrap;
+  padding: 10px 25px 10px 15px;
+  font-size: 12px;
+}
+.navbar-nav > li > a
+{
 
-    padding-top: 10px;padding-bottom: 10px;
+    display: block;
+    text-decoration: none;
+    font-size: 15px;
+    outline: 0;
+    padding: 0.4em 1em 0.4em 1em;
+    border-radius: 0.4em;
+    -webkit-transition: all 0.3s ease-out;
 }@media (max-width:767px)
 {
     .navbar-nav .open .dropdown-menu
@@ -4085,7 +4101,7 @@ fieldset[disabled] .navbar-default .btn-link:hover
     color: #9d9d9d;
 }.navbar-inverse .navbar-nav > li > a
 {
-    color: #fff;
+    color: #FFFFFF;
 }.navbar-inverse .navbar-nav > li > a:focus,
 .navbar-inverse .navbar-nav > li > a:hover
 {
@@ -5733,4 +5749,5 @@ button.list-group-item-danger.active:hover
         display: none!important;
     }
 }
+/*# sourceMappingURL=bootstrap.min.css.map */
 /*# sourceMappingURL=bootstrap.min.css.map */

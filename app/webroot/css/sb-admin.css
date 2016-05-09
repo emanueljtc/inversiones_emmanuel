@@ -146,7 +146,7 @@ ul.alert-dropdown {
     display: block;
     padding: 10px 15px 10px 38px;
     text-decoration: none;
-    color: #999;
+    color: #fff;
 }
 
 .side-nav>li>ul>li>a:hover {
@@ -235,4 +235,10 @@ ul.alert-dropdown {
     -moz-transition: 0.5s;
     -o-transition: 0.5s;
     transition: 0.5s;
+}
+.sidebar-form{
+  border-radius: 3px;
+
+    margin: 15px 8px;
+    transition: all .3s ease-in-out;
 }

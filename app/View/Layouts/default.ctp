@@ -160,7 +160,9 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 						</ul>
 						<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
 						<div class="collapse navbar-collapse navbar-ex1-collapse">
+
 								<ul class="nav navbar-nav side-nav">
+										<li class="header">MENU DE NAVEGACION</li>
 										<li class="active">
 												<?php echo $this->Html->link(__(' Inicio'), array('controller' => 'pages', 'action' => 'index'), array('class'=>'glyphicon glyphicon-home')); ?>
 										</li>
@@ -211,11 +213,24 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 														<?php echo $this->Html->link(__(' Nuevo Usuario'), array('controller' => 'users', 'action' => 'add'), array('class'=>'glyphicon glyphicon-plus')); ?>
 												</li>
 											</ul>
+											<br>
 										</li>
+											
 
+										<form action="#" method="get" class="sidebar-form">
+											<div class="input-group">
 
+												<input type="text" name="q" class="form-control" placeholder="Buscar...">
 
-								</ul>
+														<span class="input-group-btn">
+															<button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+															</button>
+														</span>
+											</div>
+										</form>
+
+							</ul>
+
 						</div>
 						<!-- /.navbar-collapse -->
 				</nav>
