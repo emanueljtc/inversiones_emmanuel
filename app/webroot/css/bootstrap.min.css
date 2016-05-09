@@ -239,11 +239,18 @@ th
     }
 }@font-face
 {
-    font-family: 'Glyphicons Halflings';src: url(../fonts/glyphicons-halflings-regular.eot);src: url(../fonts/glyphicons-halflings-regular.eot?#iefix) format('embedded-opentype'),url(../fonts/glyphicons-halflings-regular.woff2) format('woff2'),url(../fonts/glyphicons-halflings-regular.woff) format('woff'),url(../fonts/glyphicons-halflings-regular.ttf) format('truetype'),url(../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular) format('svg');
+    font-family: 'Glyphicons Halflings';
+    src: url(../fonts/glyphicons-halflings-regular.eot);
+    src: url(../fonts/glyphicons-halflings-regular.eot?#iefix)
+    format('embedded-opentype'),url(../fonts/glyphicons-halflings-regular.woff2)
+    format('woff2'),url(../fonts/glyphicons-halflings-regular.woff)
+    format('woff'),url(../fonts/glyphicons-halflings-regular.ttf)
+    format('truetype'),url(../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular) format('svg');
 }.glyphicon
 {font-family: 'Glyphicons Halflings';font-weight: 400;font-style: normal;line-height: 1;
 
     position: relative;top: 1px;display: inline-block;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;
+  
 }.glyphicon-asterisk:before
 {
     content: '\002a';
@@ -1043,7 +1050,7 @@ th
     font-size: 10px;-webkit-tap-highlight-color: rgba(0,0,0,0);
 }body
 {
-    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;font-size: 14px;line-height: 1.42857143;color: #333;background-color: #fff;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;font-size: 14px;line-height: 1.42857143;color: #333;
 }button,
 input,
 select,
@@ -4065,7 +4072,7 @@ fieldset[disabled] .navbar-default .btn-link:hover
     color: #ccc;
 }.navbar-inverse
 {border-color: rgba(8, 8, 8, 0.69);
-    background-color: rgba(34, 34, 34, 0.79);
+    background-color: #046096;
 }.navbar-inverse .navbar-brand
 {
     color: #9d9d9d;
@@ -4078,7 +4085,7 @@ fieldset[disabled] .navbar-default .btn-link:hover
     color: #9d9d9d;
 }.navbar-inverse .navbar-nav > li > a
 {
-    color: #9d9d9d;
+    color: #fff;
 }.navbar-inverse .navbar-nav > li > a:focus,
 .navbar-inverse .navbar-nav > li > a:hover
 {
@@ -4087,7 +4094,7 @@ fieldset[disabled] .navbar-default .btn-link:hover
 .navbar-inverse .navbar-nav > .active > a:focus,
 .navbar-inverse .navbar-nav > .active > a:hover
 {
-    color: #fff;background-color:rgba(5, 4, 53, 0.34);
+    color: #fff;background-color:rgba(3, 148, 232, 0.75);
 }.navbar-inverse .navbar-nav > .disabled > a,
 .navbar-inverse .navbar-nav > .disabled > a:focus,
 .navbar-inverse .navbar-nav > .disabled > a:hover
@@ -4106,7 +4113,7 @@ fieldset[disabled] .navbar-default .btn-link:hover
 }.navbar-inverse .navbar-collapse,
 .navbar-inverse .navbar-form
 {
-    border-color: #101010;
+    border-color: #3c8dbc;
 }.navbar-inverse .navbar-nav > .open > a,
 .navbar-inverse .navbar-nav > .open > a:focus,
 .navbar-inverse .navbar-nav > .open > a:hover
