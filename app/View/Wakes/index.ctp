@@ -49,8 +49,8 @@
 
 															<td><?php echo $this->Html->link($wake['Personal']['full_name'], array('controller' => 'personals', 'action' => 'view', $wake['Personal']['id'])); ?>&nbsp;</td>
 															<td><?php echo h($wake['Wake']['payment_day']); ?>&nbsp;</td>
-															<td><?php echo $this->Html->link($wake['DhExtra']['n_day'], array('controller' => 'dh_extras', 'action' => 'view', $wake['DhExtra']['id'])); ?>&nbsp;</td>
-															<td><?php echo $this->Html->link($wake['DhExtra']['n_hour'], array('controller' => 'dh_extras', 'action' => 'view', $wake['DhExtra']['id'])); ?>&nbsp;</td>
+															<td><?php echo h($wake['Wake']['holiday']);?>&nbsp;</td>
+															<td><?php echo h($wake['Wake']['extra_hours']);?>&nbsp;</td>															
 															<td><?php echo h($wake['Wake']['payment_type']);?>&nbsp;</td>
 															<td><?php echo h($wake['Wake']['amount']);?>&nbsp;</td>
 
