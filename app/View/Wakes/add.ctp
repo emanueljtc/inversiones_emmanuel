@@ -13,7 +13,7 @@
  			 <div class="form-group">
 							 <label class="control-label col-xs-3" >Nombre del Empleado:</label>
 							 <div class="col-xs-7">
-								 <?php echo $this->Form->input('daily_salary', array('label'=>'','placeholder' => 'Ingrese posición','class'=>'form-control','id'=>'cargo')); ?>
+								 <?php echo $this->Form->input('personal_id', array('label'=>'','placeholder' => 'Ingrese posición','class'=>'form-control','id'=>'cargo')); ?>
 							</div>
 							<label class="control-label col-xs-3" >Dias Feriados:</label>
  					<div class="col-xs-7">
@@ -27,9 +27,13 @@
  						'label'=>'','placeholder' => 'Ingrese Numero de Horas Extras Trabajadas','class'=>'form-control','id'=>'vhoras','onkeyup'=>'Multi();'
  							)); ?>
  					</div>
+               <label class="control-label col-xs-3" >Cargo:</label>
+               <div class="col-xs-7">
+                  <?php echo $this->Form->input('position', array('label'=>'','class'=>'form-control')); ?>
+             </div>
 					<label class="control-label col-xs-3" >Salario Diario:</label>
 					<div class="col-xs-7">
-						<?php echo $this->Form->input('position_id', array('label'=>'','class'=>'form-control')); ?>
+						<?php echo $this->Form->input('salario', array('label'=>'','class'=>'form-control')); ?>
 				 </div>
  					<label class="control-label col-xs-3" >Monto:</label>
  					<div class="col-xs-7">
