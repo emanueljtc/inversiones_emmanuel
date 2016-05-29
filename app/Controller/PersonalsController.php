@@ -45,7 +45,11 @@ class PersonalsController extends AppController {
 			throw new NotFoundException(__('Error Intente de Nuevo'));
 		}
 		$options = array('conditions' => array('Personal.' . $this->Personal->primaryKey => $id));
-		$this->set('personal', $this->Personal->find('first', $options));
+    $this->pdfConfig = array(
+    	'download' => true,
+    	'filename' => 'personal.pdf'
+    );
+    $this->set('personal', $this->Personal->find('first', $options));
 	}
 
 /**
