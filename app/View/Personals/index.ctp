@@ -84,7 +84,7 @@
 <div class="btn-group btn-group-justified">
 
 				<?php echo $this->Html->link(__('Añadir Empleado'), array('action' => 'add'), array('class' => 'btn btn-info')); ?>
-				<?php echo $this->Html->link(__('Lista de Personal'), array('action' => 'index'), array('class' => 'btn btn-danger')); ?>
+				<?php echo $this->Html->link(__('Exportar Lista del Personal'), array('action' => 'index' , $personal['Personal']['id'].'.pdf' ), array('class' => 'btn btn-danger')); ?>
 				<?php echo $this->Html->link(__('Registrar Pago'), array('controller' => 'documents', 'action' => 'add'), array('class' => 'btn btn-primary')); ?>
 
 </div>
