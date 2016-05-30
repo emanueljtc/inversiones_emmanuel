@@ -1,3 +1,5 @@
 <?php
-echo $this->fetch('content');
-?>
+
+header("Content-type: application/pdf");
+
+echo $content_for_layout;
