@@ -65,25 +65,25 @@ Cache::config('default', array('engine' => 'File'));
  */
 
  CakePlugin::load('DebugKit'); // Loads a single plugin named DebugKit
- CakePlugin::load('CakePdf', array('bootstrap'=>true, 'routes' =>true));
+  CakePlugin::load('CakePdf', array('bootstrap'=>true, 'routes' =>true));
 
-   Configure::write('CakePdf', array(
-       'engine' => 'CakePdf.WkHtmlToPdf',
-       'options' => array(
-           'print-media-type' => true,
-           'outline' => true,
-           'dpi' => 96
-       ),
-       'margin' => array(
-           'bottom' => 15,
-           'left' => 10,
-           'right' => 10,
-           'top' => 20
-       ),
-       'orientation' => 'landscape',
+    Configure::write('CakePdf', array(
+        'engine' => 'CakePdf.WkHtmlToPdf',
+        'options' => array(
+            'print-media-type' => true,
+            'outline' => true,
+            'dpi' => 96
+        ),
+        'margin' => array(
+            'bottom' => 15,
+            'left' => 10,
+            'right' => 10,
+            'top' => 20
+        ),
+        'orientation' => 'landscape',
        'download' => true,
 
-   ));
+    ));
 
 
 /**
