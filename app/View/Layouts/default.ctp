@@ -31,6 +31,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
        echo $this->Html->script(array('jquery.js'));
 			 echo $this->Html->script(array('bootstrap.min.js'));
+			 echo $this->Html->script(array('fajax.js'));
        echo $this->Html->script(array('plugins/morris/raphael.min.js'));
        echo $this->Html->script(array('plugins/morris/morris.min.js'));
        echo $this->Html->script(array('plugins/morris/morris-data.js'));

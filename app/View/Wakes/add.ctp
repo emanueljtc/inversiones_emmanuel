@@ -1,3 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Document</title>
+</head>
+<?php echo $this->Js->writeBuffer(array('cache'=>TRUE)); // Write cached scripts ?>
+<?php echo $this->Html->script('jquery',TRUE); ?>
+<script>
+   $(document).ready(function(){
+ 
+ $('#personal').change(function(){
+  var selected = $(this).val();
+
+  //alert('que locura');
+  
+  $.ajax({
+   type: "POST",
+   url: 'getCargoByPersonal',
+   data: "idPersonal="+selected,
+   dataType: 'json',
+   success: function(data){
+   
+
+   
+   $.each(data, function(i,items){
+      $('#cargo').val(items.Position.cargo);
+      $('#salario').val(items.Position.salario);
+    });    
+
+   //var cadena = JSON.stringify(data);
+   //var vector = cadena.split('Personal');
+   //var array = vector;
+   //var cadena =jQuery.parseJSON(data);
+   //cadena.toString;
+    //alert(vector);
+
+   }
+  });
+ });
+});
+
+</script>
+<body>
 <div id="general">
 
 <div class="panel panel-primary">
@@ -13,31 +57,33 @@
  			 <div class="form-group">
 							 <label class="control-label col-xs-3" >Nombre del Empleado:</label>
 							 <div class="col-xs-7">
-								 <?php echo $this->Form->input('personal_id', array('label'=>'','placeholder' => 'Ingrese posición','class'=>'form-control','id'=>'cargo')); ?>
-							</div>
+								 <?php echo $this->Form->input('personal_id', array('label'=>'','placeholder' => 'Ingrese posición','class'=>'form-control','id'=>'personal')); ?>
+                     </div>
+                     
 							<label class="control-label col-xs-3" >Dias Feriados:</label>
  					<div class="col-xs-7">
  						<?php echo $this->Form->input('holiday', array(
- 						'label'=>'','placeholder' => 'Ingrese Numero de Dias Feriados Trabajados','class'=>'form-control','id'=>'vhoras','onkeyup'=>'Multi();'
+ 						'label'=>'','placeholder' => 'Ingrese Numero de Dias Feriados Trabajados','class'=>'form-control','id'=>'diasf'
  							)); ?>
  					</div>
  			        <label class="control-label col-xs-3" >Horas Extras:</label>
  					<div class="col-xs-7">
  						<?php echo $this->Form->input('extra_hours', array(
- 						'label'=>'','placeholder' => 'Ingrese Numero de Horas Extras Trabajadas','class'=>'form-control','id'=>'vhoras','onkeyup'=>'Multi();'
+ 						'label'=>'','placeholder' => 'Ingrese Numero de Horas Extras Trabajadas','class'=>'form-control','onkeyup'=>'Multi();'
  							)); ?>
  					</div>
                <label class="control-label col-xs-3" >Cargo:</label>
                <div class="col-xs-7">
-                  <?php echo $this->Form->input('position', array('label'=>'','class'=>'form-control')); ?>
+
+                  <?php echo $this->Form->input('position', array('label'=>'','class'=>'form-control','id'=>'cargo')); ?>
              </div>
 					<label class="control-label col-xs-3" >Salario Diario:</label>
 					<div class="col-xs-7">
-						<?php echo $this->Form->input('salario', array('label'=>'','class'=>'form-control')); ?>
+						<?php echo $this->Form->input('salario', array('label'=>'','class'=>'form-control','id'=>'salario')); ?>
 				 </div>
  					<label class="control-label col-xs-3" >Monto:</label>
  					<div class="col-xs-7">
- 						<?php echo $this->Form->input('amount', array('label'=>'','placeholder' => 'Ingrese Monto','class'=>'form-control','id'=>'salario')); ?>
+ 						<?php echo $this->Form->input('amount', array('label'=>'','placeholder' => 'Ingrese Monto','class'=>'form-control','id'=>'monto')); ?>
  					</div>
  					<label class="control-label col-xs-3" >Tipo de Pago:</label>
  					<div class="col-xs-7">
@@ -129,3 +175,15 @@
 		<li><?php echo $this->Html->link(__('New Dh Extra'), array('controller' => 'dh_extras', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
+<script>
+$(document).ready(function(){
+   $('#diasf').keyup(function(){
+         var txtdiasf = $("#diasf").val().substring(0,8);
+
+         $("#monto").val(txtdiasf);
+    });
+});
+</script>
+</body>
+</html>
+

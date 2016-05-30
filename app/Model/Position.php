@@ -14,11 +14,12 @@ class Position extends AppModel {
  *
  * @var string
  */
-      public $displayField = array('salario','cargo','position');
+      public $displayField = array('position');
 
      public $virtualFields = array(
          'salario'   => 'Position.daily_salary',
-         'cargo'     => 'Position.position'
+         'cargo'     => 'Position.position',
+         'idposition'     => 'Position.id',
       );
 /**
  * Validation rules
