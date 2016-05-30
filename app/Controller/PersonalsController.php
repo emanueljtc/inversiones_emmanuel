@@ -31,7 +31,7 @@ class PersonalsController extends AppController {
      $this->Personal->recursive = 0;
      $this->pdfConfig = array(
      	'download' => true,
-     	'filename' => 'personal.pdf',
+     	'filename' => 'personal'.$id.'.pdf',
        );
      $this->Paginator->settings = $this->paginate = array('limit' => 6);
 	 		$this->set('personals', $this->paginate('Personal'));
@@ -57,7 +57,7 @@ class PersonalsController extends AppController {
 		$options = array('conditions' => array('Personal.' . $this->Personal->primaryKey => $id));
     $this->pdfConfig = array(
     	'download' => true,
-    	'filename' => 'personal.pdf'
+    	'filename' => 'personal'.$id.'.pdf'
     );
     $this->set('personal', $this->Personal->find('first', $options));
 	}
