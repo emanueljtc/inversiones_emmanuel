@@ -1,9 +1,9 @@
 <style>
 h3 {
-	text-align: center;
-	font-size: 30px;
+
+	font-size: 28px;
 	font-family:Lucida Sans Unicode;
-	text-decoration: underline;
+	text-decoration: none;
 }
 p {
 	font-size: 20px;
@@ -12,38 +12,54 @@ p {
 	text-align : justify;
 
 }
-pastor{
-	font-size: 20px;
-	font-weight: bold;
-	text-align: left;
+a.nounderline:link
+{
+ text-decoration:none;
 }
-copastor{
-	font-size: 20px;
-	font-weight: bold;
-	text-align: right;
-}
-table, th, td {
+table, thead,th, td {
+		font-size: 18px;
 
-    font-size: 18px;
 }
-th {
+th{
     padding: 5px;
     text-align: left;
-    background-color: #940616;
+		color: black;
+    background-color: #16c8e6;
+		text-decoration: none;
+		border: #ddd 1px solid;
 
 }
 td {
     padding: 5px;
-    text-align: center;
-
+    text-align: left;
+		border: #ddd 1px solid;
 
 }
 
-table#forma {
+table#cabezera {
+    width: 80%;
+		text-align: center;
+		border-collapse: separate;
+		text-decoration: none;
+
+}
+th.cabezera{
+	padding: 2px;
+	background-color: #ffffff;
+	border: white 1px solid;
+}
+tr.cabezera {
+    padding: 2px;
+		border: white 1px solid;
+}
+table#datos {
     width: 100%;
-
-
+		text-align: center;
+		border-collapse: collapse;
+		border: 1px solid #ddd;
+		text-decoration: none;
 }
+
 membrete{
 	font-size: 25px;
 	font-weight: bold;
@@ -56,61 +72,53 @@ membrete{
 	text-align: right;
 }
 </style>
-<div class="imagen">
-<img src="/var/www/html/inversiones_emmanuel/app/webroot/img/foto2.jpg" width="300px" height="200px" alt="Texto Alternativo"> <!-- INSERTANDO LOGO-->
-</div>
-<div class="fecha">
-<?php echo "" . date("d") . "/" . date("m") . "/" . date("Y"); ?>
-</div >
 
-	
-	<br>
-	<h3>Lista General del Personal Registrado</h3>
-		<br>
-		<br>
-		<table id="forma" border="1">
-			<thead>
-					<tr>
-						<th>Cargo</th>
-						<th>Fecha de Ingreso</th>
-						<th>Nombre</th>
-						<th>Apellido</th>
-						<th>Edad</th>
-						<th>Telefono</th>
-						<th>Correo</th>
-					</tr>
-			</thead>
-			<?php foreach ($personals as $personal): ?>
+
+	<div class="fecha">
+	<?php echo "" . date("d") . "/" . date("m") . "/" . date("Y"); ?>
+	</div >
+
+<table id="cabezera">
+
+			<tr class="cabezera">
+				<th class="cabezera">
+					<div class="imagen">
+					<img src="/var/www/html/inversiones_emmanuel/app/webroot/img/foto2.jpg" width="300px" height="200px" alt="Texto Alternativo"> <!-- INSERTANDO LOGO-->
+					</div>
+				</th>
+				<th class="cabezera">
+
+						<h3>Lista General del Personal Registrado</h3>
+
+				</th>
+</table>
+<br>
+<table id="datos">
+		<thead>
 				<tr>
-							<td>
-									<?php echo $this->Html->link($personal['Position']['position'], array('controller' => 'positions', 'action' => 'exportar', $personal['Position']['id'])); ?>
-									&nbsp;
-							</td>
-					     <td>
-							  	<?php echo $this->Html->link($personal['Personal']['date_reg'], array('controller' => 'Personals', 'action' => 'exportar', $personal['Personal']['id'])); ?>
-									&nbsp;
-							 </td>
-							 <td>
-							  	<?php echo $this->Html->link($personal['Personal']['name'], array('controller' => 'Personals', 'action' => 'exportar', $personal['Personal']['id'])); ?>
-									&nbsp;
-							 </td>
-							 <td>
-							  	<?php echo $this->Html->link($personal['Personal']['last_name'], array('controller' => 'Personals', 'action' => 'exportar', $personal['Personal']['id'])); ?>
-									&nbsp;
-							 </td>
 
-					     <td>
-							 		<?php echo $this->Html->link($personal['Personal']['age'], array('controller' => 'Personals', 'action' => 'exportar', $personal['Personal']['id'])); ?>
-									&nbsp;
-							 </td>
-					     <td>
-							 		<?php echo $this->Html->link($personal['Personal']['cell_phone'], array('controller' => 'Personals', 'action' => 'exportar', $personal['Personal']['id'])); ?>
-									&nbsp;
-							 </td>
-							 <td>
-							  	<?php echo $this->Html->link($personal['Personal']['email'], array('controller' => 'Personals', 'action' => 'exportar', $personal['Personal']['id'])); ?>
-									&nbsp;
-							 </td>
+						<th>Nombres</th>
+						<th>Apellidos</th>
+						<th>Cedula</th>
+						<th>Celular</th>
+						<th>Cargo</th>
+
 				</tr>
-			<?php endforeach; ?>
-		</table>
+		</thead>
+		<tbody>
+		<?php foreach ($personals as $personal): ?>
+		<tr>
+			<!-- <td><?php echo h($personal['Personal']['id']); ?>&nbsp;</td> -->
+
+
+			<td><?php echo h($personal['Personal']['name']); ?>&nbsp;</td>
+			<td><?php echo h($personal['Personal']['last_name']); ?>&nbsp;</td>
+			<td><?php echo h($personal['Personal']['dni']); ?>&nbsp;</td>
+			<td><?php echo h($personal['Personal']['cell_phone']);?>&nbsp;</td>
+		<td>
+				<?php echo $this->Html->link($personal['Position']['position'], array('controller' => 'positions', 'action' => 'view', $personal['Position']['id'])); ?>
+			</td>
+
+		</tr>
+	<?php endforeach; ?>
+</table>

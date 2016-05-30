@@ -27,6 +27,7 @@ class PersonalsController extends AppController {
  *
  * @return void
  */
+
    public function exportar($id = null){
      $this->Personal->recursive = 0;
      $this->pdfConfig = array(
@@ -133,4 +134,5 @@ class PersonalsController extends AppController {
 		}
 		return $this->redirect(array('action' => 'index'));
 	}
+  
 }

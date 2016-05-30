@@ -215,20 +215,16 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 											</ul>
 											<br>
 										</li>
-											
 
-										<form action="#" method="get" class="sidebar-form">
-											<div class="input-group">
 
-												<input type="text" name="q" class="form-control" placeholder="Buscar...">
 
-														<span class="input-group-btn">
-															<button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-															</button>
-														</span>
+											<?php echo $this->Form->create('Personal', array('type' => 'GET','class' => 'navbar-form navbar', 'url' => array('controller' => 'personals', 'action' => 'search'))); ?>
+											<div class="form-group">
+												<?php echo  $this->Form->input('search',array('label'=> false, 'div' => false, 'id' => 's', 'class' => 'form-control s', 'autocomplete' => 'off', 'placeholder' => 'Buscar Empleado...')); ?>
+												<?php echo $this->Form->button('', array('div'=> false, 'class'=> 'fa fa-search')) ?>
 											</div>
-										</form>
 
+											<?php echo $this->Form->end(); ?>
 							</ul>
 
 						</div>
