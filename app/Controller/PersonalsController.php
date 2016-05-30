@@ -27,8 +27,19 @@ class PersonalsController extends AppController {
  *
  * @return void
  */
+
+   public function exportar($id = null){
+     $this->Personal->recursive = 0;
+     $this->pdfConfig = array(
+     	'download' => true,
+     	'filename' => 'personal'.$id.'.pdf',
+       );
+     $this->Paginator->settings = $this->paginate = array('limit' => 6);
+	 		$this->set('personals', $this->paginate('Personal'));
+   }
 	public function index() {
 		$this->Personal->recursive = 0;
+
 		$this->Paginator->settings = $this->paginate;
 			$this->set('personals', $this->paginate());
 	}
@@ -47,7 +58,7 @@ class PersonalsController extends AppController {
 		$options = array('conditions' => array('Personal.' . $this->Personal->primaryKey => $id));
     $this->pdfConfig = array(
     	'download' => true,
-    	'filename' => 'personal.pdf'
+    	'filename' => 'personal'.$id.'.pdf'
     );
     $this->set('personal', $this->Personal->find('first', $options));
 	}
@@ -123,4 +134,5 @@ class PersonalsController extends AppController {
 		}
 		return $this->redirect(array('action' => 'index'));
 	}
+  
 }
