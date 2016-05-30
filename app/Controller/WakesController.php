@@ -14,8 +14,8 @@ class WakesController extends AppController {
  * Components
  *
  * @var array
- */
-	public $components = array('Paginator', 'Flash', 'Session');
+ */	public $helpers = array('Js');
+	public $components = array('Paginator', 'Flash', 'Session','RequestHandler');
 
 /**
  * index method
@@ -42,6 +42,83 @@ class WakesController extends AppController {
 		$this->set('wake', $this->Wake->find('first', $options));
 	}
 
+
+
+public function getCargoByPersonal() {
+ if ($this->request->is('ajax')) { 
+  $idPersonal = $this->params['data']['idPersonal'];
+   
+$servidor = "localhost";
+$usuar = "root";
+$contrase = "";
+$bd = "arte_cristal";
+
+$conexion = mysql_connect($servidor,$usuar,$contrase) or die ("No se puede establecer la conexion");
+$base = mysql_select_db($bd) or die ("No se puede conectar a la Base de Datos");
+$query= mysql_query("SELECT * FROM personals WHERE id = \"". mysql_real_escape_string($idPersonal) ."\"");
+
+$filas = mysql_fetch_array($query);
+                    if (mysql_num_rows($query) > 0) 
+                    {
+                        $idposition = $filas['position_id'];
+                    }
+
+
+  /*$cargo = new Cargo();
+  $id_cargo = $this->Wake->Personal->find('all',array(
+   'fields' => array('Personal.idcargo',), 
+   'conditions'=>array('Personal.idpersonal'=>$idPersonal)));*/
+
+
+ 
+  $cargo = $this->Wake->Position->find('all',array(
+   'fields' => array('Position.cargo','Position.salario'), 
+   'conditions'=>array('Position.idposition'=>$idposition)));
+
+
+  $this->RequestHandler->respondAs('json');
+  $this->autoRender = false;      
+   echo json_encode ( $cargo );
+ }
+}
+
+/*
+   $this->Js->get('#personal')->event('change', $this->Js->request(array(
+            'controller' => 'wakes',
+            'action' => 'funajax'
+                ), array(
+            'update' => '#vhoras',
+            'evalScripts' => true,
+            'async' => true,
+            'method' => 'post',
+            'dataExpression' => true,
+            'data' => $this->Js->serializeForm(array('isForm' => true, 'inline' => true))
+        ))
+);
+
+function funajax(){
+        $this->autoRender = false; // No renderiza mediate el fichero .ctp
+        if($this->request->is('ajax')){ // Comprobar si es una petición ajax
+ 
+            $nombre = $this->request->data['Wake']['personal_id'];	
+
+            echo "Este es el Nombre ".$nombre;
+
+        }	
+    }*/
+
+
+public function getByPersonal() {
+$personal = $this->request->data['Post']['personal_id'];
+
+/*$subcategories = $this->Subcategory->find('list', array(
+'conditions' => array('Subcategory.category_id' => $perso_id),
+'recursive' => -1
+));*/
+
+$this->set('personal',$personal);
+$this->layout = 'ajax';
+}
 /**
  * add method
  *
@@ -58,14 +135,8 @@ class WakesController extends AppController {
 			}
 		}
 		$personals = $this->Wake->Personal->find('list');
-		$positions = $this->Wake->Position->find('all', [
-		           'recursive' => 0,
-		           'fields' => [
-               'Position.cargo',
-               'Position.salario'
-          ]
-        ]);
-		$this->set(compact('personals', 'positions'));
+		
+		$this->set(compact('personals'));
 	}
 
 /**
