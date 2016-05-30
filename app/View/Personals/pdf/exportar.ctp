@@ -55,7 +55,6 @@ membrete{
 	text-decoration: none;
 	text-align: right;
 }
-
 </style>
 <div class="imagen">
 <img src="/var/www/html/inversiones_emmanuel/app/webroot/img/foto2.jpg" width="300px" height="200px" alt="Texto Alternativo"> <!-- INSERTANDO LOGO-->
@@ -70,13 +69,9 @@ membrete{
 		Inversiones Emmanuel 1108 C.A
 	</membrete>
 
-	<br><br><br><br><br>
+	<br><br>
 	<h3>Lista General del Personal Registrado</h3>
-	<br><br>
-
-	 <p> Datos del Miembro: </p>
-	<br><br>
-
+		<br>
 		<br>
 		<table id="forma" border="1">
 			<thead>
@@ -90,37 +85,37 @@ membrete{
 						<th>Correo</th>
 					</tr>
 			</thead>
-
+			<?php foreach ($personals as $personal): ?>
 				<tr>
 							<td>
-									<?php echo $this->Html->link($personal['Position']['position'], array('controller' => 'positions', 'action' => 'view', $personal['Position']['id'])); ?>
-
+									<?php echo $this->Html->link($personal['Position']['position'], array('controller' => 'positions', 'action' => 'exportar', $personal['Position']['id'])); ?>
+									&nbsp;
 							</td>
 					     <td>
-							  	<?php echo $this->Html->link($personal['Personal']['date_reg'], array('controller' => 'Personals', 'action' => 'view', $personal['Personal']['id'])); ?>
-
+							  	<?php echo $this->Html->link($personal['Personal']['date_reg'], array('controller' => 'Personals', 'action' => 'exportar', $personal['Personal']['id'])); ?>
+									&nbsp;
 							 </td>
 							 <td>
-							  	<?php echo $this->Html->link($personal['Personal']['name'], array('controller' => 'Personals', 'action' => 'view', $personal['Personal']['id'])); ?>
-
+							  	<?php echo $this->Html->link($personal['Personal']['name'], array('controller' => 'Personals', 'action' => 'exportar', $personal['Personal']['id'])); ?>
+									&nbsp;
 							 </td>
 							 <td>
-							  	<?php echo $this->Html->link($personal['Personal']['last_name'], array('controller' => 'Personals', 'action' => 'view', $personal['Personal']['id'])); ?>
-
+							  	<?php echo $this->Html->link($personal['Personal']['last_name'], array('controller' => 'Personals', 'action' => 'exportar', $personal['Personal']['id'])); ?>
+									&nbsp;
 							 </td>
 
 					     <td>
-							 		<?php echo $this->Html->link($personal['Personal']['age'], array('controller' => 'Personals', 'action' => 'view', $personal['Personal']['id'])); ?>
-
+							 		<?php echo $this->Html->link($personal['Personal']['age'], array('controller' => 'Personals', 'action' => 'exportar', $personal['Personal']['id'])); ?>
+									&nbsp;
 							 </td>
 					     <td>
-							 		<?php echo $this->Html->link($personal['Personal']['cell_phone'], array('controller' => 'Personals', 'action' => 'view', $personal['Personal']['id'])); ?>
-
+							 		<?php echo $this->Html->link($personal['Personal']['cell_phone'], array('controller' => 'Personals', 'action' => 'exportar', $personal['Personal']['id'])); ?>
+									&nbsp;
 							 </td>
 							 <td>
-							  	<?php echo $this->Html->link($personal['Personal']['email'], array('controller' => 'Personals', 'action' => 'view', $personal['Personal']['id'])); ?>
-
+							  	<?php echo $this->Html->link($personal['Personal']['email'], array('controller' => 'Personals', 'action' => 'exportar', $personal['Personal']['id'])); ?>
+									&nbsp;
 							 </td>
 				</tr>
-
+			<?php endforeach; ?>
 		</table>

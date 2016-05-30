@@ -80,7 +80,7 @@ Cache::config('default', array('engine' => 'File'));
            'right' => 10,
            'top' => 20
        ),
-       'orientation' => 'portrait',
+       'orientation' => 'landscape',
        'download' => true,
 
    ));
