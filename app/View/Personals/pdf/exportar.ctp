@@ -62,14 +62,9 @@ membrete{
 <div class="fecha">
 <?php echo "" . date("d") . "/" . date("m") . "/" . date("Y"); ?>
 </div >
-<br>
-	<membrete>
-		Rep&uacute;blica Bolivarina de Venezuela<br>
-		Maracay Edo. Aragua<br>
-		Inversiones Emmanuel 1108 C.A
-	</membrete>
 
-	<br><br>
+	
+	<br>
 	<h3>Lista General del Personal Registrado</h3>
 		<br>
 		<br>
