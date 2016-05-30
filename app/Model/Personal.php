@@ -12,13 +12,15 @@ class Personal extends AppModel {
  *
  * @var string
  */
- public $virtualFields = array(
+
+public $displayField = 'full_name';
+
+public $virtualFields = array(
         'full_name' => 'CONCAT(name, " ", last_name)',
         'idcargo'   => 'Personal.position_id',
         'idpersonal'   => 'Personal.id',
     );
 
-public $displayField = 'full_name';
 
 /**
  * Validation rules
