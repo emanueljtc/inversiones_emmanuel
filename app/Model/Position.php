@@ -14,7 +14,7 @@ class Position extends AppModel {
  *
  * @var string
  */
-      public $displayField = array('position');
+      public $displayField = "position";
 
      public $virtualFields = array(
          'salario'   => 'Position.daily_salary',

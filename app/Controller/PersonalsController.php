@@ -66,6 +66,11 @@ class PersonalsController extends AppController {
 			}
 		}
 		$positions = $this->Personal->Position->find('list');
+		//$positions = $this->Personal->Position->find('list', [
+		//           'recursive' => 0,
+		//           'fields' => [
+        //       'Personal.position_id',
+        //  ]]);
 		$this->set(compact('positions'));
 	}
 

@@ -108,17 +108,7 @@ function funajax(){
     }*/
 
 
-public function getByPersonal() {
-$personal = $this->request->data['Post']['personal_id'];
 
-/*$subcategories = $this->Subcategory->find('list', array(
-'conditions' => array('Subcategory.category_id' => $perso_id),
-'recursive' => -1
-));*/
-
-$this->set('personal',$personal);
-$this->layout = 'ajax';
-}
 /**
  * add method
  *
@@ -135,6 +125,7 @@ $this->layout = 'ajax';
 			}
 		}
 		$personals = $this->Wake->Personal->find('list');
+		
 		
 		$this->set(compact('personals'));
 	}
