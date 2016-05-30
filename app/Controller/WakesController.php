@@ -45,12 +45,12 @@ class WakesController extends AppController {
 
 
 public function getCargoByPersonal() {
- if ($this->request->is('ajax')) { 
+ if ($this->request->is('ajax')) {
   $idPersonal = $this->params['data']['idPersonal'];
-   
+
 $servidor = "localhost";
 $usuar = "root";
-$contrase = "";
+$contrase = "ema18787";
 $bd = "arte_cristal";
 
 $conexion = mysql_connect($servidor,$usuar,$contrase) or die ("No se puede establecer la conexion");
@@ -58,7 +58,7 @@ $base = mysql_select_db($bd) or die ("No se puede conectar a la Base de Datos");
 $query= mysql_query("SELECT * FROM personals WHERE id = \"". mysql_real_escape_string($idPersonal) ."\"");
 
 $filas = mysql_fetch_array($query);
-                    if (mysql_num_rows($query) > 0) 
+                    if (mysql_num_rows($query) > 0)
                     {
                         $idposition = $filas['position_id'];
                     }
@@ -66,18 +66,18 @@ $filas = mysql_fetch_array($query);
 
   /*$cargo = new Cargo();
   $id_cargo = $this->Wake->Personal->find('all',array(
-   'fields' => array('Personal.idcargo',), 
+   'fields' => array('Personal.idcargo',),
    'conditions'=>array('Personal.idpersonal'=>$idPersonal)));*/
 
 
- 
+
   $cargo = $this->Wake->Position->find('all',array(
-   'fields' => array('Position.cargo','Position.salario'), 
+   'fields' => array('Position.cargo','Position.salario'),
    'conditions'=>array('Position.idposition'=>$idposition)));
 
 
   $this->RequestHandler->respondAs('json');
-  $this->autoRender = false;      
+  $this->autoRender = false;
    echo json_encode ( $cargo );
  }
 }
@@ -99,12 +99,12 @@ $filas = mysql_fetch_array($query);
 function funajax(){
         $this->autoRender = false; // No renderiza mediate el fichero .ctp
         if($this->request->is('ajax')){ // Comprobar si es una petición ajax
- 
-            $nombre = $this->request->data['Wake']['personal_id'];	
+
+            $nombre = $this->request->data['Wake']['personal_id'];
 
             echo "Este es el Nombre ".$nombre;
 
-        }	
+        }
     }*/
 
 
@@ -135,7 +135,7 @@ $this->layout = 'ajax';
 			}
 		}
 		$personals = $this->Wake->Personal->find('list');
-		
+
 		$this->set(compact('personals'));
 	}
 
