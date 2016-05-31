@@ -1,199 +1,158 @@
-<style type="text/css">
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-{
-    box-sizing: border-box;
-}
+    <?php echo $this->Html->css(array('style')); ?>
+    <?php echo $this->Html->script(array('jquery', 'highcharts','exporting')); ?>
+    <style type="text/css">
+      ${demo.css}
+		</style>
+    <div class="content-wrapper">
+    			<div class="container-fluid">
 
+    				<div class="row">
+    					<div class="col-md-12">
+                <div class="page-title">
+                    <marquee loop="1" SCROLLAMOUNT="25" behavior = "slide" direction="left">
 
+                          <Titulo>
+                              <h3>Sistema Control de Pagos Inversiones Emmanuel 1108 C.A</h3><hr>
+                          </Titulo>
+              				</marquee>
+                </div>
+    						<div class="row">
+    							<div class="col-md-12">
+    								<div class="row">
+    									<div class="col-md-3">
+    										<div class="panel panel-default">
+    											<div class="panel-body bk-primary text-light">
+    												<div class="stat-panel text-center">
+    													<div class="stat-panel-number h1 ">
 
-input[name="slider-select-element"] {
-    display: none;
-}
-
-#slider-arrows {
-    margin: -10% auto 0 auto;
-    width: 80%;
-}
-
-#slider-box {
-    -moz-animation: autoSlider 15s infinite linear;
-    -o-animation: autoSlider 15s infinite linear;
-    -webkit-animation: autoSlider 15s infinite linear;
-    animation: autoSlider 15s infinite linear;
-
-    -webkit-transition: all 0.80s ease;
-    -moz-transition: all 0.80s ease;
-    -ms-transition: all 0.80s ease;
-    -o-transition: all 0.80s ease;
-    transition: all 0.80s ease;
-
-    height: 100%;
-    width: 300%;
-}
-
-#slider-container {
-    height: 20%;
-    margin: 0 auto;
-    overflow: hidden;
-    text-align: left;
-    width: 101%;
-    box-shadow: 0px 10px 29px #000000;
-}
-
-.element-foto3,
-.element-foto2,
-.element-foto1 {
-    min-height: 400px;
-    max-height: 500px;
-		min-width: 180px;
-		max-width: 800px;
-
-
-
-}
-
-.element-foto1 {
-    /*background: blue;*/
-    background-image: url('../inversiones_emmanuel/app/webroot/img/foto1.jpg');
-}
-
-.element-foto2 {
-    /*background: green;*/
-    background-image: url('../inversiones_emmanuel/app/webroot/img/foto2.jpg');
-}
-
-.element-foto3 {
-    background-image: url('../inversiones_emmanuel/app/webroot/img/foto1.jpg');
-}
-
-.slider-element {
-    float: left;
-    width: 33.333%;
-}
-
-@-moz-keyframes autoSlider {
-    0% {
-        margin-left: 0;
-    }
-
-    30% {
-        margin-left: 0;
-    }
-
-    35% {
-        margin-left: -100%;
-    }
-
-    65% {
-        margin-left: -100%;
-    }
-
-    70% {
-        margin-left: -200%;
-    }
-
-    95% {
-        margin-left: -200%;
-    }
-
-    100% {
-        margin-left: 0;
-    }
-}
-
-@-webkit-keyframes autoSlider {
-    0% {
-        margin-left: 0;
-    }
-
-    30% {
-        margin-left: 0;
-    }
-
-    35% {
-        margin-left: -100%;
-    }
-
-    65% {
-        margin-left: -100%;
-    }
-
-    70% {
-        margin-left: -200%;
-    }
-
-    95% {
-        margin-left: -200%;
-    }
-
-    100% {
-        margin-left: 0;
-    }
-}
-
-@keyframes autoSlider {
-    0% {
-        margin-left: 0;
-    }
-
-    30% {
-        margin-left: 0;
-    }
-
-    35% {
-        margin-left: -100%;
-    }
-
-    65% {
-        margin-left: -100%;
-    }
-
-    70% {
-        margin-left: -200%;
-    }
-
-    95% {
-        margin-left: -200%;
-    }
-
-    100% {
-        margin-left: 0;
-    }
-}
-
-</style>
+                                  <i class="glyphicon glyphicon-user"></i>
+                                </div>
+    													<div class="stat-panel-title text-uppercase">
+                                  <?php echo $this->Html->link(__('Personal'), array('controller' => 'personals', 'action' => 'index'),
+                                    array('class'=>'stat-panel-title text-uppercase')); ?>
+                              </div>
+    												</div>
+    											</div>
+                          <center>
+    											<a href="http://127.0.0.1/inversiones_emmanuel/personals" class="block-anchor panel-footer">Acceder <i class="fa fa-arrow-right"></i></a>
+                        </center>
+                        </div>
+    									</div>
+    									<div class="col-md-3">
+    										<div class="panel panel-default">
+    											<div class="panel-body bk-success text-light">
+    												<div class="stat-panel text-center">
+    													<div class="stat-panel-number h1 ">
+                                  <i class="glyphicon glyphicon-briefcase"></i>
+                              </div>
+    													<div class="stat-panel-title text-uppercase">
+                                <?php echo $this->Html->link(__('Cargos'), array('controller' => 'positions', 'action' => 'index')); ?>
+                              </div>
+    												</div>
+    											</div>
+    											<a href="http://127.0.0.1/inversiones_emmanuel/positions" class="block-anchor panel-footer text-center">Acceder &nbsp; <i class="fa fa-arrow-right"></i></a>
+    										</div>
+    									</div>
+    									<div class="col-md-3">
+    										<div class="panel panel-default">
+    											<div class="panel-body bk-info text-light">
+    												<div class="stat-panel text-center">
+    													<div class="stat-panel-number h1 ">
+                                  <i class="glyphicon glyphicon-usd"></i>
+                              </div>
+    													<div class="stat-panel-title text-uppercase">
+                              <?php echo $this->Html->link(__('Salarios'), array('controller' => 'wakes', 'action' => 'index')); ?>
+                              </div>
+    												</div>
+    											</div>
+    											<a href="http://127.0.0.1/inversiones_emmanuel/wakes" class="block-anchor panel-footer text-center">Acceder &nbsp; <i class="fa fa-arrow-right"></i></a>
+    										</div>
+    									</div>
+    									<div class="col-md-3">
+    										<div class="panel panel-default">
+    											<div class="panel-body bk-warning text-light">
+    												<div class="stat-panel text-center">
+    													<div class="stat-panel-number h1 ">
+                                <i class="glyphicon glyphicon-lock"></i>
+                              </div>
+    													<div class="stat-panel-title text-uppercase">
+                                <?php echo $this->Html->link(__('Usuarios'), array('controller' => 'users', 'action' => 'index')); ?>
+                              </div>
+    												</div>
+    											</div>
+    											<a href="http://127.0.0.1/inversiones_emmanuel/users" class="block-anchor panel-footer text-center">Acceder &nbsp; <i class="fa fa-arrow-right"></i></a>
+    										</div>
+    									</div>
+    								</div>
+    							</div>
+    						</div>
 
 
- <marquee loop="1" SCROLLAMOUNT="25" behavior = "slide" direction="left">
 
-        <Titulo>
-            <h3>Sistema Control de Pagos Inversiones Emmanuel</h3><hr>
-        </Titulo>
-				</marquee>
-			 <div id="page">
-			            <section>
+	</head>
+  <script type="text/javascript">
+            $(function () {
 
-			                <div id="slider-container">
-			                    <div id="slider-box">
-			                        <div class="slider-element">
-			                            <article class="element-foto1">
+                $('#container').highcharts({
+                    chart: {
+                        plotBackgroundColor: null,
+                        plotBorderWidth: 1,//null,
+                        plotShadow: false
+                    },
+                    title: {
+                        text: 'Personal Registrado'
+                    },
+                    tooltip: {
+                        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                    },
+                    plotOptions: {
+                        pie: {
+                            allowPointSelect: true,
+                            cursor: 'pointer',
+                            dataLabels: {
+                                enabled: true,
+                                format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                                style: {
+                                    color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                                }
+                            }
+                        }
+                    },
+                    series: [{
+                        type: 'pie',
+                        name: 'Empleado',
+                        data: [
+                            //['Ricardo Perez',   12.0],
+                     <?php
+                        // Conectando, seleccionando la base de datos
+                        $link = mysql_connect('localhost', 'root', 'ema18787')
+                            or die('No se pudo conectar: ' . mysql_error());
+                        //echo 'Connected successfully';
+                        mysql_select_db('arte_cristal') or die('No se pudo seleccionar la base de datos');
+                        // Realizar una consulta MySQL
+                        $query = 'SELECT * FROM personals';
+                        $result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
 
-			                            </article>
-			                        </div>
-			                        <div class="slider-element">
-			                            <article class="element-foto2">
+                            for ($i=0; $i<mysql_num_rows($result);$i++){
+                                $dato=mysql_fetch_array($result);
+                            ?>
+                            ['<?=$dato["name"]." ".$dato["last_name"]."<br>"?>', 1000],
+                            <?php
+                    }
+                    ?>
 
-			                            </article>
-			                        </div>
-			                        <div class="slider-element">
-			                            <article class="element-foto3">
+                        ]
+                    }]
+                });
+            });
 
 
-			                            </article>
-			                        </div>
+  </script>
+	<body>
 
-			                    </div>
-			                </div>
-
-			            </section>
-			    </div>
+<div id="container" style="min-width: 310px; height: 500px; max-width: 600px; margin: 0 auto"></div>

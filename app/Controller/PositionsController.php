@@ -51,10 +51,10 @@ class PositionsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Position->create();
 			if ($this->Position->save($this->request->data)) {
-				$this->Flash->success(__('El Cargo ha sido Guardado con Exito.'));
+				$this->Session->setFlash(__('Cargo registrado con exito.'), 'alert-box', array('class'=>'alert-success'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Flash->error(__('El cargo no pudo ser Guardado. Por favor Intente de Nuevo.'));
+				$this->Session->setFlash(__('El cargo no pudo ser registrado. Por favor, intente de nuevo.'),'alert-box', array('class'=>'alert-danger'));
 			}
 		}
 	}
@@ -72,10 +72,11 @@ class PositionsController extends AppController {
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Position->save($this->request->data)) {
-				$this->Flash->success(__('El Cargo ha sido Actualizado con Exito.'));
+				$this->Session->setFlash(__('Cargo actualizado con exito.'), 'alert-box', array('class'=>'alert-info'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Flash->error(__('El cargo no pudo ser Actualizado. Por favor Intente de Nuevo.'));
+				$this->Session->setFlash(__('El cargo no pudo ser actualizado. Por favor, intente de nuevo.'),'alert-box', array('class'=>'alert-danger'));
+
 			}
 		} else {
 			$options = array('conditions' => array('Position.' . $this->Position->primaryKey => $id));
@@ -97,9 +98,10 @@ class PositionsController extends AppController {
 		}
 		$this->request->allowMethod('post', 'delete');
 		if ($this->Position->delete()) {
-			$this->Flash->success(__('El cargo ha sido eliminado.'));
+			$this->Session->setFlash(__('Cargo eliminado con exito.'), 'alert-box', array('class'=>'alert-warning'));
 		} else {
-			$this->Flash->error(__('El cargo no a podido ser eliminado.Por Favor, Intente de nuevo.'));
+			$this->Session->setFlash(__('El cargo no pudo ser eliminado. Por favor, intente de nuevo.'),'alert-box', array('class'=>'alert-danger'));
+
 		}
 		return $this->redirect(array('action' => 'index'));
 	}
