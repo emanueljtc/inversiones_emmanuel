@@ -4455,7 +4455,7 @@ a.thumbnail:hover
     position: relative;top: -2px;right: -21px;color: inherit;
 }.alert-success
 {
-    color: #3c763d;border-color: #d6e9c6;background-color: #dff0d8;
+    color: #ffffff;border-color: transparent;background-color: #70bb05; font-size: 20px; font-weight:bold; font-family: "Comic", Courier, monospace; text-transform: uppercase; text-align: center;
 }.alert-success hr
 {
     border-top-color: #c9e2b3;
@@ -4464,7 +4464,7 @@ a.thumbnail:hover
     color: #2b542c;
 }.alert-info
 {
-    color: #31708f;border-color: #bce8f1;background-color: #d9edf7;
+    color: #ffffff;border-color: transparent;background-color: #29abe0; font-size: 20px; font-weight:bold; font-family: "Comic", Courier, monospace; text-transform: uppercase; text-align: center;
 }.alert-info hr
 {
     border-top-color: #a6e1ec;
@@ -4473,7 +4473,7 @@ a.thumbnail:hover
     color: #245269;
 }.alert-warning
 {
-    color: #8a6d3b;border-color: #faebcc;background-color: #fcf8e3;
+    color: #ffffff;border-color: transparent;background-color: #f47c3c; font-size: 20px; font-weight:bold; font-family: "Comic", Courier, monospace; text-transform: uppercase; text-align: center;
 }.alert-warning hr
 {
     border-top-color: #f7e1b5;
@@ -4482,7 +4482,7 @@ a.thumbnail:hover
     color: #66512c;
 }.alert-danger
 {
-    color: #a94442;border-color: #ebccd1;background-color: #f2dede;
+    color: #ffffff;border-color: transparent;background-color: #d9534f; font-size: 20px; font-weight:bold; font-family: "Comic", Courier, monospace; text-transform: uppercase; text-align: center;
 }.alert-danger hr
 {
     border-top-color: #e4b9c0;
@@ -5101,13 +5101,13 @@ button.list-group-item-danger.active:hover
 {
     padding: 9px;border-radius: 3px;
 }.close
-{font-size: 21px;font-weight: 700;line-height: 1;
+{font-size: 30px;font-weight: 700;line-height: 1;
 
-    float: right;opacity: .2;color: #000;text-shadow: 0 1px 0 #fff;filter: alpha(opacity=20);
+    float: right;opacity: 1.2;color: #000;text-shadow: 0 1px 0 #fff;filter: alpha(opacity=20);
 }.close:focus,
 .close:hover
-{cursor: pointer;text-decoration: none;opacity: .5;
-    color: #000;filter: alpha(opacity=50);
+{cursor: auto;text-decoration: none;opacity: .5;
+    color: #e20000;filter: alpha(opacity=50);
 }button.close
 {padding: 0;cursor: pointer;border: 0;background: 0 0;
 
