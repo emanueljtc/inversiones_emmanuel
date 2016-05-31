@@ -118,10 +118,10 @@ function funajax(){
 		if ($this->request->is('post')) {
 			$this->Wake->create();
 			if ($this->Wake->save($this->request->data)) {
-				$this->Flash->success(__('El salario ha sido Guardado.'));
+				$this->Session->setFlash(__('Salario registrado con exito.'), 'alert-box', array('class'=>'alert-success'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Flash->error(__('El salario no pudo ser Guardado. Intente de nuevo'));
+				$this->Session->setFlash(__('El salario no pudo ser registrado. Por favor, intente de nuevo.'),'alert-box', array('class'=>'alert-danger'));
 			}
 		}
 		$personals = $this->Wake->Personal->find('list');
@@ -141,11 +141,11 @@ function funajax(){
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Wake->save($this->request->data)) {
-				$this->Flash->success(__('El salario ha sido Actualizado con exito.'));
+				$this->Session->setFlash(__('Salario actualizado con exito.'), 'alert-box', array('class'=>'alert-info'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Flash->error(__('El salario no ha sido Actualizado. Por favor Intente de Nuevo.'));
-			}
+				$this->Session->setFlash(__('El salario no pudo ser actualizado. Por favor, intente de nuevo.'),'alert-box', array('class'=>'alert-danger'));
+				}
 		} else {
 			$options = array('conditions' => array('Wake.' . $this->Wake->primaryKey => $id));
 			$this->request->data = $this->Wake->find('first', $options);
@@ -169,9 +169,10 @@ function funajax(){
 		}
 		$this->request->allowMethod('post', 'delete');
 		if ($this->Wake->delete()) {
-			$this->Flash->success(__('El salario a sido eliminado.'));
+			$this->Session->setFlash(__('Salario eliminado con exito.'), 'alert-box', array('class'=>'alert-warning'));
 		} else {
-			$this->Flash->error(__('El Salario no fue borrado. Por favor intente de nuevo.'));
+			$this->Session->setFlash(__('El salario no pudo ser eliminado. Por favor, intente de nuevo.'),'alert-box', array('class'=>'alert-danger'));
+
 		}
 		return $this->redirect(array('action' => 'index'));
 	}
