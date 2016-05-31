@@ -74,10 +74,12 @@ class PersonalsController extends AppController {
 			$this->Personal->create();
 			if ($this->Personal->save($this->request->data)) {
 
-				$this->Flash->success(__('El Empleado ha sido Registrado.'));
+        $this->Session->setFlash(__('Empleado registrado con exito.'), 'alert-box', array('class'=>'alert-success'));
+
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Flash->error(__('El Empleado no ha sido Registrado. Por favor, Intente de Nuevo.'));
+        $this->Session->setFlash(__('El empleado no pudo ser registrado. Por favor, intente de nuevo.'),'alert-box', array('class'=>'alert-danger'));
+
 
 			}
 		}
@@ -104,10 +106,10 @@ class PersonalsController extends AppController {
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Personal->save($this->request->data)) {
 
-					$this->Session->setFlash(__('Datos del empleado han sido actualizados.'), 'alert-box', array('class'=>'alert-success'));
+					$this->Session->setFlash(__('Datos del empleado han sido actualizados.'), 'alert-box', array('class'=>'alert-info'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Flash->error(__('El empleado no pudo ser Actualizado. Por favor, intente de nuevo.'));
+				$this->Session->setFlash(__('Los datos del empleado no han podido ser actualizados. Por favor, intente de nuevo.'),'alert-box', array('class'=>'alert-danger'));
 
 			}
 		} else {
@@ -133,7 +135,7 @@ class PersonalsController extends AppController {
 		$this->request->allowMethod('post', 'delete');
 		if ($this->Personal->delete()) {
 
-			$this->Session->setFlash(__('El empleado ha sido eliminado.'), 'alert-box', array('class'=>'alert-success'));
+			$this->Session->setFlash(__('El empleado ha sido eliminado.'), 'alert-box', array('class'=>'alert-warning'));
 		} else {
 			$this->Session->setFlash(__('El empleado no ha sido eliminado. Por favor, intente de nuevo.'),'alert-box', array('class'=>'alert-danger'));
 
