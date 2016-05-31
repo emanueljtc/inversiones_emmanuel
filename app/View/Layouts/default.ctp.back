@@ -219,7 +219,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
 
 
-											<?php echo $this->Form->create('Personal', array('type' => 'GET','class' => 'navbar-form navbar', 'url' => array('controller' => 'personals', 'action' => 'search'))); ?>
+											<?php echo $this->Form->create('Personal', array('type' => 'GET','class' => 'form-control', 'url' => array('controller' => 'personals', 'action' => 'search'))); ?>
 											<div class="form-group">
 												<?php echo  $this->Form->input('search',array('label'=> false, 'div' => false, 'id' => 's', 'class' => 'form-control s', 'autocomplete' => 'off', 'placeholder' => 'Buscar Empleado...')); ?>
 												<?php echo $this->Form->button('', array('div'=> false, 'class'=> 'fa fa-search')) ?>

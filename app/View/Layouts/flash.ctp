@@ -19,17 +19,19 @@
 <head>
 <?php echo $this->Html->charset(); ?>
 <title><?php echo $pageTitle; ?></title>
-
+<?php $this->element('alert-box')?>
 <?php
 if (Configure::read('debug') == 0):
 	echo sprintf('<meta http-equiv="Refresh" content="%s;url=%s" />', $pause, $url);
 endif;
 ?>
-<style><!--
+<style>
+<!--
 P { text-align:center; font:bold 1.1em sans-serif }
 A { color:#444; text-decoration:none }
 A:HOVER { text-decoration: underline; color:#44E }
---></style>
+-->
+</style>
 </head>
 <body>
 <p>

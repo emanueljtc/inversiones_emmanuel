@@ -23,6 +23,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
         echo $this->Html->css(array('sb-admin.css'));
         echo $this->Html->css(array('plugins/morris.css'));
         echo $this->Html->css(array('font-awesome.min.css'));
+				echo $this->Html->css(array('jquery-ui.min'));
 				echo $this->Html->css(array('http://fonts.googleapis.com/css?family=Righteous'));
 
 
@@ -32,7 +33,9 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
        echo $this->Html->script(array('jquery.js'));
 			 echo $this->Html->script(array('bootstrap.min.js'));
 			 echo $this->Html->script(array('fajax.js'));
-       echo $this->Html->script(array('plugins/morris/raphael.min.js'));
+			 echo $this->Html->script(array('jquery-ui.min'));
+			 echo $this->Html->script(array('search'));
+			 echo $this->Html->script(array('plugins/morris/raphael.min.js'));
        echo $this->Html->script(array('plugins/morris/morris.min.js'));
        echo $this->Html->script(array('plugins/morris/morris-data.js'));
 
@@ -216,19 +219,18 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 											</ul>
 											<br>
 										</li>
-											
 
-										<form action="#" method="get" class="sidebar-form">
-											<div class="input-group">
-
-												<input type="text" name="q" class="form-control" placeholder="Buscar...">
-
-														<span class="input-group-btn">
-															<button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-															</button>
-														</span>
+											<?php echo $this->Form->create('Personal', array('type' => 'GET','class' => 'nav navbar-rigth', 'url' => array('controller' => 'personals', 'action' => 'search'))); ?>
+											<div class="form-group">
+												<?php echo  $this->Form->input('search',array('label'=> false, 'div' => false, 'id' => 's', 'class' => 'form-control s', 'autocomplete' => 'off', 'placeholder' => 'Buscar Empleado...')); ?>
 											</div>
-										</form>
+											<center>
+												<?php echo $this->Form->button('Buscar', array('div'=> false, 'class'=> 'btn btn-primary')) ?>
+											</center>
+											<?php echo $this->Form->end(); ?>
+
+
+
 
 							</ul>
 
@@ -246,12 +248,13 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
 								<div class="row">
 										<div class="col-lg-12">
-												<!-- <div class="alert alert-info alert-dismissable"> -->
+												 <!--<div class="alert alert-success fade in"> -->
 														<!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
 														<!-- <i class="fa fa-info-circle"></i> -->
+
 														<?php echo $this->Session->flash(); ?> <!--ALERTAS DE CAKE-->
 
-												<!-- </div> -->
+													
 										</div>
 								</div>
 								<!-- /.row -->

@@ -15,6 +15,7 @@ class PersonalsController extends AppController {
  *
  * @var array
  */
+
  public $helpers = array('Html','Form','Time','Js');
  public $components = array('Paginator', 'Session','RequestHandler');
  public $paginate = array (
@@ -103,7 +104,7 @@ class PersonalsController extends AppController {
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Personal->save($this->request->data)) {
 
-				$this->Flash->success(__('El empleado ha sido Actualizado con exito.'));
+					$this->Session->setFlash(__('Datos del empleado han sido actualizados.'), 'alert-box', array('class'=>'alert-success'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Flash->error(__('El empleado no pudo ser Actualizado. Por favor, intente de nuevo.'));
@@ -127,17 +128,70 @@ class PersonalsController extends AppController {
 	public function delete($id = null) {
 		$this->Personal->id = $id;
 		if (!$this->Personal->exists()) {
-			throw new NotFoundException(__('Error Intente de Nuevo'));
+			throw new NotFoundException(__('Error intente de nuevo'));
 		}
 		$this->request->allowMethod('post', 'delete');
 		if ($this->Personal->delete()) {
 
-			$this->Flash->success(__('El Empleado ha sido Eliminado.'));
+			$this->Session->setFlash(__('El empleado ha sido eliminado.'), 'alert-box', array('class'=>'alert-success'));
 		} else {
-			$this->Flash->error(__('EL Personal no ha sido Eliminado. Por favor, intente de nuevo.'));
+			$this->Session->setFlash(__('El empleado no ha sido eliminado. Por favor, intente de nuevo.'),'alert-box', array('class'=>'alert-danger'));
 
 		}
 		return $this->redirect(array('action' => 'index'));
 	}
-  
+  public function searchjson()
+  {
+    $term = null;
+    if(!empty($this->request->query['term']))
+    {
+      $term = $this->request->query['term'];
+      $term = explode(' ', trim($term));
+      $term = array_diff($term, array(''));
+      foreach($terms as $term){
+        $conditions[] = array('Personal.dni LIKE' => '%'. $term. '%');
+      }
+
+      $personal =  $this->Personals->find('all', array('recursive' => -1, 'fields' =>
+      array('Personal.id','Personal.dni','Personal.name'), 'conditions'=> $conditions,
+      'limit' => 20));
+    }
+    echo json_encode($personal);
+    $this->autoRender = false;
+  }
+  public function search()
+  {
+    $search = null;
+    if(!empty($this->request->query['search']))
+    {
+      $search = $this->request->query['search'];
+      $search = preg_replace('/[^a-zA-ZñÑáéíóúÁÉÍÓÚ0-9 ]/', '', $search);
+			$terms = explode(' ', trim($search));
+			$terms = array_diff($terms, array(''));
+
+      foreach($terms as $term)
+      {
+        $terms1[] = preg_replace('/[^a-zA-ZñÑáéíóúÁÉÍÓÚ0-9 ]/', '', $term);
+				$conditions[] = array('Personal.dni LIKE' => '%' . $term . '%');
+      }
+      $personals = $this->Personal->find('all', array('recursive'=> -1, 'conditions' => $conditions,
+    'limit' => 200));
+      if(count($personals) == 1)
+      {
+        return $this->redirect(array('controller'=>'personals', 'action'=>'view',$personals[0]['Personal']['id']));
+      }
+      $terms1 = array_diff($terms1, array(''));
+			$this->set(compact('platillos', 'terms1'));
+    }
+      $this->set(compact('search'));
+
+      if($this->request->is('ajax'))
+      {
+          $this->layout = false;
+          $this->set('ajax', 1);
+      }
+      else{
+        $this->set('ajax', 0);
+      }
+  }
 }
