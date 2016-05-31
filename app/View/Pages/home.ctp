@@ -28,51 +28,71 @@
     										<div class="panel panel-default">
     											<div class="panel-body bk-primary text-light">
     												<div class="stat-panel text-center">
-    													<div class="stat-panel-number h1 ">24</div>
-    													<div class="stat-panel-title text-uppercase">Nuevo Personal</div>
+    													<div class="stat-panel-number h1 ">
+
+                                  <i class="glyphicon glyphicon-user"></i>
+                                </div>
+    													<div class="stat-panel-title text-uppercase">
+                                  <?php echo $this->Html->link(__('Personal'), array('controller' => 'personals', 'action' => 'index'),
+                                    array('class'=>'stat-panel-title text-uppercase')); ?>
+                              </div>
     												</div>
     											</div>
-    											<a href="#" class="block-anchor panel-footer">Full Detail <i class="fa fa-arrow-right"></i></a>
-    										</div>
+                          <center>
+    											<a href="http://127.0.0.1/inversiones_emmanuel/personals" class="block-anchor panel-footer">Acceder <i class="fa fa-arrow-right"></i></a>
+                        </center>
+                        </div>
     									</div>
     									<div class="col-md-3">
     										<div class="panel panel-default">
     											<div class="panel-body bk-success text-light">
     												<div class="stat-panel text-center">
-    													<div class="stat-panel-number h1 ">8</div>
-    													<div class="stat-panel-title text-uppercase">Support Tickets</div>
+    													<div class="stat-panel-number h1 ">
+                                  <i class="glyphicon glyphicon-briefcase"></i>
+                              </div>
+    													<div class="stat-panel-title text-uppercase">
+                                <?php echo $this->Html->link(__('Cargos'), array('controller' => 'positions', 'action' => 'index')); ?>
+                              </div>
     												</div>
     											</div>
-    											<a href="#" class="block-anchor panel-footer text-center">See All &nbsp; <i class="fa fa-arrow-right"></i></a>
+    											<a href="http://127.0.0.1/inversiones_emmanuel/positions" class="block-anchor panel-footer text-center">Acceder &nbsp; <i class="fa fa-arrow-right"></i></a>
     										</div>
     									</div>
     									<div class="col-md-3">
     										<div class="panel panel-default">
     											<div class="panel-body bk-info text-light">
     												<div class="stat-panel text-center">
-    													<div class="stat-panel-number h1 ">58</div>
-    													<div class="stat-panel-title text-uppercase">New Orders</div>
+    													<div class="stat-panel-number h1 ">
+                                  <i class="glyphicon glyphicon-usd"></i>
+                              </div>
+    													<div class="stat-panel-title text-uppercase">
+                              <?php echo $this->Html->link(__('Salarios'), array('controller' => 'wakes', 'action' => 'index')); ?>
+                              </div>
     												</div>
     											</div>
-    											<a href="#" class="block-anchor panel-footer text-center">See All &nbsp; <i class="fa fa-arrow-right"></i></a>
+    											<a href="http://127.0.0.1/inversiones_emmanuel/wakes" class="block-anchor panel-footer text-center">Acceder &nbsp; <i class="fa fa-arrow-right"></i></a>
     										</div>
     									</div>
     									<div class="col-md-3">
     										<div class="panel panel-default">
     											<div class="panel-body bk-warning text-light">
     												<div class="stat-panel text-center">
-    													<div class="stat-panel-number h1 ">18</div>
-    													<div class="stat-panel-title text-uppercase">New Comments</div>
+    													<div class="stat-panel-number h1 ">
+                                <i class="glyphicon glyphicon-lock"></i>
+                              </div>
+    													<div class="stat-panel-title text-uppercase">
+                                <?php echo $this->Html->link(__('Usuarios'), array('controller' => 'users', 'action' => 'index')); ?>
+                              </div>
     												</div>
     											</div>
-    											<a href="#" class="block-anchor panel-footer text-center">See All &nbsp; <i class="fa fa-arrow-right"></i></a>
+    											<a href="http://127.0.0.1/inversiones_emmanuel/users" class="block-anchor panel-footer text-center">Acceder &nbsp; <i class="fa fa-arrow-right"></i></a>
     										</div>
     									</div>
     								</div>
     							</div>
     						</div>
 
-    						
+
 
 	</head>
   <script type="text/javascript">
@@ -105,7 +125,7 @@
                     },
                     series: [{
                         type: 'pie',
-                        name: 'Usuario',
+                        name: 'Empleado',
                         data: [
                             //['Ricardo Perez',   12.0],
                      <?php

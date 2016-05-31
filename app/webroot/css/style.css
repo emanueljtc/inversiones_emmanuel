@@ -745,3 +745,29 @@ li {
   height: 100%;
   width: 100%;
 }
+.stat-panel{
+  text-align: center;
+
+}
+.stat-panel-number h1{
+  font-size: 36;
+  margin-top: 20px;
+  margin-bottom: 10px;
+
+}
+.stat-panel-title{
+  text-align: center;
+  text-transform: uppercase;
+
+
+}
+.stat-panel a{
+  text-decoration: none;
+  color: #fff;
+
+}
+a:hover, a.stat-panel:active{
+  font-size: 120%;
+  color: #f20000;
+
+}
