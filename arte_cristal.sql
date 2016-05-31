@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.10deb1
+-- version 4.1.12
 -- http://www.phpmyadmin.net
 --
--- Servidor: localhost
--- Tiempo de generación: 04-05-2016 a las 04:08:28
--- Versión del servidor: 5.5.49-0ubuntu0.14.04.1
--- Versión de PHP: 5.5.9-1ubuntu4.16
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 31-05-2016 a las 18:22:05
+-- Versión del servidor: 5.6.16
+-- Versión de PHP: 5.5.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `personals` (
   `email` varchar(250) NOT NULL,
   `address` varchar(250) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
 -- Volcado de datos para la tabla `personals`
@@ -53,7 +53,9 @@ INSERT INTO `personals` (`id`, `position_id`, `date_reg`, `dni`, `name`, `last_n
 (3, 1, '0000-00-00', 19221592, 'Luis', 'Mendez', '1989-04-12', 'Masculino', 27, '04120486034', '0246000888', 'luismedezinfomatica@gmail.com', 'Pariapan Bloque 2'),
 (4, 1, '2013-01-01', 23455678, 'Mariannis', 'Romero', '1990-09-05', 'Femenino', 25, '0412345786', '0244567894', 'mar_romero_i@hotmail.com', 'La Morita'),
 (5, 2, '2013-05-04', 18789450, 'Maria', 'Salgado', '1990-07-04', 'Femenino', 25, '0414567823', '0244567890', 'm-salgado@gmail.com', 'Av Bolivar'),
-(6, 1, '2016-05-04', 12456789, 'Ana', 'Palma', '1987-10-09', 'Femenino', 29, '0412376903', '0244567892', 'j@gmail.com', 'Lomas del Avila');
+(6, 1, '2016-05-04', 12456789, 'Ana', 'Palma', '1987-10-09', 'Femenino', 29, '0412376903', '0244567892', 'j@gmail.com', 'Lomas del Avila'),
+(8, 3, '2016-02-12', 1241242, 'Luis', 'Berroteron', '1998-05-30', 'Masculino', 27, '04126728912', '23124313', 'br@gmail.com', 'Berroteron Las CASITAS'),
+(9, 2, '2016-05-30', 17221892, 'Maria', 'Maria Guerra', '1998-12-02', 'Femenino', 28, '23132', '123123', 'mariag@gmail.com', 'Urb. Maria');
 
 -- --------------------------------------------------------
 
@@ -68,16 +70,17 @@ CREATE TABLE IF NOT EXISTS `positions` (
   `time_value` decimal(10,0) NOT NULL,
   `daily_salary` decimal(10,0) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Volcado de datos para la tabla `positions`
 --
 
 INSERT INTO `positions` (`id`, `position`, `hour_worked`, `time_value`, `daily_salary`) VALUES
-(1, 'Gerente', 6, 30, 180),
-(2, 'Secretaria', 8, 25, 200),
-(3, 'Tecnico', 8, 45, 360);
+(1, 'Gerente', '6', '30', '180'),
+(2, 'Secretaria', '8', '25', '200'),
+(3, 'Tecnico', '8', '45', '360'),
+(4, 'Tecnico', '3', '2', '6');
 
 -- --------------------------------------------------------
 
@@ -94,18 +97,20 @@ CREATE TABLE IF NOT EXISTS `wakes` (
   `extra_hours` int(11) NOT NULL,
   `amount` decimal(10,0) NOT NULL,
   `payment_type` varchar(255) NOT NULL,
-  `start` date NOT NULL,
-  `end` date NOT NULL,
+  `start` varchar(15) NOT NULL,
+  `end` varchar(15) NOT NULL,
+  `salary_date` varchar(60) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
 -- Volcado de datos para la tabla `wakes`
 --
 
-INSERT INTO `wakes` (`id`, `personal_id`, `position_id`, `payment_day`, `holiday`, `extra_hours`, `amount`, `payment_type`, `start`, `end`) VALUES
-(1, 1, 1, '2016-05-03', 0, 0, 234, 'Normal', '2016-05-03', '2016-08-03'),
-(2, 1, 1, '2016-05-03', 0, 0, 888, 'Normal', '2016-05-03', '2016-05-03');
+INSERT INTO `wakes` (`id`, `personal_id`, `position_id`, `payment_day`, `holiday`, `extra_hours`, `amount`, `payment_type`, `start`, `end`, `salary_date`) VALUES
+(8, 3, 0, '2016-05-31', 23, 12, '6750', 'Adelantado', '15-05-2016', '02-06-2016', '3240'),
+(10, 5, 0, '2016-05-31', 23, 12, '7350', 'Adelantado', '21-05-2016', '31-05-2016', '2000'),
+(11, 4, 0, '2016-05-31', 23, 11, '6750', 'Adelantado', '01-05-2016', '30-05-2016', '5220');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -23,6 +23,9 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
         echo $this->Html->css(array('sb-admin.css'));
         echo $this->Html->css(array('plugins/morris.css'));
         echo $this->Html->css(array('font-awesome.min.css'));
+        echo $this->Html->css(array('jscal2.css'));
+        echo $this->Html->css(array('border-radius.css'));
+        echo $this->Html->css(array('gold/gold.css'));
 				echo $this->Html->css(array('jquery-ui.min'));
 				echo $this->Html->css(array('http://fonts.googleapis.com/css?family=Righteous'));
 
@@ -32,7 +35,8 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
        echo $this->Html->script(array('jquery.js'));
 			 echo $this->Html->script(array('bootstrap.min.js'));
-			 echo $this->Html->script(array('fajax.js'));
+			 echo $this->Html->script(array('jscal2.js'));
+			 echo $this->Html->script(array('es.js'));
 			 echo $this->Html->script(array('jquery-ui.min'));
 			 echo $this->Html->script(array('search'));
 			 echo $this->Html->script(array('plugins/morris/raphael.min.js'));

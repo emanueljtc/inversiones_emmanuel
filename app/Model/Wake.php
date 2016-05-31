@@ -93,7 +93,7 @@ class Wake extends AppModel {
 		),
 		'start' => array(
 			'date' => array(
-				'rule' => array('date'),
+				'rule' => array('notBlank'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -103,7 +103,17 @@ class Wake extends AppModel {
 		),
 		'end' => array(
 			'date' => array(
-				'rule' => array('date'),
+				'rule' => array('notBlank'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'salary_date' => array(
+			'notBlank' => array(
+				'rule' => array('notBlank'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,

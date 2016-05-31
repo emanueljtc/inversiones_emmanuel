@@ -49,6 +49,7 @@
 
   });
  });
+
 });
 
 </script>
@@ -59,13 +60,22 @@
 		<div class="panel-heading">
 			<center>
 				<h4>Nuevo Pago de Personal</h4>
-
+    
 			</center>
+      <style>
+            .pagof{
+              display:none;
+            }
+      </style>
 		</div>
 		<br>
 		<div class="form-horizontal">
+
  			<?php echo $this->Form->create('Wake', array('type'=>'file', 'novalidate'=>'novalidate' )); ?>
  			 <div class="form-group">
+
+                <?php echo $this->Form->input('payment_day', array('label'=>'','placeholder' => '','class'=>'form-control pagof')); ?>
+
 							 <label class="control-label col-xs-3" >Nombre del Empleado:</label>
 							 <div class="col-xs-7">
 								 <?php echo $this->Form->input('personal_id', array('label'=>'','placeholder' => 'Ingrese posición','class'=>'form-control','id'=>'personal')); ?>
@@ -86,87 +96,46 @@
                <label class="control-label col-xs-3" >Cargo:</label>
                <div class="col-xs-7">
 
-                  <?php echo $this->Form->input('position', array('label'=>'','class'=>'form-control','id'=>'cargo')); ?>
+                  <?php echo $this->Form->input('position', array('label'=>'','class'=>'form-control','id'=>'cargo','readonly'=>'readonly')); ?>
              </div>
 					<label class="control-label col-xs-3" >Salario Diario:</label>
 					<div class="col-xs-7">
-						<?php echo $this->Form->input('salario', array('label'=>'','class'=>'form-control','id'=>'salariod')); ?>
+						<?php echo $this->Form->input('salario', array('label'=>'','class'=>'form-control','id'=>'salariod','readonly'=>'readonly')); ?>
 				 </div>
          <input type="hidden" id="vhora">
  					<label class="control-label col-xs-3" >Monto:</label>
  					<div class="col-xs-7">
- 						<?php echo $this->Form->input('amount', array('label'=>'','placeholder' => 'Ingrese Monto','class'=>'form-control','id'=>'monto')); ?>
- 					</div>
+ 						<?php echo $this->Form->input('amount', array('label'=>'','placeholder' => 'Ingrese Monto','class'=>'form-control','id'=>'monto','readonly'=>'readonly')); ?>
+ 					</div>  
  					<label class="control-label col-xs-3" >Tipo de Pago:</label>
  					<div class="col-xs-7">
  						<?php
- 							 echo $this->Form->input('payment_type',array('class'=>'form-control','id'=>'tipop','label'=>'','onClick'=>'fechas();','type'=>'select','options'=>array(''=>'[SELECCIONE TIPO]','Adelantado'=>'Adelantado','Atrasado'=>'Atrasado','Reglamentario'=>'Reglamentario')));
+ 							 echo $this->Form->input('payment_type',array('class'=>'form-control','id'=>'tipop','label'=>'','type'=>'select','options'=>array(''=>'[SELECCIONE TIPO]','Adelantado'=>'Adelantado','Atrasado'=>'Atrasado','Reglamentario'=>'Reglamentario')));
  						  ?>
  					</div>
 
 
  					<label class="control-label col-xs-3" >Inicio:</label>
- 					<div class="col-xs-2">
- 						<?php
-   								$meses = array(
-                    '01'=>'01',
-                    '02'=>'02',
-                    '03'=>'03',
-                    '04'=>'04',
-                    '05'=>'05',
-                    '06'=>'06',
-                    '07'=>'07',
-                    '08'=>'08',
-                    '09'=>'09',
-                    '10'=>'10',
-                    '11'=>'11',
-                    '12'=>'12',
-                    );
-   								echo $this->Form->input('end', array(
-   									    'label' => ' ',
-   									    'class'=>'form-control',
-                        'id'=>'inicio',
-   									    'dateFormat' => 'DMY',
-   									    'minYear' => date('Y') - 95,//aqui se configura la edad limite de miembro
-   									    'maxYear' => date('Y') - 0,
-   									    'monthNames' => $meses
-   									));
-   							?>
- 					</div>
- 					<div class="col-xs-7">
+ 	
+          
+        <div class="col-xs-2">
+            <?php echo $this->Form->input('start', array('label'=>'','placeholder' => '','class'=>'form-control','id'=>'f_date1','readonly'=>'readonly')); ?>
+            <button id="inicio"><span class="input-group-addon glyphicon glyphicon-calendar"></span></button>
+        </div>
 
- 					</div>
+
+ 					
  					<label class="control-label col-xs-3" >Fin:</label>
  					<div class="col-xs-2">
- 						<?php
-   								$meses = array(
-   									'01'=>'01',
-   									'02'=>'02',
-   									'03'=>'03',
-   									'04'=>'04',
-   									'05'=>'05',
-   									'06'=>'06',
-   									'07'=>'07',
-   									'08'=>'08',
-   									'09'=>'09',
-   									'10'=>'10',
-   									'11'=>'11',
-   									'12'=>'12',
-   									);
-   								echo $this->Form->input('end', array(
-   									    'label' => ' ',
-   									    'class'=>'form-control',
-                        'id'=>'fin',
-   									    'dateFormat' => 'DMY',
-   									    'minYear' => date('Y') - 95,//aqui se configura la edad limite de miembro
-   									    'maxYear' => date('Y') - 0,
-   									    'monthNames' => $meses
-   									));
-   							?>
+            <?php echo $this->Form->input('end', array('label'=>'','placeholder' => '','class'=>'form-control','id'=>'f_date2','readonly'=>'readonly')); ?>
+            <button id="fin"><span class="input-group-addon glyphicon glyphicon-calendar"></span></button>
+        </div>
 
- 					</div>
+ 			    <label class="control-label col-xs-3" >Salario Resultante:</label>
+          <div class="col-xs-7">
+            <?php echo $this->Form->input('salary_date', array('label'=>'','placeholder' => '','class'=>'form-control fechas','id'=>'salariof','readonly'=>'readonly')); ?>
+          </div>  
 
- 			</div>
  					<br>
  					</div>
 
@@ -175,20 +144,14 @@
 			<br>
  	</div>
 </div>
-
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-
-		<li><?php echo $this->Html->link(__('List Wakes'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Personals'), array('controller' => 'personals', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Personal'), array('controller' => 'personals', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Positions'), array('controller' => 'positions', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Position'), array('controller' => 'positions', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Dh Extras'), array('controller' => 'dh_extras', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Dh Extra'), array('controller' => 'dh_extras', 'action' => 'add')); ?> </li>
-	</ul>
 </div>
+<div class="btn-group btn-group-justified">
+
+              <?php echo $this->Html->link(__('Añadir Nuevo Pago'), array('action' => 'add'), array('class' => 'btn btn-info')); ?>
+              <?php echo $this->Html->link(__('Lista de Relacion de Pago'), array('action' => 'index'), array('class' => 'btn btn-danger')); ?>
+              <?php echo $this->Html->link(__('Añadir Empleado'), array('controller' => 'Personals', 'action' => 'add'), array('class' => 'btn btn-primary')); ?>
+
+      </div>
 <script>
 
 $(document).ready(function(){
@@ -207,28 +170,44 @@ $(document).ready(function(){
         var monto = parseFloat(rhorase)+parseFloat(rdiasf);
         $("#monto").val(monto);
 
-        var inicio = $("#inicio").val();        
-        alert(inicio);
+        
 
     });
-
+    
 });
 
-function fechas(){
-          //Calculo de Numero de Dias Correspondientes al Pago
-f1 = document.getElementById("inicio").value;
-f2 = document.getElementById("fin").value;
 
-alert(f1);
+$('#salariof').hover(function(){
+        
+        var inicio = $("#f_date1").val();
+        var fin =  $("#f_date2").val();
+        var salariodia = $("#salariod").val(); 
+        var aFecha1 = inicio.split('-'); 
+        var aFecha2 = fin.split('-'); 
+        var fFecha1 = Date.UTC(aFecha1[2],aFecha1[1]-1,aFecha1[0]); 
+        var fFecha2 = Date.UTC(aFecha2[2],aFecha2[1]-1,aFecha2[0]); 
+        var dif = fFecha2 - fFecha1;
+        var dias = Math.floor(dif / (1000 * 60 * 60 * 24)); 
+        var montot = parseFloat(dias) * parseFloat(salariodia);
 
- var aFecha1 = f1.split('-'); 
- var aFecha2 = f2.split('-'); 
- var fFecha1 = Date.UTC(aFecha1[2],aFecha1[1]-1,aFecha1[0]); 
- var fFecha2 = Date.UTC(aFecha2[2],aFecha2[1]-1,aFecha2[0]); 
- var dif = fFecha2 - fFecha1;
- var dias = Math.floor(dif / (1000 * 60 * 60 * 24)); 
- alert (dias);
-   }
+           $('.fechas').val(montot);     
+});
+
+    Calendar.setup({
+                  inputField : "f_date1",
+                  trigger    : "inicio",
+                  onSelect   : function() { this.hide() },
+                  showTime   : 12,
+                  dateFormat : "%d-%m-%Y"
+                });
+
+    Calendar.setup({
+                  inputField : "f_date2",
+                  trigger    : "fin",
+                  onSelect   : function() { this.hide() },
+                  showTime   : 12,
+                  dateFormat : "%d-%m-%Y"
+                });
 </script>
 </body>
 </html>
