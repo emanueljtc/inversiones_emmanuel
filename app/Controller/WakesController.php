@@ -50,7 +50,7 @@ public function getCargoByPersonal() {
 
 $servidor = "localhost";
 $usuar = "root";
-$contrase = "ema18787";
+$contrase = "";
 $bd = "arte_cristal";
 
 $conexion = mysql_connect($servidor,$usuar,$contrase) or die ("No se puede establecer la conexion");
@@ -72,7 +72,7 @@ $filas = mysql_fetch_array($query);
 
 
   $cargo = $this->Wake->Position->find('all',array(
-   'fields' => array('Position.cargo','Position.salario'),
+   'fields' => array('Position.cargo','Position.salario','Position.horast','Position.vhora'),
    'conditions'=>array('Position.idposition'=>$idposition)));
 
 
