@@ -20,6 +20,8 @@ class Position extends AppModel {
          'salario'   => 'Position.daily_salary',
          'cargo'     => 'Position.position',
          'idposition'     => 'Position.id',
+         'horast' => 'Position.hour_worked',
+         'vhora' => 'Position.time_value',
       );
 /**
  * Validation rules

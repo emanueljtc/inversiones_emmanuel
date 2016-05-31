@@ -24,8 +24,18 @@
 
    
    $.each(data, function(i,items){
-      $('#cargo').val(items.Position.cargo);
-      $('#salario').val(items.Position.salario);
+
+      var cargo = items.Position.cargo;
+      $('#cargo').val(cargo);
+
+      var salario = items.Position.salario;
+      $('#salariod').val(salario);
+
+      var vhora = items.Position.vhora;
+      $('#vhora').val(vhora);
+      //var horast = items.Position.horast;
+      //$('#horat').val(horast);
+
     });    
 
    //var cadena = JSON.stringify(data);
@@ -36,6 +46,7 @@
     //alert(vector);
 
    }
+
   });
  });
 });
@@ -63,13 +74,13 @@
 							<label class="control-label col-xs-3" >Dias Feriados:</label>
  					<div class="col-xs-7">
  						<?php echo $this->Form->input('holiday', array(
- 						'label'=>'','placeholder' => 'Ingrese Numero de Dias Feriados Trabajados','class'=>'form-control','id'=>'diasf'
+ 						'label'=>'','placeholder' => 'Ingrese Numero de Dias Feriados Trabajados','class'=>'form-control calculo','id'=>'diasf'
  							)); ?>
  					</div>
  			        <label class="control-label col-xs-3" >Horas Extras:</label>
  					<div class="col-xs-7">
  						<?php echo $this->Form->input('extra_hours', array(
- 						'label'=>'','placeholder' => 'Ingrese Numero de Horas Extras Trabajadas','class'=>'form-control','onkeyup'=>'Multi();'
+ 						'label'=>'','placeholder' => 'Ingrese Numero de Horas Extras Trabajadas','class'=>'form-control calculo','id'=>'horase'
  							)); ?>
  					</div>
                <label class="control-label col-xs-3" >Cargo:</label>
@@ -79,8 +90,9 @@
              </div>
 					<label class="control-label col-xs-3" >Salario Diario:</label>
 					<div class="col-xs-7">
-						<?php echo $this->Form->input('salario', array('label'=>'','class'=>'form-control','id'=>'salario')); ?>
+						<?php echo $this->Form->input('salario', array('label'=>'','class'=>'form-control','id'=>'salariod')); ?>
 				 </div>
+         <input type="hidden" id="vhora">
  					<label class="control-label col-xs-3" >Monto:</label>
  					<div class="col-xs-7">
  						<?php echo $this->Form->input('amount', array('label'=>'','placeholder' => 'Ingrese Monto','class'=>'form-control','id'=>'monto')); ?>
@@ -88,7 +100,7 @@
  					<label class="control-label col-xs-3" >Tipo de Pago:</label>
  					<div class="col-xs-7">
  						<?php
- 							 echo $this->Form->input('payment_type',array('class'=>'form-control','label'=>'','type'=>'select','options'=>array(''=>'[SELECCIONE TIPO]','Salario Basico'=>'Salario Basico','Bono Vacacional'=>'Bono Vacacional')));
+ 							 echo $this->Form->input('payment_type',array('class'=>'form-control','id'=>'tipop','label'=>'','onClick'=>'fechas();','type'=>'select','options'=>array(''=>'[SELECCIONE TIPO]','Adelantado'=>'Adelantado','Atrasado'=>'Atrasado','Reglamentario'=>'Reglamentario')));
  						  ?>
  					</div>
 
@@ -97,22 +109,23 @@
  					<div class="col-xs-2">
  						<?php
    								$meses = array(
-   									'01'=>'Enero',
-   									'02'=>'Febrero',
-   									'03'=>'Marzo',
-   									'04'=>'Abril',
-   									'05'=>'Mayo',
-   									'06'=>'Junio',
-   									'07'=>'Julio',
-   									'08'=>'Agosto',
-   									'09'=>'Septiembre',
-   									'10'=>'Octubre',
-   									'11'=>'Noviembre',
-   									'12'=>'Diciembre',
-   									);
+                    '01'=>'01',
+                    '02'=>'02',
+                    '03'=>'03',
+                    '04'=>'04',
+                    '05'=>'05',
+                    '06'=>'06',
+                    '07'=>'07',
+                    '08'=>'08',
+                    '09'=>'09',
+                    '10'=>'10',
+                    '11'=>'11',
+                    '12'=>'12',
+                    );
    								echo $this->Form->input('end', array(
    									    'label' => ' ',
    									    'class'=>'form-control',
+                        'id'=>'inicio',
    									    'dateFormat' => 'DMY',
    									    'minYear' => date('Y') - 95,//aqui se configura la edad limite de miembro
    									    'maxYear' => date('Y') - 0,
@@ -127,22 +140,23 @@
  					<div class="col-xs-2">
  						<?php
    								$meses = array(
-   									'01'=>'Enero',
-   									'02'=>'Febrero',
-   									'03'=>'Marzo',
-   									'04'=>'Abril',
-   									'05'=>'Mayo',
-   									'06'=>'Junio',
-   									'07'=>'Julio',
-   									'08'=>'Agosto',
-   									'09'=>'Septiembre',
-   									'10'=>'Octubre',
-   									'11'=>'Noviembre',
-   									'12'=>'Diciembre',
+   									'01'=>'01',
+   									'02'=>'02',
+   									'03'=>'03',
+   									'04'=>'04',
+   									'05'=>'05',
+   									'06'=>'06',
+   									'07'=>'07',
+   									'08'=>'08',
+   									'09'=>'09',
+   									'10'=>'10',
+   									'11'=>'11',
+   									'12'=>'12',
    									);
    								echo $this->Form->input('end', array(
    									    'label' => ' ',
    									    'class'=>'form-control',
+                        'id'=>'fin',
    									    'dateFormat' => 'DMY',
    									    'minYear' => date('Y') - 95,//aqui se configura la edad limite de miembro
    									    'maxYear' => date('Y') - 0,
@@ -176,13 +190,45 @@
 	</ul>
 </div>
 <script>
-$(document).ready(function(){
-   $('#diasf').keyup(function(){
-         var txtdiasf = $("#diasf").val().substring(0,8);
 
-         $("#monto").val(txtdiasf);
+$(document).ready(function(){
+   $('.calculo').keyup(function(){
+        //Calculo de Dias Feriados
+         var valor = 1.5;
+         var diasf = $("#diasf").val().substring(0,10);
+         var salariod = $("#salariod").val(); 
+         var rdiasf = ((parseFloat(salariod) * parseFloat(valor)) * parseFloat(diasf));
+        
+        //Calculo de Horas Extras
+        var valorhora = $("#vhora").val();
+        var horase = $("#horase").val();
+        var rhorase = ((parseFloat(valorhora) * parseFloat(valor)) * parseFloat(horase));
+
+        var monto = parseFloat(rhorase)+parseFloat(rdiasf);
+        $("#monto").val(monto);
+
+        var inicio = $("#inicio").val();        
+        alert(inicio);
+
     });
+
 });
+
+function fechas(){
+          //Calculo de Numero de Dias Correspondientes al Pago
+f1 = document.getElementById("inicio").value;
+f2 = document.getElementById("fin").value;
+
+alert(f1);
+
+ var aFecha1 = f1.split('-'); 
+ var aFecha2 = f2.split('-'); 
+ var fFecha1 = Date.UTC(aFecha1[2],aFecha1[1]-1,aFecha1[0]); 
+ var fFecha2 = Date.UTC(aFecha2[2],aFecha2[1]-1,aFecha2[0]); 
+ var dif = fFecha2 - fFecha1;
+ var dias = Math.floor(dif / (1000 * 60 * 60 * 24)); 
+ alert (dias);
+   }
 </script>
 </body>
 </html>
