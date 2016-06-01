@@ -14,14 +14,27 @@ class WakesController extends AppController {
  * Components
  *
  * @var array
- */	public $helpers = array('Js');
-	public $components = array('Paginator', 'Flash', 'Session','RequestHandler');
+ */	public $helpers = array('Html','Form','Time','Js');
+ 		public $components = array('Paginator', 'Session','RequestHandler');
+ 		public $paginate = array (
+		'limit' => 5,
+		'order' => array('Personal.name' => 'asc')
+		);
 
 /**
  * index method
  *
  * @return void
  */
+ public function lista_pdf($id = null){
+	$this->Position->recursive = 0;
+	$this->pdfConfig = array(
+	 'download' => true,
+	 'filename' => 'wakes'.$id.'.pdf',
+		);
+	$this->Paginator->settings = $this->paginate = array('limit' => 6);
+	 $this->set('wake', $this->paginate('Wake'));
+ }
 	public function index() {
 		$this->Wake->recursive = 0;
 		$this->set('wakes', $this->Paginator->paginate());
@@ -39,6 +52,10 @@ class WakesController extends AppController {
 			throw new NotFoundException(__('Error Intente de Nuevo'));
 		}
 		$options = array('conditions' => array('Wake.' . $this->Wake->primaryKey => $id));
+		$this->pdfConfig = array(
+    	'download' => true,
+    	'filename' => 'wake'.$id.'.pdf'
+    );
 		$this->set('wake', $this->Wake->find('first', $options));
 	}
 
