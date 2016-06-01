@@ -13,23 +13,25 @@
 					</div>
 					<div class="clol col-sm-5">
 								<br>
-							<strong>Factura Nº : <?php echo h($wake['Wake']['id']); ?> </strong>
-						  <br>
 							<strong>Fecha de Pago : <?php echo h($wake['Wake']['payment_day']); ?> </strong>
-					    <br>
-							<strong>Fecha Inicio : <?php echo h($wake['Wake']['start']); ?></strong>
-							<br>
-							<strong>Fecha Fin : <?php echo h($wake['Wake']['end']); ?></strong>
-							<br>
-							<strong>Empleado : <?php echo $this->Html->link($wake['Personal']['full_name'], array('controller' => 'personals', 'action' => 'view', $wake['Personal']['id'])); ?> </strong>
-							<br>
-							<strong>Cedula : <?php echo $this->Html->link($wake['Personal']['dni'], array('controller' => 'positions', 'action' => 'view', $wake['Position']['id'])); ?></strong>
-							<br>
-							<strong>Cargo : <?php echo $this->Html->link($wake['Position']['position'], array('controller' => 'positions', 'action' => 'view', $wake['Position']['id'])); ?> </strong>
 							<br>
 							<strong>Tipo de Pago : <?php echo h($wake['Wake']['payment_type']); ?></strong>
 							<br>
-							<strong>Monto Horas Extras : <?php echo $this->Html->link($wake['DhExtra']['amount'], array('controller' => 'positions', 'action' => 'view', $wake['DhExtra']['id'])); ?></strong>
+							<strong>Factura Nº : 000<?php echo h($wake['Wake']['id']); ?> </strong>
+							<br>
+							<strong>Empleado : <?php echo $this->Html->link($wake['Personal']['full_name'], array('controller' => 'personals', 'action' => 'view', $wake['Personal']['id'])); ?> </strong>
+						  <br>
+							<strong>Cedula : <?php echo $this->Html->link($wake['Personal']['dni'], array('controller' => 'personals', 'action' => 'index', $wake['Position']['id'])); ?></strong>
+							<br>
+							<strong>Cargo : <?php echo $this->Html->link($wake['Position']['position'], array('controller' => 'positions', 'action' => 'view', $wake['Position']['id'])); ?> </strong>
+							<br>
+							<strong>Dias Feriados : <?php echo h($wake['Wake']['holiday']); ?></strong>
+							<br>
+							<strong>Horas Extras : <?php echo h($wake['Wake']['extra_hours']); ?></strong>
+							<br>
+							<strong>Fecha Inicio : <?php echo h($wake['Wake']['start']); ?></strong>
+							<br>
+							<strong>Fecha Fin : <?php echo h($wake['Wake']['end']); ?></strong>
 							<br>
 							<strong>Monto Total : <?php echo h($wake['Wake']['amount']); ?></strong>
 							<br>
