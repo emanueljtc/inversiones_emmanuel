@@ -43,16 +43,6 @@ class Wake extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'dh_extra_id' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
 		'payment_day' => array(
 			'date' => array(
 				'rule' => array('date'),
@@ -66,7 +56,7 @@ class Wake extends AppModel {
 		'amount' => array(
 			'decimal' => array(
 				'rule' => array('decimal'),
-				//'message' => 'Your custom message here',
+				'message' => 'Campo Vacio',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -84,7 +74,7 @@ class Wake extends AppModel {
 		'payment_type' => array(
 			'notBlank' => array(
 				'rule' => array('notBlank'),
-				//'message' => 'Your custom message here',
+				'message' => 'Campo Vacio, Seleccione el Tipo de Pago',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -94,7 +84,7 @@ class Wake extends AppModel {
 		'start' => array(
 			'date' => array(
 				'rule' => array('notBlank'),
-				//'message' => 'Your custom message here',
+				'message' => 'Campo Vacio, Seleccione Fecha',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -104,7 +94,7 @@ class Wake extends AppModel {
 		'end' => array(
 			'date' => array(
 				'rule' => array('notBlank'),
-				//'message' => 'Your custom message here',
+				'message' => 'Campo Vacio, Seleccione Fecha',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -114,7 +104,7 @@ class Wake extends AppModel {
 		'salary_date' => array(
 			'notBlank' => array(
 				'rule' => array('notBlank'),
-				//'message' => 'Your custom message here',
+				'message' => 'Campo Vacio, Ingrese Informacion Requerida',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
