@@ -37,12 +37,12 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 			 echo $this->Html->script(array('bootstrap.min.js'));
 			 echo $this->Html->script(array('jscal2.js'));
 			 echo $this->Html->script(array('es.js'));
-			 echo $this->Html->script(array('jquery-ui.min'));
-			 echo $this->Html->script(array('search'));
+			 echo $this->Html->script(array('jquery-ui.min.js'));
+			 echo $this->Html->script(array('search.js'));
 			 echo $this->Html->script(array('plugins/morris/raphael.min.js'));
        echo $this->Html->script(array('plugins/morris/morris.min.js'));
        echo $this->Html->script(array('plugins/morris/morris-data.js'));
-
+       echo $this->Html->script(array('validaciones.js'));
 
 
 

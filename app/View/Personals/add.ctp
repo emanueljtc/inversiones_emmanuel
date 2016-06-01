@@ -1,5 +1,53 @@
- <div id="general">
+<script>
+function calcularEdad()
+{
+    var fecha=document.getElementById("f_date2").value;
+  
+        // Si la fecha es correcta, calculamos la edad
+        var values=fecha.split("-");
+        var dia = values[0];
+        var mes = values[1];
+        var ano = values[2];
+  
+  
+        // cogemos los valores actuales
+        var fecha_hoy = new Date();
+        var ahora_ano = fecha_hoy.getYear();
+        var ahora_mes = fecha_hoy.getMonth();
+        var ahora_dia = fecha_hoy.getDate();
+        
+        var otra_fecha = new Date();
+        var anoa = otra_fecha.getFullYear()
+        
+     if (ano < anoa){   
+        // realizamos el calculo
+        var edad = (ahora_ano + 1900) - ano;
+        if ( ahora_mes < (mes - 1))
+        {
+            edad--;
+        }
+        if (((mes - 1) == ahora_mes) && (ahora_dia < dia))
+        {
+            edad--;
+        }
+        if (edad > 1900)
+        {
+            edad -= 1900;
+        }
+    if(edad == 1){
+        document.getElementById("edad").value=edad;
+    }else{
+    document.getElementById("edad").value=edad;  
+      }
+  }else if(ano >= anoa){
+    
+    document.getElementById("edad").value="Edad Incorrecta";
 
+    }
+}
+</script>
+ <div id="general">
+  
   <div class="panel panel-primary">
   		<div class="panel-heading">
   			<center>
@@ -11,33 +59,16 @@
   		<div class="form-horizontal">
    			<?php echo $this->Form->create('Personal', array('type'=>'file', 'novalidate'=>'novalidate' )); ?>
    			 <div class="form-group">
-                 <label class="control-label col-xs-3">Fecha de Ingreso</label>
-                  <div class="col-xs-9">
-                  <br>
-                     <?php
-                      $meses = array(
-                        '01'=>'Enero',
-                        '02'=>'Febrero',
-                        '03'=>'Marzo',
-                        '04'=>'Abril',
-                        '05'=>'Mayo',
-                        '06'=>'Junio',
-                        '07'=>'Julio',
-                        '08'=>'Agosto',
-                        '09'=>'Septiembre',
-                        '10'=>'Octubre',
-                        '11'=>'Noviembre',
-                        '12'=>'Diciembre',
-                        );
-                      echo $this->Form->input('date_reg', array(
-                            'label' => ' ',
-                            'dateFormat' => 'DMY',
-                            'minYear' => date('Y') - 95,//aqui se configura la edad limite de miembro
-                            'maxYear' => date('Y') - 0,
-                            'monthNames' => $meses
-                        ));
-                    ?>
-                  </div>
+        <label class="control-label col-xs-3" >Fecha de Ingreso:</label>
+  
+          
+        <div class="col-xs-2">
+            <?php echo $this->Form->input('date_reg', array('label'=>'','placeholder' => '','class'=>'form-control','id'=>'f_date1','readonly'=>'readonly')); ?>
+            <button id="fingreso"><span class="input-group-addon glyphicon glyphicon-calendar"></span></button>
+        </div>
+        <div class="control-label col-xs-10">
+            
+        </div>
   							 <label class="control-label col-xs-3" >Cargo:</label>
   							 <div class="col-xs-7">
 
@@ -49,78 +80,61 @@
    			        <div class="col-xs-7">
 
   		 						<?php echo $this->Form->input('dni', array(
-  		 							'label'=>'','placeholder' => 'Cedula','type'=>'text','class'=>'form-control'
-  		 						)); ?>
+  		 							'label'=>'','placeholder' => 'Cedula','type'=>'text','class'=>'form-control','onkeypress'=>'return IsCedula(event);','maxlength'=>'10')); ?>
    					   </div>
    					<label class="control-label col-xs-3" >Nombre:</label>
    					<div class="col-xs-7">
    						<?php echo $this->Form->input('name', array(
-   						'label'=>'','placeholder' => 'Ingrese Nombre','class'=>'form-control'
+   						'label'=>'','placeholder' => 'Ingrese Nombre','class'=>'form-control','onkeypress'=>'return IsNombre(event);','maxlength'=>'60'
    							)); ?>
    					</div>
   					<label class="control-label col-xs-3" >Apellido:</label>
    					<div class="col-xs-7">
    						<?php echo $this->Form->input('last_name', array(
-   						'label'=>'','placeholder' => 'Ingrese Apellido','class'=>'form-control'
+   						'label'=>'','placeholder' => 'Ingrese Apellido','class'=>'form-control','onkeypress'=>'return IsNombre(event);','maxlength'=>'60'
    							)); ?>
    					</div>
-  					<label class="control-label col-xs-3">F. Nacimiento:</label>
-   		        <div class="col-xs-9">
-   		        <br>
-   		           <?php
-   								$meses = array(
-   									'01'=>'Enero',
-   									'02'=>'Febrero',
-   									'03'=>'Marzo',
-   									'04'=>'Abril',
-   									'05'=>'Mayo',
-   									'06'=>'Junio',
-   									'07'=>'Julio',
-   									'08'=>'Agosto',
-   									'09'=>'Septiembre',
-   									'10'=>'Octubre',
-   									'11'=>'Noviembre',
-   									'12'=>'Diciembre',
-   									);
-   								echo $this->Form->input('born_date', array(
-   									    'label' => ' ',
-   									    'dateFormat' => 'DMY',
-   									    'minYear' => date('Y') - 95,//aqui se configura la edad limite de miembro
-   									    'maxYear' => date('Y') - 0,
-   									    'monthNames' => $meses
-   									));
-   							?>
-   		        </div>
+  					<label class="control-label col-xs-3" >Fecha de Nacimiento:</label>
+  
+          
+        <div class="col-xs-2">
+            <?php echo $this->Form->input('born_date', array('label'=>'','placeholder' => '','class'=>'form-control','id'=>'f_date2','readonly'=>'readonly')); ?>
+            <button id="fnac"><span class="input-group-addon glyphicon glyphicon-calendar"></span></button>
+        </div>
+        <div class="control-label col-xs-10">
+            
+        </div>
+
    						<label class="control-label col-xs-3" >Sexo:</label>
    					<div class="col-xs-7">
               <?php
  							 echo $this->Form->input('sex',
- 								array('class'=>'form-control','label'=>'','type'=>'select','options'=>array('Femenino'=>'Femenino','Masculino'=>'Masculino')));
+ 								array('class'=>'form-control','label'=>'','type'=>'select','options'=>array(''=>'[SELECCIONE SEXO]','Femenino'=>'Femenino','Masculino'=>'Masculino')));
  						  ?>
    					</div>
    					<label class="control-label col-xs-3" >Edad:</label>
    					<div class="col-xs-7">
    						<?php echo $this->Form->input('age', array(
-   						'label'=>'','placeholder' => 'Edad','type'=>'text','class'=>'form-control'
+   						'label'=>'','placeholder' => 'Edad','type'=>'text','class'=>'form-control','onkeypress'=>'return IsEdad(event);','maxlength'=>'3','id'=>'edad','readonly'=>'readonly','onClick'=>'calcularEdad();'
    							)); ?>
    					</div>
 
   					<label class="control-label col-xs-3" >Celular:</label>
    					<div class="col-xs-7">
    							<?php echo $this->Form->input('cell_phone', array(
-   							'label'=>'','placeholder' => 'Telefono Celular','type'=>'text','class'=>'form-control'
+   							'label'=>'','placeholder' => 'Telefono Celular','type'=>'text','class'=>'form-control','onkeypress'=>'return IsTelefono(event);','maxlength'=>'12'
    								)); ?>
    					</div>
    					<label class="control-label col-xs-3" >Telefono:</label>
    					<div class="col-xs-7">
    							<?php echo $this->Form->input('phone', array(
-   							'label'=>'','placeholder' => 'Telefono Local','type'=>'text','class'=>'form-control'
+   							'label'=>'','placeholder' => 'Telefono Local','type'=>'text','class'=>'form-control','onkeypress'=>'return IsTelefono(event);','maxlength'=>'12'
    								)); ?>
    					</div>
   					<label class="control-label col-xs-3" >Email:</label>
   					<div class="col-xs-7">
   							<?php echo $this->Form->input('email', array(
-  							'label'=>'','placeholder' => 'Email','type'=>'email','class'=>'form-control'
+  							'label'=>'','placeholder' => 'Email','type'=>'email','class'=>'form-control','maxlength'=>'80'
   								)); ?>
   					</div>
 
@@ -128,7 +142,7 @@
    					<div class="col-xs-7">
    							<?php
    								 echo $this->Form->input('address', array(
-   									'label'=>'','placeholder' => 'Direccion','class'=>'form-control'
+   									'label'=>'','placeholder' => 'Direccion','class'=>'form-control','maxlength'=>'150'
    								));
    							?>
    							<br>
@@ -172,3 +186,21 @@
       </div>
 
 </div>
+<script>
+    Calendar.setup({
+                  inputField : "f_date1",
+                  trigger    : "fingreso",
+                  onSelect   : function() { this.hide() },
+                  showTime   : 12,
+                  dateFormat : "%d-%m-%Y"
+                });
+
+    Calendar.setup({
+                  inputField : "f_date2",
+                  trigger    : "fnac",
+                  onSelect   : function() { this.hide() },
+                  showTime   : 12,
+                  dateFormat : "%d-%m-%Y"
+                });
+
+</script>
