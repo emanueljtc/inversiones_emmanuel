@@ -25,8 +25,11 @@
    
    $.each(data, function(i,items){
 
+      var idp = items.Position.idposition;
       var cargo = items.Position.cargo;
-      $('#cargo').val(cargo);
+      //$('#cargo option:selected').text(cargo);
+      $('#cargo').html(''); 
+      $("<option value='"+idp+"'>"+cargo+"</option>").appendTo("#cargo");
 
       var salario = items.Position.salario;
       $('#salariod').val(salario);
@@ -96,7 +99,7 @@
                <label class="control-label col-xs-3" >Cargo:</label>
                <div class="col-xs-7">
 
-                  <?php echo $this->Form->input('position', array('label'=>'','class'=>'form-control','id'=>'cargo','readonly'=>'readonly')); ?>
+                  <?php echo $this->Form->input('position_id', array('label'=>'','type'=>'select','class'=>'form-control','id'=>'cargo','readonly'=>'readonly')); ?>
              </div>
 					<label class="control-label col-xs-3" >Salario Diario:</label>
 					<div class="col-xs-7">

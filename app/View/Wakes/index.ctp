@@ -52,7 +52,8 @@
 															<td><?php echo h($wake['Wake']['holiday']);?>&nbsp;</td>
 															<td><?php echo h($wake['Wake']['extra_hours']);?>&nbsp;</td>															
 															<td><?php echo h($wake['Wake']['payment_type']);?>&nbsp;</td>
-															<td><?php echo h($wake['Wake']['amount']);?>&nbsp;</td>
+															<?php $montot = $wake['Wake']['amount'] + $wake['Wake']['salary_date'];?>
+															<td><?php echo h($montot);?>&nbsp;</td>
 
 															<td class="actions">
 																<?php echo $this->Html->link(__(''), array('action' => 'view', $wake['Wake']['id']), array('class' => 'glyphicon glyphicon-search')); ?>

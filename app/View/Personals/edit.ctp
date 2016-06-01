@@ -51,7 +51,7 @@ function calcularEdad()
  <div class="panel panel-primary">
 		 <div class="panel-heading">
 			 <center>
-				 <h4>Añadir Empleado</h4>
+				 <h4>Editar Empleado</h4>
 
 			 </center>
 		 </div>
@@ -154,7 +154,7 @@ function calcularEdad()
 
 
 			 </div>
-			 <center><input type="submit" value="Guardar" class="btn btn-info">
+			 <center><input type="submit" value="Actualizar" class="btn btn-info">
 			 <input type="reset" value="Limpiar" class="btn btn-danger"></center>
 			 <br>
 	 </div>

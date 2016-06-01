@@ -8,8 +8,12 @@
 			<div class="bloque">
 				<div class="row">
 					<div class="col col-sm-4">
-						<?php //echo $this->Html->image('../files/Personal/foto/'. $Personal['Personal']['foto_dir'].'/'.'vga_'.$Personal['Personal']['foto']); ?>
-						<?php echo $this->Html->image('../img/hombre.png'); ?>
+						<?php if($wake['Personal']['sex']=='Femenino'){
+								echo $this->Html->image('../img/mujer.png');
+
+						}else if($wake['Personal']['sex']=='Masculino'){
+								echo $this->Html->image('../img/hombre.jpg');
+						} ?>
 					</div>
 					<div class="clol col-sm-5">
 								<br>
@@ -17,21 +21,33 @@
 						  <br>
 							<strong>Fecha de Pago : <?php echo h($wake['Wake']['payment_day']); ?> </strong>
 					    <br>
-							<strong>Fecha Inicio : <?php echo h($wake['Wake']['start']); ?></strong>
-							<br>
-							<strong>Fecha Fin : <?php echo h($wake['Wake']['end']); ?></strong>
-							<br>
 							<strong>Empleado : <?php echo $this->Html->link($wake['Personal']['full_name'], array('controller' => 'personals', 'action' => 'view', $wake['Personal']['id'])); ?> </strong>
 							<br>
 							<strong>Cedula : <?php echo $this->Html->link($wake['Personal']['dni'], array('controller' => 'positions', 'action' => 'view', $wake['Position']['id'])); ?></strong>
 							<br>
 							<strong>Cargo : <?php echo $this->Html->link($wake['Position']['position'], array('controller' => 'positions', 'action' => 'view', $wake['Position']['id'])); ?> </strong>
 							<br>
+							<strong>Salario Diario : <?php echo h($wake['Position']['daily_salary']); ?>Bs.</strong>
+							<br>
 							<strong>Tipo de Pago : <?php echo h($wake['Wake']['payment_type']); ?></strong>
 							<br>
-							<strong>Monto Horas Extras : <?php echo $this->Html->link($wake['DhExtra']['amount'], array('controller' => 'positions', 'action' => 'view', $wake['DhExtra']['id'])); ?></strong>
+							<h4>Pago por Horas Extras y Dias Feriados: </h4>
+							<strong>Horas Extras : <?php echo h($wake['Wake']['extra_hours']); ?>Horas</strong>
 							<br>
-							<strong>Monto Total : <?php echo h($wake['Wake']['amount']); ?></strong>
+							<strong>Dias Feriados : <?php echo h($wake['Wake']['holiday']); ?>Dias</strong>
+							<br>
+							<strong>Pago: <?php echo h($wake['Wake']['amount']); ?>Bs.</strong>
+							<br>
+							<h4>Pago por Rango de Tiempo: </h4>
+							<strong>Fecha Inicio : <?php echo h($wake['Wake']['start']); ?></strong>
+							<br>
+							<strong>Fecha Fin : <?php echo h($wake['Wake']['end']); ?></strong>
+							<br>
+							<strong>Pago: <?php echo h($wake['Wake']['salary_date']); ?>Bs.</strong>
+							<br>
+							<h4>Monto Total: </h4>
+							<?php $montototal = $wake['Wake']['amount'] + $wake['Wake']['salary_date'];?>
+							<strong>Fecha Inicio : <?php echo h($montototal); ?>Bs.</strong>
 							<br>
 							<br>
 

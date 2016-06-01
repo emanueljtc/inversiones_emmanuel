@@ -41,7 +41,7 @@ function Multi(){
  					</div>
 					<label class="control-label col-xs-3" >Salario:</label>
  					<div class="col-xs-7">
- 						<?php echo $this->Form->input('daily_salary', array('label'=>'','placeholder' => 'Ingrese Salario','class'=>'form-control','id'=>'salario')); ?>
+ 						<?php echo $this->Form->input('daily_salary', array('label'=>'','placeholder' => 'Ingrese Salario','class'=>'form-control','id'=>'salario','readonly'=>'readonly')); ?>
  					</div>
  			</div>
  					<br>
