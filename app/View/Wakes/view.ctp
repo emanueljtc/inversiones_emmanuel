@@ -47,7 +47,7 @@
 							<br>
 							<h4>Monto Total: </h4>
 							<?php $montototal = $wake['Wake']['amount'] + $wake['Wake']['salary_date'];?>
-							<strong>Fecha Inicio : <?php echo h($montototal); ?>Bs.</strong>
+							<strong> <?php echo h($montototal); ?>Bs.</strong>
 							<br>
 							<br>
 
