@@ -30,7 +30,7 @@ class WakesController extends AppController {
 	$this->Wake->recursive = 0;
 	$this->pdfConfig = array(
 	 'download' => true,
-	 'filename' => 'Salarios_'.$id.'.pdf',
+	 'filename' => 'Lista_'.$id.'.pdf',
 		);
 	$this->Paginator->settings = $this->paginate = array('limit' => 6);
 	 $this->set('wake', $this->paginate('Wake'));
@@ -67,7 +67,7 @@ public function getCargoByPersonal() {
 
 $servidor = "localhost";
 $usuar = "root";
-$contrase = "";
+$contrase = "ema18787";
 $bd = "arte_cristal";
 
 $conexion = mysql_connect($servidor,$usuar,$contrase) or die ("No se puede establecer la conexion");
