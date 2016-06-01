@@ -54,7 +54,7 @@
 															</td>
 															<td class="actions">
 																<?php echo $this->Html->link(__(''), array('action' => 'view', $personal['Personal']['id']), array('class' => 'glyphicon glyphicon-search')); ?>
-																<?php echo $this->Html->link(__(''), array('action' => 'view', $personal['Personal']['id'].'.pdf' ), array('class' => 'glyphicon glyphicon-print')); ?>
+																<?php echo $this->Html->link(__(''), array('action' => 'view', $personal['Personal']['id'], 'ext' => 'pdf' ), array('class' => 'glyphicon glyphicon-print')); ?>
 																<?php echo $this->Html->link(__(''), array('action' => 'edit', $personal['Personal']['id']), array('class' => 'glyphicon glyphicon-edit')); ?>
 																<?php echo $this->Form->postLink('<i class="fa fa-trash-o fa-fw"></i> ' . __(''), array('action' => 'delete', $personal['Personal']['id']), array('escape' => false), __('Seguro quieres eliminar al empleado %s?', $personal['Personal']['name'])); ?>
 															</td>
@@ -84,7 +84,7 @@
 <div class="btn-group btn-group-justified">
 
 				<?php echo $this->Html->link(__('Añadir Empleado'), array('action' => 'add'), array('class' => 'btn btn-info')); ?>
-				<?php echo $this->Html->link(__('Exportar Lista del Personal'), array('action' => 'exportar' , $personal['Personal']['id'].'.pdf' ), array('class' => 'btn btn-danger')); ?>
+				<?php echo $this->Html->link(__('Exportar Lista del Personal'), array('action' => 'lista_pdf' , $personal['Personal']['id'].'.pdf' ), array('class' => 'btn btn-danger')); ?>
 				<?php echo $this->Html->link(__('Registrar Pago'), array('controller' => 'documents', 'action' => 'add'), array('class' => 'btn btn-primary')); ?>
 
 </div>
