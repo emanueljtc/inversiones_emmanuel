@@ -15,7 +15,7 @@
 				</th>
 				<th class="cabezera">
 
-						<h3>Lista General de Salarios</h3>
+						<h3>Lista General de Cargos</h3>
 
 				</th>
 </table>
