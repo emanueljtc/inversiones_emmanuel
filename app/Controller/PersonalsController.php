@@ -29,7 +29,7 @@ class PersonalsController extends AppController {
  * @return void
  */
 
-   public function exportar($id = null){
+   public function lista_pdf($id = null){
      $this->Personal->recursive = 0;
      $this->pdfConfig = array(
      	'download' => true,
