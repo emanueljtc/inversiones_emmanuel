@@ -32,7 +32,7 @@ class Position extends AppModel {
 		'position' => array(
 			'notBlank' => array(
 				'rule' => array('notBlank'),
-				//'message' => 'Your custom message here',
+				'message' => 'Campo Vacio, Ingrese un Cargo',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -41,7 +41,7 @@ class Position extends AppModel {
 		),
 		'hour_worked' => array(
 			'decimal' => array(
-				'rule' => array('decimal'),
+				'rule' => array('numeric'),
 				'message' => 'Campo Vacio, Ingrese Numero de Horas Trabajadas',
 				//'allowEmpty' => false,
 				'required' => true,
@@ -50,17 +50,17 @@ class Position extends AppModel {
 			),
 			'numeric' => array(
 				'rule' => array('numeric'),
-				//'message' => '',
+				'message' => 'Solo Numeros',
 				//'allowEmpty' => false,
-				//'required' => true,
+				'required' => true  ,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
 		'time_value' => array(
 			'decimal' => array(
-				'rule' => array('decimal'),
-				//'message' => 'Your custom message here',
+				'rule' => array('numeric'),
+				'message' => 'Campo Vacio, Ingrese Valor de la Hora',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -77,18 +77,18 @@ class Position extends AppModel {
 		),
 		'daily_salary' => array(
 			'decimal' => array(
-				'rule' => array('decimal'),
-				//'message' => 'Your custom message here',
+				'rule' => array('numeric'),
+				//'message' => 'Campo Vacio, Ingrese Valor de Hora',
 				//'allowEmpty' => false,
-				//'required' => false,
+				'required' => true,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 			'numeric' => array(
 				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
+				//'message' => 'Solo Numeros',
 				//'allowEmpty' => false,
-				//'required' => false,
+				'required' => true,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
