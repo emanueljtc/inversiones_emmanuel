@@ -1,10 +1,4 @@
 <style>
-h3 {
-
-	font-size: 50px;
-	font-family:Lucida Sans Unicode;
-	text-decoration: none;
-}
 p {
 	font-size: 20px;
 	font-weight: bold;
@@ -51,6 +45,14 @@ th.cabezera{
 tr.cabezera {
     padding: 2px;
 		border: white 1px solid;
+}
+h3{
+	background:#fff;
+	color: #000;
+	font-family:'Gill Sans','lucida grande', helvetica, arial, sans-serif;;
+	font-size: 180%;
+
+
 }
 table#datos {
     width: 100%;
