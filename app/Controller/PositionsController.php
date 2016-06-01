@@ -15,14 +15,18 @@ class PositionsController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator', 'Flash', 'Session');
-
+ public $helpers = array('Html','Form','Time','Js');
+ public $components = array('Paginator', 'Session','RequestHandler');
+ public $paginate = array (
+		'limit' => 5,
+		'order' => array('Personal.name' => 'asc')
+		);
 /**
  * index method
  *
  * @return void
  */
- public function exportar($id = null){
+ public function lista_pdf($id = null){
 	 $this->Position->recursive = 0;
 	 $this->pdfConfig = array(
 		'download' => true,
