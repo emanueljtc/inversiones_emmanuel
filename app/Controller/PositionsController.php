@@ -15,13 +15,26 @@ class PositionsController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator', 'Flash', 'Session');
-
+ public $helpers = array('Html','Form','Time','Js');
+ public $components = array('Paginator', 'Session','RequestHandler');
+ public $paginate = array (
+		'limit' => 5,
+		'order' => array('Personal.name' => 'asc')
+		);
 /**
  * index method
  *
  * @return void
  */
+ public function lista_pdf($id = null){
+	 $this->Position->recursive = 0;
+	 $this->pdfConfig = array(
+		'download' => true,
+		'filename' => 'position'.$id.'.pdf',
+		 );
+	 $this->Paginator->settings = $this->paginate = array('limit' => 6);
+		$this->set('position', $this->paginate('Position'));
+ }
 	public function index() {
 		$this->Position->recursive = 0;
 		$this->set('positions', $this->Paginator->paginate());
@@ -39,6 +52,10 @@ class PositionsController extends AppController {
 			throw new NotFoundException(__('Error Intente de Nuevo'));
 		}
 		$options = array('conditions' => array('Position.' . $this->Position->primaryKey => $id));
+		$this->pdfConfig = array(
+    	'download' => true,
+    	'filename' => 'position'.$id.'.pdf'
+    );
 		$this->set('position', $this->Position->find('first', $options));
 	}
 

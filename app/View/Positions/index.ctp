@@ -79,6 +79,6 @@
 <div class="btn-group btn-group-justified">
 
 				<?php echo $this->Html->link(__('Añadir Cargo'), array('action' => 'add'), array('class' => 'btn btn-info')); ?>
-				<?php echo $this->Html->link(__('Lista de Personal'), array('controller' => 'personals', 'action' => 'index'), array('class' => 'btn btn-danger')); ?>
+				<?php echo $this->Html->link(__('Exportar Lista Cargos'), array('action' => 'lista_pdf' , $position['Position']['id'], 'ext' => 'pdf' ), array('class' => 'btn btn-danger')); ?>
 				<?php echo $this->Html->link(__('Nuevo Personal'), array('controller' => 'personals', 'action' => 'add'), array('class' => 'btn btn-primary')); ?>
 </div>
