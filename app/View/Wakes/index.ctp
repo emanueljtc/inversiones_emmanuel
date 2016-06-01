@@ -50,7 +50,7 @@
 															<td><?php echo $this->Html->link($wake['Personal']['full_name'], array('controller' => 'personals', 'action' => 'view', $wake['Personal']['id'])); ?>&nbsp;</td>
 															<td><?php echo h($wake['Wake']['payment_day']); ?>&nbsp;</td>
 															<td><?php echo h($wake['Wake']['holiday']);?>&nbsp;</td>
-															<td><?php echo h($wake['Wake']['extra_hours']);?>&nbsp;</td>															
+															<td><?php echo h($wake['Wake']['extra_hours']);?>&nbsp;</td>
 															<td><?php echo h($wake['Wake']['payment_type']);?>&nbsp;</td>
 															<td><?php echo h($wake['Wake']['amount']);?>&nbsp;</td>
 
@@ -86,7 +86,7 @@
 <div class="btn-group btn-group-justified">
 
 				<?php echo $this->Html->link(__('Registrar Pago'), array('action' => 'add'), array('class' => 'btn btn-info')); ?>
-				<?php echo $this->Html->link(__('Registrar Bonos'), array('controller' => 'DhExtras', 'action' => 'add'), array('class' => 'btn btn-danger')); ?>
+				<?php echo $this->Html->link(__('Exportar Lista Salarios'), array('action' => 'lista_pdf' , $wake['Wake']['id'], 'ext' => 'pdf' ), array('class' => 'btn btn-danger')); ?>
 				<?php echo $this->Html->link(__('Lista de Salarios'), array('action' => 'index'), array('class' => 'btn btn-primary')); ?>
 
 </div>

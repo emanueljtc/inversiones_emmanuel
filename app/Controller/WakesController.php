@@ -27,10 +27,10 @@ class WakesController extends AppController {
  * @return void
  */
  public function lista_pdf($id = null){
-	$this->Position->recursive = 0;
+	$this->Wake->recursive = 0;
 	$this->pdfConfig = array(
 	 'download' => true,
-	 'filename' => 'wakes'.$id.'.pdf',
+	 'filename' => 'Salarios_'.$id.'.pdf',
 		);
 	$this->Paginator->settings = $this->paginate = array('limit' => 6);
 	 $this->set('wake', $this->paginate('Wake'));

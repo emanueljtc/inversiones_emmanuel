@@ -24,23 +24,30 @@
 		<thead>
 				<tr>
 
-						<th>Cargo</th>
-						<th>Horas Trabajadas</th>
-						<th>Valor de la Hora</th>
-						<th>Salario Diario</th>
+						<th>Empleado</th>
+						<th>Fecha de Pago</th>
+						<th>Dias Feriados</th>
+						<th>Horas Extras</th>
+						<th>Tipo de Pago</th>
+						<th>Monto Total</th>
 
 
 				</tr>
 		</thead>
 		<tbody>
 
-			<?php foreach ($position as $position): ?>
+			<?php foreach ($wake as $wake): ?>
 			<tr>
+				<!-- <td><?php echo h($wake['Wake']['id']); ?>&nbsp;</td> -->
 
-				<td><?php echo h($position['Position']['position']); ?>&nbsp;</td>
-				<td><?php echo h($position['Position']['hour_worked']); ?>&nbsp;Horas</td>
-				<td><?php echo h($position['Position']['time_value']); ?>&nbsp;bs</td>
-				<td><?php echo h($position['Position']['daily_salary']); ?>&nbsp;bs</td>
+
+				<td><?php echo $this->Html->link($wake['Personal']['full_name'], array('controller' => 'personals', 'action' => 'view', $wake['Personal']['id'])); ?>&nbsp;</td>
+				<td><?php echo h($wake['Wake']['payment_day']); ?>&nbsp;</td>
+				<td><?php echo h($wake['Wake']['holiday']);?>&nbsp;</td>
+				<td><?php echo h($wake['Wake']['extra_hours']);?>&nbsp;</td>
+				<td><?php echo h($wake['Wake']['payment_type']);?>&nbsp;</td>
+				<td><?php echo h($wake['Wake']['amount']);?>&nbsp;</td>
+
 
 			</tr>
 		<?php endforeach; ?>
