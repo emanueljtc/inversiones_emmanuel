@@ -10,12 +10,13 @@
 			<tr class="cabezera">
 				<th class="cabezera">
 					<div class="imagen">
-					<img src="/var/www/html/inversiones_emmanuel/app/webroot/img/foto2.jpg" width="300px" height="200px" alt="Texto Alternativo"> <!-- INSERTANDO LOGO-->
+						<!-- INSERTANDO LOGO-->
+						<img src="/var/www/html/inversiones_emmanuel/app/webroot/img/foto2.jpg" width="210px" height="150px" alt="Inversiones Emmanuel"> <!-- INSERTANDO LOGO-->
 					</div>
 				</th>
 				<th class="cabezera">
 
-						<h3>Lista General de Salarios</h3>
+						<h3>Lista General de Cargos</h3>
 
 				</th>
 </table>

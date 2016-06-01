@@ -50,13 +50,14 @@
 															<td><?php echo $this->Html->link($wake['Personal']['full_name'], array('controller' => 'personals', 'action' => 'view', $wake['Personal']['id'])); ?>&nbsp;</td>
 															<td><?php echo h($wake['Wake']['payment_day']); ?>&nbsp;</td>
 															<td><?php echo h($wake['Wake']['holiday']);?>&nbsp;</td>
-															<td><?php echo h($wake['Wake']['extra_hours']);?>&nbsp;</td>															
+															<td><?php echo h($wake['Wake']['extra_hours']);?>&nbsp;</td>
 															<td><?php echo h($wake['Wake']['payment_type']);?>&nbsp;</td>
 															<?php $montot = $wake['Wake']['amount'] + $wake['Wake']['salary_date'];?>
 															<td><?php echo h($montot);?>&nbsp;</td>
 
 															<td class="actions">
 																<?php echo $this->Html->link(__(''), array('action' => 'view', $wake['Wake']['id']), array('class' => 'glyphicon glyphicon-search')); ?>
+																<?php echo $this->Html->link(__(''), array('action' => 'view', $wake['Wake']['id'], 'ext' => 'pdf' ), array('class' => 'glyphicon glyphicon-print')); ?>
 																<?php echo $this->Html->link(__(''), array('action' => 'edit', $wake['Wake']['id']), array('class' => 'glyphicon glyphicon-edit')); ?>
 																<!-- <?php echo $this->Form->postLink('<i class="fa fa-trash-o fa-fw"></i> ' . __(''),  array('action' => 'delete', $wake['Wake']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $wake['Wake']['id']))); ?> -->
 																<?php echo $this->Form->postLink('<i class="fa fa-trash-o fa-fw"></i> ' . __(''), array('action' => 'delete', $wake['Wake']['id']), array('escape' => false), __('Seguro quieres eliminar al empleado %s?', $wake['Wake']['id'])); ?>
@@ -87,7 +88,7 @@
 <div class="btn-group btn-group-justified">
 
 				<?php echo $this->Html->link(__('Registrar Pago'), array('action' => 'add'), array('class' => 'btn btn-info')); ?>
-				<?php echo $this->Html->link(__('Registrar Bonos'), array('controller' => 'DhExtras', 'action' => 'add'), array('class' => 'btn btn-danger')); ?>
+				<?php echo $this->Html->link(__('Exportar Lista Salarios'), array('action' => 'lista_pdf' , $wake['Wake']['id'], 'ext' => 'pdf' ), array('class' => 'btn btn-danger')); ?>
 				<?php echo $this->Html->link(__('Lista de Salarios'), array('action' => 'index'), array('class' => 'btn btn-primary')); ?>
 
 </div>

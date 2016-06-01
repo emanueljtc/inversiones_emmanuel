@@ -1,80 +1,4 @@
-<style>
-h3 {
 
-	font-size: 30px;
-	font-family:Lucida Sans Unicode;
-	text-decoration: none;
-}
-p {
-	font-size: 20px;
-	font-weight: bold;
-	text-decoration: none;
-	text-align : justify;
-
-}
-a.nounderline:link
-{
- text-decoration:none;
-}
-table, thead,th, td {
-		font-size: 18px;
-
-}
-th{
-    padding: 5px;
-    text-align: left;
-		color: black;
-    background-color: #16c8e6;
-		text-decoration: none;
-		border: #ddd 1px solid;
-
-
-}
-td {
-    padding: 5px;
-    text-align: left;
-		border: #ddd 1px solid;
-
-}
-
-table#cabezera {
-    width: 80%;
-		text-align: center;
-		border-collapse: separate;
-		text-decoration: none;
-
-}
-th.cabezera{
-	padding: 5px;
-	ext-align: left;
-	background-color: #ffffff;
-	border: white 1px solid;
-}
-tr.cabezera {
-    padding: 5px;
-		text-align: left;
-		border: white 1px solid;
-}
-table#datos {
-    width: 100%;
-		text-align: center;
-		border-collapse: collapse;
-		border: 1px solid #ddd;
-		text-decoration: none;
-}
-
-membrete{
-	font-size: 25px;
-	font-weight: bold;
-	text-decoration: none;
-}
-.fecha{
-	font-size: 20px;
-	font-weight: bold;
-	text-decoration: none;
-	text-align: right;
-}
-</style>
 <div class="fecha">
 <?php echo "" . date("d") . "/" . date("m") . "/" . date("Y"); ?>
 </div >
@@ -84,7 +8,8 @@ membrete{
 		<tr class="cabezera">
 			<th class="cabezera">
 				<div class="imagen">
-				<img src="/var/www/html/inversiones_emmanuel/app/webroot/img/foto2.jpg" width="300px" height="200px" alt="Texto Alternativo"> <!-- INSERTANDO LOGO-->
+					<img src="/var/www/html/inversiones_emmanuel/app/webroot/img/foto2.jpg" width="210px" height="150px" alt="Inversiones Emmanuel"> <!-- INSERTANDO LOGO-->
+ 				<!-- INSERTANDO LOGO-->
 				</div>
 			</th>
 			<th class="cabezera">
