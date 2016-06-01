@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +5,9 @@
 	<title>
 		<?php echo $this->fetch('title'); ?>
 	</title>
-	
+	<?php
+		echo $this->Html->css('pdf');
+	?>
 </head>
 <body>
 	<div id="container">
