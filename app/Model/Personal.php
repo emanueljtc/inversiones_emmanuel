@@ -65,6 +65,14 @@ public $virtualFields = array(
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
+      'isUnique' => array(
+				'rule' => array('isUnique'),
+				'message' => 'Esta Cedula ya Existe',
+				//'allowEmpty' => false,
+				'required' => true,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
 		),
 		'name' => array(
 			'notBlank' => array(
@@ -79,7 +87,7 @@ public $virtualFields = array(
 		'last_name' => array(
 			'notBlank' => array(
 				'rule' => array('notBlank'),
-				'message' => 'Campo Vacio, Ingrese Apellido',
+				'message' => 'Campo Vacio, Ingrese Apellidos',
 				//'allowEmpty' => false,
 				'required' => true,
 				//'last' => false, // Stop validation after this rule
@@ -127,9 +135,9 @@ public $virtualFields = array(
 		'cell_phone' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
-				'message' => 'Campo Vacio, Ingrese Numero Movil',
-				//'allowEmpty' => false,
-				'required' => false,
+				//'message' => 'Solo Numeros',
+				'allowEmpty' => true,
+				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
@@ -137,9 +145,9 @@ public $virtualFields = array(
 		'phone' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
-				'message' => 'Campo Vacio, Ingrese Numero Local',
-				//'allowEmpty' => false,
-				'required' => true,
+				//'message' => 'Campo Vacio, Ingrese Numero Local',
+				'allowEmpty' => true,
+				//'required' => true,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
@@ -147,9 +155,9 @@ public $virtualFields = array(
 		'email' => array(
 			'email' => array(
 				'rule' => array('email'),
-				'message' => 'Campo Vacio, Ingrese Email',
-				//'allowEmpty' => false,
-				'required' => true,
+				//'message' => 'Campo Vacio, Ingrese Email',
+				'allowEmpty' => true,
+				//'required' => true,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
