@@ -50,6 +50,17 @@ table#datos {
 		border: 1px solid #ddd;
 		text-decoration: none;
 }
+
+.bloque1{
+	text-align:center;
+	font-size:21px;
+}
+
+
+.derecha{
+	float:right;
+}
+
 </style>
 
 
@@ -58,8 +69,8 @@ table#datos {
 					<div class="imagen">
 					<img src="/var/www/html/inversiones_emmanuel/app/webroot/img/foto2.jpg" width="210px" height="150px" alt="Inversiones Emmanuel"> <!-- INSERTANDO LOGO-->
 					</div>
-					<h3>CONSTANCIA PAGO DE SALARIO</h3>
-					<h2>Factura Nº: 000<?php echo h($wake['Wake']['id']); ?> del <?php echo h($wake['Wake']['start']); ?> al <?php echo h($wake['Wake']['end']); ?></h2>
+					<h3>RECIBO DE PAGO</h3>
+					<h2><span class="izquierda">Factura Nº: 000<?php echo h($wake['Wake']['id']); ?></span> <span class="derecha"><?php echo h($wake['Wake']['start']); ?> al <?php echo h($wake['Wake']['end']); ?></span></h2>
 				</div>
 <div class="bloque1">
 
@@ -67,11 +78,11 @@ table#datos {
 <br>
 <strong>Fecha de Pago : <?php echo h($wake['Wake']['payment_day']); ?> </strong>
 <br>
-<strong>Empleado : <?php echo $this->Html->link($wake['Personal']['full_name'], array('controller' => 'personals', 'action' => 'view', $wake['Personal']['id'])); ?> </strong>
+<strong>Empleado : <?php echo h($wake['Personal']['full_name']); ?></strong>
 <br>
-<strong>Cedula : <?php echo $this->Html->link($wake['Personal']['dni'], array('controller' => 'positions', 'action' => 'view', $wake['Position']['id'])); ?></strong>
+<strong>Cedula : <?php echo h($wake['Personal']['dni']); ?></strong>
 <br>
-<strong>Cargo : <?php echo $this->Html->link($wake['Position']['position'], array('controller' => 'positions', 'action' => 'view', $wake['Position']['id'])); ?> </strong>
+<strong>Cargo : <?php echo h($wake['Position']['position']); ?></strong>
 <br>
 <strong>Salario Diario : <?php echo h($wake['Position']['daily_salary']); ?>Bs.</strong>
 <br>

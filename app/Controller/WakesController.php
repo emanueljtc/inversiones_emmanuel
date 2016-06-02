@@ -35,9 +35,12 @@ class WakesController extends AppController {
 	$this->Paginator->settings = $this->paginate = array('limit' => 6);
 	 $this->set('wake', $this->paginate('Wake'));
  }
+	
 	public function index() {
 		$this->Wake->recursive = 0;
-		$this->set('wakes', $this->Paginator->paginate());
+
+		$this->Paginator->settings = $this->paginate;
+			$this->set('wakes', $this->paginate());
 	}
 
 /**

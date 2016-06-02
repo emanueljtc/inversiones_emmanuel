@@ -19,7 +19,7 @@ class PositionsController extends AppController {
  public $components = array('Paginator', 'Session','RequestHandler');
  public $paginate = array (
 		'limit' => 5,
-		'order' => array('Personal.name' => 'asc')
+		'order' => array('Position.position' => 'asc')
 		);
 /**
  * index method
@@ -35,11 +35,13 @@ class PositionsController extends AppController {
 	 $this->Paginator->settings = $this->paginate = array('limit' => 6);
 		$this->set('position', $this->paginate('Position'));
  }
+
 	public function index() {
 		$this->Position->recursive = 0;
-		$this->set('positions', $this->Paginator->paginate());
-	}
 
+		$this->Paginator->settings = $this->paginate;
+			$this->set('positions', $this->paginate());
+	}
 /**
  * view method
  *
