@@ -68,6 +68,7 @@ Cache::config('default', array('engine' => 'File'));
   CakePlugin::load('CakePdf', array('bootstrap'=>true, 'routes' =>true));
 
     Configure::write('CakePdf', array(
+        //'binary' => 'C:\Program Files\wkhtmltopdf\bin',
         'engine' => 'CakePdf.WkHtmlToPdf',
         'options' => array(
             'print-media-type' => true,
