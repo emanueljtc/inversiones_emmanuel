@@ -62,64 +62,15 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 										<span class="icon-bar"></span>
 								</button>
 								<div id="logo" class="col-xs-12 col-sm-2">
-									<a href="index.html">S.R.C.P</a>
+									<?php echo $this->Html->link(__('S.R.C.P'), array('controller' => 'pages', 'action' => 'home')); ?>
+									<!--<a href="index.html">S.R.C.P</a>-->
 							 </div>
 						</div>
 						<!-- Top Menu Items -->
 						<ul class="nav navbar-right top-nav">
-								<li class="dropdown">
-										<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
-										<ul class="dropdown-menu message-dropdown">
-												<li class="message-preview">
-														<a href="#">
-																<div class="media">
-																		<span class="pull-left">
-																				<img class="media-object" src="http://placehold.it/50x50" alt="">
-																		</span>
-																		<div class="media-body">
-																				<h5 class="media-heading"><strong>John Smith</strong>
-																				</h5>
-																				<p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-																				<p>Lorem ipsum dolor sit amet, consectetur...</p>
-																		</div>
-																</div>
-														</a>
-												</li>
-												<li class="message-preview">
-														<a href="#">
-																<div class="media">
-																		<span class="pull-left">
-																				<img class="media-object" src="http://placehold.it/50x50" alt="">
-																		</span>
-																		<div class="media-body">
-																				<h5 class="media-heading"><strong>John Smith</strong>
-																				</h5>
-																				<p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-																				<p>Lorem ipsum dolor sit amet, consectetur...</p>
-																		</div>
-																</div>
-														</a>
-												</li>
-												<li class="message-preview">
-														<a href="#">
-																<div class="media">
-																		<span class="pull-left">
-																				<img class="media-object" src="http://placehold.it/50x50" alt="">
-																		</span>
-																		<div class="media-body">
-																				<h5 class="media-heading"><strong>John Smith</strong>
-																				</h5>
-																				<p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-																				<p>Lorem ipsum dolor sit amet, consectetur...</p>
-																		</div>
-																</div>
-														</a>
-												</li>
-												<li class="message-footer">
-														<a href="#">Read All New Messages</a>
-												</li>
-										</ul>
-								</li>
+
+
+
 								<li class="dropdown">
 										<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
 										<ul class="dropdown-menu alert-dropdown">
@@ -177,10 +128,10 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 										<li>
 											<a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="glyphicon glyphicon-user"></i> Personal <i class="glyphicon glyphicon-menu-down"></i></a>
 											<ul id="demo" class="collapse">
-													<li>
+													<li class="menu">
 															<?php echo $this->Html->link(__(' Personal Registrado'), array('controller' => 'personals', 'action' => 'index'), array('class'=>'glyphicon glyphicon-list')); ?>
 													</li>
-													<li>
+													<li class="menu">
 														<?php echo $this->Html->link(__(' Nuevo Empleado'), array('controller' => 'personals', 'action' => 'add'), array('class'=>'glyphicon glyphicon-plus')); ?>
 												</li>
 
@@ -190,10 +141,10 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 										<li>
 											<a href="javascript:;" data-toggle="collapse" data-target="#demo2"><i class="glyphicon glyphicon-briefcase"></i> Cargo <i class="glyphicon glyphicon-menu-down"></i></a>
 											<ul id="demo2" class="collapse">
-													<li>
+													<li class="menu">
 															<?php echo $this->Html->link(__(' Listado de Cargos'), array('controller' => 'positions', 'action' => 'index'), array('class'=>'glyphicon glyphicon-list')); ?>
 													</li>
-													<li>
+													<li class="menu">
 														<?php echo $this->Html->link(__(' Nuevo Cargo'), array('controller' => 'positions', 'action' => 'add'), array('class'=>'glyphicon glyphicon-plus')); ?>
 												</li>
 											</ul>
@@ -202,10 +153,10 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 										<li>
 											<a href="javascript:;" data-toggle="collapse" data-target="#demo3"><i class="glyphicon glyphicon-usd"></i> Salarios <i class="glyphicon glyphicon-menu-down"></i></a>
 											<ul id="demo3" class="collapse">
-													<li>
+													<li class="menu">
 															<?php echo $this->Html->link(__(' Listado de Salarios'), array('controller' => 'wakes', 'action' => 'index'), array('class'=>'glyphicon glyphicon-list')); ?>
 													</li>
-													<li>
+													<li class="menu">
 														<?php echo $this->Html->link(__(' Nuevo Pago'), array('controller' => 'wakes', 'action' => 'add'), array('class'=>'glyphicon glyphicon-plus')); ?>
 												</li>
 											</ul>
@@ -214,10 +165,10 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 										<li>
 											<a href="javascript:;" data-toggle="collapse" data-target="#demo4"><i class="glyphicon glyphicon-lock"></i> Usuarios <i class="glyphicon glyphicon-menu-down"></i></a>
 											<ul id="demo4" class="collapse">
-													<li>
+													<li class="menu">
 															<?php echo $this->Html->link(__(' Listado de Usuarios'), array('controller' => 'users', 'action' => 'index'), array('class'=>'glyphicon glyphicon-list')); ?>
 													</li>
-													<li>
+													<li class="menu">
 														<?php echo $this->Html->link(__(' Nuevo Usuario'), array('controller' => 'users', 'action' => 'add'), array('class'=>'glyphicon glyphicon-plus')); ?>
 												</li>
 											</ul>
@@ -258,7 +209,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
 														<?php echo $this->Session->flash(); ?> <!--ALERTAS DE CAKE-->
 
-													
+
 										</div>
 								</div>
 								<!-- /.row -->
