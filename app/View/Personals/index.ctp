@@ -8,16 +8,17 @@
 						<!-- Page Heading -->
 						<div class="row">
 								<div class="col-lg-12">
-										<h1 class="page-header">
-												<?php echo __('Lista del Personal'); ?>
-										</h1>
+									<marquee loop="1" SCROLLAMOUNT="25" behavior = "slide" direction="left">
+												<Titulo>
+														<h3>Lista de Empleados</h3><hr>
+												</Titulo>
+										</marquee>
 										<ol class="breadcrumb">
 												<li>
 														<i class="fa fa-dashboard"></i>  <a href="index.html">Inicio</a>
 												</li>
 												<li class="active">
-														<i class="fa fa-table"></i> Lista de Personas
-												</li>
+														<i class="fa fa-table"></i> Lista de Empleados </li>
 										</ol>
 								</div>
 						</div>
