@@ -8,16 +8,17 @@
 						<!-- Page Heading -->
 						<div class="row">
 								<div class="col-lg-12">
-										<h1 class="page-header">
-												<?php echo __('Lista de Cargos'); ?>
-										</h1>
+									<marquee loop="1" SCROLLAMOUNT="25" behavior = "slide" direction="left">
+												<Titulo>
+														<h3>Lista de Cargos</h3><hr>
+												</Titulo>
+										</marquee>
 										<ol class="breadcrumb">
 												<li>
 														<i class="fa fa-dashboard"></i>  <a href="index.html">Inicio</a>
 												</li>
 												<li class="active">
-														<i class="fa fa-table"></i> Lista de Cargos
-												</li>
+														<i class="fa fa-table"></i> Lista de Cargos</li>
 										</ol>
 								</div>
 						</div>
