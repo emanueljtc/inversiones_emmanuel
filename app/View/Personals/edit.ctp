@@ -2,24 +2,24 @@
 function calcularEdad()
 {
     var fecha=document.getElementById("f_date2").value;
-  
+
         // Si la fecha es correcta, calculamos la edad
         var values=fecha.split("-");
         var dia = values[0];
         var mes = values[1];
         var ano = values[2];
-  
-  
+
+
         // cogemos los valores actuales
         var fecha_hoy = new Date();
         var ahora_ano = fecha_hoy.getYear();
         var ahora_mes = fecha_hoy.getMonth();
         var ahora_dia = fecha_hoy.getDate();
-        
+
         var otra_fecha = new Date();
         var anoa = otra_fecha.getFullYear()
-        
-     if (ano < anoa){   
+
+     if (ano < anoa){
         // realizamos el calculo
         var edad = (ahora_ano + 1900) - ano;
         if ( ahora_mes < (mes - 1))
@@ -37,10 +37,10 @@ function calcularEdad()
     if(edad == 1){
         document.getElementById("edad").value=edad;
     }else{
-    document.getElementById("edad").value=edad;  
+    document.getElementById("edad").value=edad;
       }
   }else if(ano >= anoa){
-    
+
     document.getElementById("edad").value="Edad Incorrecta";
 
     }
@@ -63,14 +63,14 @@ function calcularEdad()
 									echo $this->Form->input('id', array('class'=>'form-control'));
 									?>
                   <label class="control-label col-xs-3" >Fecha de Ingreso:</label>
-  
-          
+
+
         <div class="col-xs-2">
             <?php echo $this->Form->input('date_reg', array('label'=>'','placeholder' => '','class'=>'form-control','id'=>'f_date1','readonly'=>'readonly')); ?>
             <button id="fingreso"><span class="input-group-addon glyphicon glyphicon-calendar"></span></button>
         </div>
         <div class="control-label col-xs-10">
-            
+
         </div>
 								<label class="control-label col-xs-3" >Cargo:</label>
 								<div class="col-xs-7">
@@ -91,21 +91,21 @@ function calcularEdad()
 						 'label'=>'','placeholder' => 'Ingrese Nombre','class'=>'form-control','onkeypress'=>'return IsNombre(event);','maxlength'=>'60'
 							 )); ?>
 					 </div>
-					 <label class="control-label col-xs-3" >Apellido:</label>
+					 <label class="control-label col-xs-3" >Apellidos:</label>
 					 <div class="col-xs-7">
 						 <?php echo $this->Form->input('last_name', array(
-						 'label'=>'','placeholder' => 'Ingrese Nombre','class'=>'form-control','onkeypress'=>'return IsNombre(event);','maxlength'=>'60'
+						 'label'=>'','placeholder' => 'Ingrese Apellidos','class'=>'form-control','onkeypress'=>'return IsNombre(event);','maxlength'=>'60'
 							 )); ?>
 					 </div>
 					 <label class="control-label col-xs-3" >Fecha de Nacimiento:</label>
-  
-          
+
+
         <div class="col-xs-2">
             <?php echo $this->Form->input('born_date', array('label'=>'','placeholder' => '','class'=>'form-control','id'=>'f_date2','readonly'=>'readonly')); ?>
             <button id="fnac"><span class="input-group-addon glyphicon glyphicon-calendar"></span></button>
         </div>
         <div class="control-label col-xs-10">
-            
+
         </div>
 						 <label class="control-label col-xs-3" >Sexo:</label>
 					 <div class="col-xs-7">
