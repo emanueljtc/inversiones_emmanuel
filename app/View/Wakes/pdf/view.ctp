@@ -59,10 +59,44 @@ table#datos {
 					<img src="/var/www/html/inversiones_emmanuel/app/webroot/img/foto2.jpg" width="210px" height="150px" alt="Inversiones Emmanuel"> <!-- INSERTANDO LOGO-->
 					</div>
 					<h3>CONSTANCIA PAGO DE SALARIO</h3>
-					<h2>Factura: 000<?php echo h($wake['Wake']['id']); ?> del <?php echo h($wake['Wake']['start']); ?> al <?php echo h($wake['Wake']['end']); ?></h2>
+					<h2>Factura Nº: 000<?php echo h($wake['Wake']['id']); ?> del <?php echo h($wake['Wake']['start']); ?> al <?php echo h($wake['Wake']['end']); ?></h2>
 				</div>
 <div class="bloque1">
-	<strong>DATOS DE FACTURA:
+
+<strong>Factura Nº : 000<?php echo h($wake['Wake']['id']); ?> </strong>
+<br>
+<strong>Fecha de Pago : <?php echo h($wake['Wake']['payment_day']); ?> </strong>
+<br>
+<strong>Empleado : <?php echo $this->Html->link($wake['Personal']['full_name'], array('controller' => 'personals', 'action' => 'view', $wake['Personal']['id'])); ?> </strong>
+<br>
+<strong>Cedula : <?php echo $this->Html->link($wake['Personal']['dni'], array('controller' => 'positions', 'action' => 'view', $wake['Position']['id'])); ?></strong>
+<br>
+<strong>Cargo : <?php echo $this->Html->link($wake['Position']['position'], array('controller' => 'positions', 'action' => 'view', $wake['Position']['id'])); ?> </strong>
+<br>
+<strong>Salario Diario : <?php echo h($wake['Position']['daily_salary']); ?>Bs.</strong>
+<br>
+<strong>Tipo de Pago : <?php echo h($wake['Wake']['payment_type']); ?></strong>
+<br>
+<h4>Pago por Horas Extras y Dias Feriados: </h4>
+<strong>Horas Extras : <?php echo h($wake['Wake']['extra_hours']); ?>Horas</strong>
+<br>
+<strong>Dias Feriados : <?php echo h($wake['Wake']['holiday']); ?>Dias</strong>
+<br>
+<strong>Pago: <?php echo h($wake['Wake']['amount']); ?>Bs.</strong>
+<br>
+<h4>Pago por Rango de Tiempo: </h4>
+<strong>Fecha Inicio : <?php echo h($wake['Wake']['start']); ?></strong>
+<br>
+<strong>Fecha Fin : <?php echo h($wake['Wake']['end']); ?></strong>
+<br>
+<strong>Pago: <?php echo h($wake['Wake']['salary_date']); ?>Bs.</strong>
+<br>
+<h4>Monto Total: </h4>
+<?php $montototal = $wake['Wake']['amount'] + $wake['Wake']['salary_date'];?>
+<strong> <?php echo h($montototal); ?>Bs.</strong>
+<br>
+<br>
+	<!-- <strong>DATOS DE FACTURA:
 
 	</strong>
 	<br><br><br><br>
@@ -88,7 +122,7 @@ table#datos {
 								<?php echo $this->Html->link($wake['Personal']['dni'], array('controller' => 'personals', 'action' => 'index', $wake['Position']['id'])); ?>
 						 </td>
 						 <td>
-							<?php echo $this->Html->link($wake['Wake']['position_id'], array('controller' => 'positions', 'action' => 'view', $wake['Position']['position'])); ?>
+							<?php echo $this->Html->link($wake['Position']['position'], array('controller' => 'positions', 'action' => 'view', $wake['Position']['id'])); ?>
 						 </td>
 						 <td>
 								<?php echo h($wake['Wake']['payment_day']); ?>
@@ -115,7 +149,7 @@ table#datos {
 									<strong>________________________</strong>
 									<br><br>
 									         <strong>FIRMA</strong>
-									<center>
+									<center> -->
 
 </div>
 
