@@ -8,27 +8,27 @@
 <?php echo $this->Html->script('jquery',TRUE); ?>
 <script>
    $(document).ready(function(){
- 
+
  $('#personal').change(function(){
   var selected = $(this).val();
 
   //alert('que locura');
-  
+
   $.ajax({
    type: "POST",
    url: 'getCargoByPersonal',
    data: "idPersonal="+selected,
    dataType: 'json',
    success: function(data){
-   
 
-   
+
+
    $.each(data, function(i,items){
 
       var idp = items.Position.idposition;
       var cargo = items.Position.cargo;
       //$('#cargo option:selected').text(cargo);
-      $('#cargo').html(''); 
+      $('#cargo').html('');
       $("<option value='"+idp+"'>"+cargo+"</option>").appendTo("#cargo");
 
       var salario = items.Position.salario;
@@ -39,7 +39,7 @@
       //var horast = items.Position.horast;
       //$('#horat').val(horast);
 
-    });    
+    });
 
    //var cadena = JSON.stringify(data);
    //var vector = cadena.split('Personal');
@@ -62,8 +62,8 @@
 <div class="panel panel-primary">
 		<div class="panel-heading">
 			<center>
-				<h4>Nuevo Pago de Personal</h4>
-    
+				<h4>Registro de Pago</h4>
+
 			</center>
       <style>
             .pagof{
@@ -83,7 +83,7 @@
 							 <div class="col-xs-7">
 								 <?php echo $this->Form->input('personal_id', array('label'=>'','placeholder' => 'Ingrese posición','class'=>'form-control','id'=>'personal')); ?>
                      </div>
-                     
+
 							<label class="control-label col-xs-3" >Dias Feriados:</label>
  					<div class="col-xs-7">
  						<?php echo $this->Form->input('holiday', array(
@@ -108,8 +108,8 @@
          <input type="hidden" id="vhora">
  					<label class="control-label col-xs-3" >Monto:</label>
  					<div class="col-xs-7">
- 						<?php echo $this->Form->input('amount', array('label'=>'','placeholder' => 'Ingrese Monto','class'=>'form-control','id'=>'monto','readonly'=>'readonly')); ?>
- 					</div>  
+ 						<?php echo $this->Form->input('amount', array('label'=>'','placeholder' => 'Ingrese Monto','class'=>'form-control','id'=>'monto','readonly'=>'readonly','value'=>'0')); ?>
+ 					</div>
  					<label class="control-label col-xs-3" >Tipo de Pago:</label>
  					<div class="col-xs-7">
  						<?php
@@ -119,15 +119,15 @@
 
 
  					<label class="control-label col-xs-3" >Inicio:</label>
- 	
-          
+
+
         <div class="col-xs-2">
             <?php echo $this->Form->input('start', array('label'=>'','placeholder' => '','class'=>'form-control','id'=>'f_date1','readonly'=>'readonly')); ?>
             <button id="inicio"><span class="input-group-addon glyphicon glyphicon-calendar"></span></button>
         </div>
 
 
- 					
+
  					<label class="control-label col-xs-3" >Fin:</label>
  					<div class="col-xs-2">
             <?php echo $this->Form->input('end', array('label'=>'','placeholder' => '','class'=>'form-control','id'=>'f_date2','readonly'=>'readonly')); ?>
@@ -137,7 +137,7 @@
  			    <label class="control-label col-xs-3" >Salario Resultante:</label>
           <div class="col-xs-7">
             <?php echo $this->Form->input('salary_date', array('label'=>'','placeholder' => '','class'=>'form-control fechas','id'=>'salariof','readonly'=>'readonly')); ?>
-          </div>  
+          </div>
 
  					<br>
  					</div>
@@ -162,9 +162,9 @@ $(document).ready(function(){
         //Calculo de Dias Feriados
          var valor = 1.5;
          var diasf = $("#diasf").val().substring(0,10);
-         var salariod = $("#salariod").val(); 
+         var salariod = $("#salariod").val();
          var rdiasf = ((parseFloat(salariod) * parseFloat(valor)) * parseFloat(diasf));
-        
+
         //Calculo de Horas Extras
         var valorhora = $("#vhora").val();
         var horase = $("#horase").val();
@@ -173,27 +173,27 @@ $(document).ready(function(){
         var monto = parseFloat(rhorase)+parseFloat(rdiasf);
         $("#monto").val(monto);
 
-        
+
 
     });
-    
+
 });
 
 
 $('#salariof').hover(function(){
-        
+
         var inicio = $("#f_date1").val();
         var fin =  $("#f_date2").val();
-        var salariodia = $("#salariod").val(); 
-        var aFecha1 = inicio.split('-'); 
-        var aFecha2 = fin.split('-'); 
-        var fFecha1 = Date.UTC(aFecha1[2],aFecha1[1]-1,aFecha1[0]); 
-        var fFecha2 = Date.UTC(aFecha2[2],aFecha2[1]-1,aFecha2[0]); 
+        var salariodia = $("#salariod").val();
+        var aFecha1 = inicio.split('-');
+        var aFecha2 = fin.split('-');
+        var fFecha1 = Date.UTC(aFecha1[2],aFecha1[1]-1,aFecha1[0]);
+        var fFecha2 = Date.UTC(aFecha2[2],aFecha2[1]-1,aFecha2[0]);
         var dif = fFecha2 - fFecha1;
-        var dias = Math.floor(dif / (1000 * 60 * 60 * 24)); 
+        var dias = Math.floor(dif / (1000 * 60 * 60 * 24));
         var montot = parseFloat(dias) * parseFloat(salariodia);
 
-           $('.fechas').val(montot);     
+           $('.fechas').val(montot);
 });
 
     Calendar.setup({
@@ -214,4 +214,3 @@ $('#salariof').hover(function(){
 </script>
 </body>
 </html>
-
