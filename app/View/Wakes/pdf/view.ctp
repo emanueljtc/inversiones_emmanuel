@@ -53,7 +53,7 @@ table#datos {
 
 .bloque1{
 	text-align:center;
-	font-size:21px;
+	font-size:17px;
 }
 
 
