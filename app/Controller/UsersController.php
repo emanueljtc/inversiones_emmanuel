@@ -19,6 +19,7 @@ class UsersController extends AppController {
 			'limit' => 5,
 			'order' => array('Documento.id' => 'asc')
 			);
+	//public $layout = 'p_login';
 
 /**
  * index method
@@ -115,7 +116,7 @@ class UsersController extends AppController {
 		$groups = $this->User->Group->find('list');
 
 		$this->set(compact('groups'));
-		
+
 
 	}
 
