@@ -47,9 +47,10 @@
                 </div>
                 <br><br><br>
             <?php else: ?>
-              <script>
-                 alert("NO SE ENCONTRO EL EMPLEADO");
-              </script>
+              <p class="alert alert-warning">
+              	<button class="close" data-dismiss="alert">×</button>
+              	<strong><?php echo ('ALERTA: Empleado no Encontrado'); ?>. </strong>
+              </p>
 
 
           <?php endif; ?>
