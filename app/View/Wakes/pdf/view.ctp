@@ -43,6 +43,12 @@ h3{
 
 
 }
+h4{
+	background: #fff;
+	color: #000;
+	text-decoration: underline;
+
+}
 table#datos {
     width: 100%;
 		text-align: center;
@@ -54,6 +60,8 @@ table#datos {
 .bloque1{
 	text-align:center;
 	font-size:17px;
+	line-height: normal;
+
 }
 
 
@@ -73,9 +81,6 @@ table#datos {
 					<h2><span class="izquierda">Factura Nº: 000<?php echo h($wake['Wake']['id']); ?></span> <span class="derecha"><?php echo h($wake['Wake']['start']); ?> al <?php echo h($wake['Wake']['end']); ?></span></h2>
 				</div>
 <div class="bloque1">
-
-<strong>Factura Nº : 000<?php echo h($wake['Wake']['id']); ?> </strong>
-<br>
 <strong>Fecha de Pago : <?php echo h($wake['Wake']['payment_day']); ?> </strong>
 <br>
 <strong>Empleado : <?php echo h($wake['Personal']['full_name']); ?></strong>
@@ -84,7 +89,7 @@ table#datos {
 <br>
 <strong>Cargo : <?php echo h($wake['Position']['position']); ?></strong>
 <br>
-<strong>Salario Diario : <?php echo h($wake['Position']['daily_salary']); ?>Bs.</strong>
+<strong>Salario Diario : <?php echo h($wake['Position']['daily_salary']); ?> Bs.</strong>
 <br>
 <strong>Tipo de Pago : <?php echo h($wake['Wake']['payment_type']); ?></strong>
 <br>
@@ -93,20 +98,19 @@ table#datos {
 <br>
 <strong>Dias Feriados : <?php echo h($wake['Wake']['holiday']); ?>Dias</strong>
 <br>
-<strong>Pago: <?php echo h($wake['Wake']['amount']); ?>Bs.</strong>
+<strong>Pago: <?php echo h($wake['Wake']['amount']); ?> Bs.</strong>
 <br>
 <h4>Pago por Rango de Tiempo: </h4>
 <strong>Fecha Inicio : <?php echo h($wake['Wake']['start']); ?></strong>
 <br>
 <strong>Fecha Fin : <?php echo h($wake['Wake']['end']); ?></strong>
 <br>
-<strong>Pago: <?php echo h($wake['Wake']['salary_date']); ?>Bs.</strong>
+<strong>Pago: <?php echo h($wake['Wake']['salary_date']); ?> Bs.</strong>
 <br>
 <h4>Monto Total: </h4>
 <?php $montototal = $wake['Wake']['amount'] + $wake['Wake']['salary_date'];?>
-<strong> <?php echo h($montototal); ?>Bs.</strong>
-<br>
-<br>
+<strong> <?php echo h($montototal); ?> Bs.</strong>
+
 	<!-- <strong>DATOS DE FACTURA:
 
 	</strong>
