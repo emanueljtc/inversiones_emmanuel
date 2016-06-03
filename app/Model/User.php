@@ -1,5 +1,5 @@
 <?php
-App::uses('AppModel', 'Model');
+App::uses('AppModel', 'Model','AuthComponent', 'Controller/Component');
 /**
  * User Model
  *
@@ -7,11 +7,16 @@ App::uses('AppModel', 'Model');
  */
 class User extends AppModel {
 
-/**
- * Display field
- *
- * @var string
- */
+
+	    // other code.
+
+	    public function beforeSave($options = array()) {
+	        $this->data['User']['password'] = AuthComponent::password(
+	          $this->data['User']['password']
+	        );
+	        return true;
+	    }
+
 	public $displayField = 'id';
 
 /**
@@ -26,6 +31,14 @@ class User extends AppModel {
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+			'isUnique' => array(
+				'rule' => array('isUnique'),
+				'message' => 'Nombre de Usuario ya Existe',
+				//'allowEmpty' => false,
+				'required' => true,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
@@ -68,4 +81,20 @@ class User extends AppModel {
 			'order' => ''
 		)
 	);
+	public $actsAs = array('Acl' => array('type' => 'requester'));
+
+    public function parentNode() {
+        if (!$this->id && empty($this->data)) {
+            return null;
+        }
+        if (isset($this->data['User']['group_id'])) {
+            $groupId = $this->data['User']['group_id'];
+        } else {
+            $groupId = $this->field('group_id');
+        }
+        if (!$groupId) {
+            return null;
+        }
+        return array('Group' => array('id' => $groupId));
+    }
 }
