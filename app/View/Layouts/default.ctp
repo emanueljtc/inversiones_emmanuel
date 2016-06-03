@@ -182,6 +182,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 											<center>
 												<?php echo $this->Form->button('Buscar', array('div'=> false, 'class'=> 'btn btn-primary')) ?>
 											</center>
+										
 											<?php echo $this->Form->end(); ?>
 
 

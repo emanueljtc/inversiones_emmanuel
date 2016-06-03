@@ -16,10 +16,9 @@ $(document).ready(function(){
                success: function(data){
                    response($.map(data, function(el, index){
                        return {
-                           value: el.Platillo.nombre,
-                           nombre: el.Platillo.nombre,
-                           foto: el.Platillo.foto,
-                           foto_dir: el.Platillo.foto_dir
+                           value: el.Personal.dni,
+                           dni: el.Personal.dni,
+                           
                        };
                    }));
                }
