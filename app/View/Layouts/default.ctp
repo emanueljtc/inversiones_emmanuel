@@ -28,7 +28,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
         echo $this->Html->css(array('gold/gold.css'));
 				echo $this->Html->css(array('jquery-ui.min'));
 				echo $this->Html->css(array('http://fonts.googleapis.com/css?family=Righteous'));
-
+				echo $this->Html->css(array('style'));
 
        /* -------------------------------------------*/
 			 /* Llamado de los JS */
@@ -182,7 +182,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 											<center>
 												<?php echo $this->Form->button('Buscar', array('div'=> false, 'class'=> 'btn btn-primary')) ?>
 											</center>
-										
+
 											<?php echo $this->Form->end(); ?>
 
 
