@@ -50,7 +50,7 @@
 		<td class="actions">
 			<?php echo $this->Html->link(__(''), array('action' => 'view', $position['Position']['id']), array('class' => 'glyphicon glyphicon-search')); ?>
 			<?php echo $this->Html->link(__(''), array('action' => 'edit', $position['Position']['id']), array('class' => 'glyphicon glyphicon-edit')); ?>
-			<?php echo $this->Form->postLink('<i class="fa fa-trash-o fa-fw"></i> ' . __(''), array('action' => 'delete', $position['Position']['id']), array('escape' => false), __('Seguro quieres eliminar este Cargo %s?', $position['Position']['id'])); ?>
+			<?php echo $this->Form->postLink('<i class="fa fa-trash-o fa-fw"></i> ' . __(''), array('action' => 'delete', $position['Position']['id']), array('escape' => false), __('Seguro quieres eliminar este Cargo?', $position['Position']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
