@@ -86,7 +86,7 @@ Cache::config('default', array('engine' => 'File'));
        'download' => true,
 
     ));
-
+  //  CakePlugin::load('AclExtras');
 
 
 /**
