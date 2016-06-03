@@ -5,8 +5,6 @@ App::uses('AppController', 'Controller');
  *
  * @property User $User
  * @property PaginatorComponent $Paginator
- * @property FlashComponent $Flash
- * @property SessionComponent $Session
  */
 class UsersController extends AppController {
 
@@ -15,16 +13,45 @@ class UsersController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator', 'Flash', 'Session');
+	public $helpers = array('Html','Form','Time','Js');
+	public $components = array('Paginator', 'Session','RequestHandler');
+	public $paginate = array (
+			'limit' => 5,
+			'order' => array('Documento.id' => 'asc')
+			);
 
 /**
  * index method
  *
  * @return void
  */
+	 /*public function beforeFilter() {
+        parent::beforeFilter();
+        $this->Auth->allow('add','logout');
+    }*/
+    public function login() {
+
+    if ($this->request->is('post')) {
+	    	if ($this->Session->read('Auth.User')) {
+	        $this->Session->setFlash('Ya esta Logueado');
+	        return $this->redirect('/');
+	    }
+	        if ($this->Auth->login()) {
+	            return $this->redirect($this->Auth->redirectUrl());
+	        }
+	        $this->Session->setFlash(__('Nombre de Usuario o Clave Invalidas'));
+	    }
+	}
+
+	public function logout() {
+	    $this->Session->setFlash('Cerrada la Sesion');
+		$this->redirect($this->Auth->logout());
+	}
 	public function index() {
-		$this->User->recursive = 0;
-		$this->set('users', $this->Paginator->paginate());
+
+		$this->set('users',$this->User->find('all'));
+        	$this->Paginator->settings =$this->paginate;
+		    $this->set('users',$this->paginate());
 	}
 
 /**
@@ -36,7 +63,7 @@ class UsersController extends AppController {
  */
 	public function view($id = null) {
 		if (!$this->User->exists($id)) {
-			throw new NotFoundException(__('Invalid user'));
+			throw new NotFoundException(__('Usuario Invalido'));
 		}
 		$options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
 		$this->set('user', $this->User->find('first', $options));
@@ -51,13 +78,14 @@ class UsersController extends AppController {
 		if ($this->request->is('post')) {
 			$this->User->create();
 			if ($this->User->save($this->request->data)) {
-				$this->Flash->success(__('The user has been saved.'));
+				$this->Session->setFlash(__('Usuario Guardado.'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Flash->error(__('The user could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('El usuario no ha sido guardado. Intente de nuevo'));
 			}
 		}
 		$groups = $this->User->Group->find('list');
+
 		$this->set(compact('groups'));
 	}
 
@@ -70,21 +98,24 @@ class UsersController extends AppController {
  */
 	public function edit($id = null) {
 		if (!$this->User->exists($id)) {
-			throw new NotFoundException(__('Invalid user'));
+			throw new NotFoundException(__('Usuario Invalido'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->User->save($this->request->data)) {
-				$this->Flash->success(__('The user has been saved.'));
+				$this->Session->setFlash(__('Usuario Actualizado.'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Flash->error(__('The user could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('Usuario no Actualizado, Intente de nuevo'));
 			}
 		} else {
 			$options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
 			$this->request->data = $this->User->find('first', $options);
 		}
 		$groups = $this->User->Group->find('list');
+
 		$this->set(compact('groups'));
+		//$departamentos = $this->User->Departamento->find('list');
+
 	}
 
 /**
@@ -97,14 +128,56 @@ class UsersController extends AppController {
 	public function delete($id = null) {
 		$this->User->id = $id;
 		if (!$this->User->exists()) {
-			throw new NotFoundException(__('Invalid user'));
+			throw new NotFoundException(__('Usuario Invalido'));
 		}
 		$this->request->allowMethod('post', 'delete');
 		if ($this->User->delete()) {
-			$this->Flash->success(__('The user has been deleted.'));
+			$this->Session->setFlash(__('Usuario Borrado'));
 		} else {
-			$this->Flash->error(__('The user could not be deleted. Please, try again.'));
+			$this->Session->setFlash(__('Usuario no Borrado, Intente de nuevo'));
 		}
 		return $this->redirect(array('action' => 'index'));
 	}
+
+	public function beforeFilter() {
+    parent::beforeFilter();
+
+    // For CakePHP 2.0
+    //$this->Auth->allow('*');
+
+    // For CakePHP 2.1 and up
+
+    $this->Auth->allow('login','logout','initDB');
+}
+	public function initDB() {
+    $group = $this->User->Group;
+
+    // Acceso al grupo de administadores
+    $group->id = 1;
+    $this->Acl->allow($group, 'controllers');
+
+    // Acceso al Grupo de Secretari@s
+    $group->id = 2;
+    $this->Acl->deny($group, 'controllers');
+    $this->Acl->deny($group, 'controllers/Personals');
+    $this->Acl->allow($group, 'controllers/Wakes');
+
+
+
+    // Acceso a otros grupos
+    /*$group->id = 3;
+    $this->Acl->deny($group, 'controllers');
+    $this->Acl->allow($group, 'controllers/Posts/add');
+    $this->Acl->allow($group, 'controllers/Posts/edit');
+    $this->Acl->allow($group, 'controllers/Widgets/add');
+    $this->Acl->allow($group, 'controllers/Widgets/edit');
+   */
+    // allow basic users to log out
+    $this->Acl->allow($group, 'controllers/users/logout');
+
+    // we add an exit to avoid an ugly "missing views" error message
+    echo "todo listo";
+    exit;
+}
+
 }
