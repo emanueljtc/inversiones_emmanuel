@@ -78,10 +78,10 @@ class UsersController extends AppController {
 		if ($this->request->is('post')) {
 			$this->User->create();
 			if ($this->User->save($this->request->data)) {
-				$this->Session->setFlash(__('Usuario Guardado.'));
+				$this->Session->setFlash(__('Usuario Registrado con Exito.'), 'alert-box', array('class'=>'alert-success'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('El usuario no ha sido guardado. Intente de nuevo'));
+				$this->Session->setFlash(__('El Usuario no ha sido Registrado. Intente de nuevo'), 'alert-box', array('class'=>'alert-danger'));
 			}
 		}
 		$groups = $this->User->Group->find('list');
@@ -102,10 +102,11 @@ class UsersController extends AppController {
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->User->save($this->request->data)) {
-				$this->Session->setFlash(__('Usuario Actualizado.'));
+				$this->Session->setFlash(__('Usuario Actualizado con Exito.'), 'alert-box', array('class'=>'alert-success'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('Usuario no Actualizado, Intente de nuevo'));
+				$this->Session->setFlash(__('El Usuario no ha sido Actualizado. Intente de nuevo'), 'alert-box', array('class'=>'alert-danger'));
+
 			}
 		} else {
 			$options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
@@ -114,7 +115,7 @@ class UsersController extends AppController {
 		$groups = $this->User->Group->find('list');
 
 		$this->set(compact('groups'));
-		//$departamentos = $this->User->Departamento->find('list');
+		
 
 	}
 
@@ -132,9 +133,9 @@ class UsersController extends AppController {
 		}
 		$this->request->allowMethod('post', 'delete');
 		if ($this->User->delete()) {
-			$this->Session->setFlash(__('Usuario Borrado'));
+			$this->Session->setFlash(__('Usuario Eliminado con Exito.'), 'alert-box', array('class'=>'alert-success'));
 		} else {
-			$this->Session->setFlash(__('Usuario no Borrado, Intente de nuevo'));
+			$this->Session->setFlash(__('El Usuario no ha sido Eliminado. Intente de nuevo'), 'alert-box', array('class'=>'alert-danger'));
 		}
 		return $this->redirect(array('action' => 'index'));
 	}
