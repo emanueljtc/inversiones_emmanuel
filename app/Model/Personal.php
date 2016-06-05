@@ -19,6 +19,7 @@ public $virtualFields = array(
         'full_name' => 'CONCAT(name, " ", last_name)',
         'idcargo'   => 'Personal.position_id',
         'idpersonal'   => 'Personal.id',
+		'cedula'   => 'Personal.dni',
     );
 
 

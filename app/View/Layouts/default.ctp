@@ -19,7 +19,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		<?php
 	   /* Llamado de los CSS */
 
-       	echo $this->Html->css(array('bootstrap.min'));
+       	echo $this->Html->css(array('bootstrap.min.css'));
         echo $this->Html->css(array('sb-admin.css'));
         echo $this->Html->css(array('plugins/morris.css'));
         echo $this->Html->css(array('font-awesome.min.css'));
@@ -177,7 +177,9 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
 											<?php echo $this->Form->create('Personal', array('type' => 'GET','class' => 'nav navbar-rigth', 'url' => array('controller' => 'personals', 'action' => 'search'))); ?>
 											<div class="form-group">
-												<?php echo  $this->Form->input('search',array('label'=> false, 'div' => false, 'id' => 's', 'class' => 'form-control s', 'autocomplete' => 'off', 'placeholder' => 'Buscar Empleado...')); ?>
+												<?php echo  $this->Form->input('search',array('label'=> false, 'div' => false, 'id' => 's', 'class' => 'form-control s', 'placeholder' => 'Buscar Empleado...','list'=>'empleado','onkeypress'=>'return IsCedula(event);','maxlength'=>'10')); ?>
+												<!--<select id="listap"></select>-->
+												<datalist id="empleado"></datalist>
 											</div>
 											<center>
 												<?php echo $this->Form->button('Buscar', array('div'=> false, 'class'=> 'btn btn-primary')) ?>

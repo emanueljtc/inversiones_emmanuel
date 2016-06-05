@@ -142,6 +142,23 @@ class PersonalsController extends AppController {
 		}
 		return $this->redirect(array('action' => 'index'));
 	}
+
+public function getPalabraByPersonal() {
+ if ($this->request->is('ajax')) {
+  $cedula = $this->params['data']['dni'];
+
+$personal = $this->Personal->find('all',array(
+   'fields' => array('Personal.idpersonal','Personal.full_name','Personal.cedula'),
+   'conditions'=>array('Personal.cedula LIKE'=>'%'. $cedula. '%')));
+
+
+  $this->RequestHandler->respondAs('json');
+  $this->autoRender = false;
+   echo json_encode ( $personal );
+ }
+}
+	
+	
   public function searchjson()
   {
     $term = null;
