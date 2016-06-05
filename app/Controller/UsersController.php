@@ -19,7 +19,7 @@ class UsersController extends AppController {
 			'limit' => 5,
 			'order' => array('Documento.id' => 'asc')
 			);
-	public $layout = 'p_login';
+	//public $layout = 'p_login';
 
 /**
  * index method
