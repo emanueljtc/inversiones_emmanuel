@@ -14,7 +14,7 @@
                             <?php
                               echo $this->Form->input('username',array('label'=>'Usuario','class'=>'form-control'));
 
-                              echo $this->Form->input('password',array('label'=>'Password','class'=>'form-control'));
+                              echo $this->Form->input('password',array('label'=>'Contraseña','class'=>'form-control'));
                             ?>
                         </fieldset>
 
