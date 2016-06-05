@@ -77,7 +77,7 @@ Cache::config('default', array('engine' => 'File'));
             'dpi' => 96
         ),
         'margin' => array(
-            'bottom' => 15,
+            'bottom' => 12,
             'left' => 10,
             'right' => 10,
             'top' => 20
@@ -86,7 +86,7 @@ Cache::config('default', array('engine' => 'File'));
        'download' => true,
 
     ));
-    
+  //  CakePlugin::load('AclExtras');
 
 
 /**

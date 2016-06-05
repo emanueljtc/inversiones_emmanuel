@@ -62,7 +62,7 @@
 																<?php echo $this->Html->link(__(''), array('action' => 'view', $wake['Wake']['id'], 'ext' => 'pdf' ), array('class' => 'glyphicon glyphicon-print')); ?>
 																<?php echo $this->Html->link(__(''), array('action' => 'edit', $wake['Wake']['id']), array('class' => 'glyphicon glyphicon-edit')); ?>
 																<!-- <?php echo $this->Form->postLink('<i class="fa fa-trash-o fa-fw"></i> ' . __(''),  array('action' => 'delete', $wake['Wake']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $wake['Wake']['id']))); ?> -->
-																<?php echo $this->Form->postLink('<i class="fa fa-trash-o fa-fw"></i> ' . __(''), array('action' => 'delete', $wake['Wake']['id']), array('escape' => false), __('Seguro quieres eliminar al empleado %s?', $wake['Wake']['id'])); ?>
+																<?php echo $this->Form->postLink('<i class="fa fa-trash-o fa-fw"></i> ' . __(''), array('action' => 'delete', $wake['Wake']['id']), array('escape' => false), __('Seguro quieres eliminar la factura Nº 000%s?', $wake['Wake']['id'])); ?>
 															</td>
 														</tr>
 													<?php endforeach; ?>
