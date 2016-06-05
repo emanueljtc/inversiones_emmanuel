@@ -2,20 +2,29 @@
 @import "bourbon";
 
 body {
-  background: #0c70a4 !important;
+  background: -moz-radial-gradient(center, ellipse cover, rgba(24,118,205,1) 0%, rgba(20,92,173,1) 75%, rgba(20,92,173,1) 85%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(24,118,205,1)), color-stop(75%, rgba(20,92,173,1)), color-stop(85%, rgba(20,92,173,1)));
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(24,118,205,1) 0%, rgba(20,92,173,1) 75%, rgba(20,92,173,1) 85%);
+  background: -o-radial-gradient(center, ellipse cover, rgba(24,118,205,1) 0%, rgba(20,92,173,1) 75%, rgba(20,92,173,1) 85%);
+  background: -ms-radial-gradient(center, ellipse cover, rgba(24,118,205,1) 0%, rgba(20,92,173,1) 75%, rgba(20,92,173,1) 85%);
+  background: radial-gradient(ellipse at center, rgba(24,118,205,1) 0%, rgba(20,92,173,1) 75%, rgba(20,92,173,1) 85%);
+
 }
 
 .wrapper {
-  margin-top: 80px;
+  margin-top: 206px;
   margin-bottom: 80px;
 }
 
 .form-signin {
-  max-width: 380px;
-  padding: 15px 35px 45px;
+  max-width: 437px;
+  padding: 15px 27px 24px;
   margin: 0 auto;
   background-color: rgb(255, 255, 255);
-        -webkit-border-top-left-radius: 45px;
+      -webkit-box-shadow: 14px 5px 43px 3px rgba(0,0,0,0.83);
+      -moz-box-shadow: 14px 5px 43px 3px rgba(0,0,0,0.83);
+      box-shadow: 14px 5px 43px 3px rgba(0,0,0,0.83);
+      -webkit-border-top-left-radius: 45px;
       -webkit-border-top-right-radius: 12px;
       -webkit-border-bottom-right-radius: 73px;
       -webkit-border-bottom-left-radius: 12px;
@@ -27,13 +36,13 @@ body {
       border-top-right-radius: 12px;
       border-bottom-right-radius: 73px;
       border-bottom-left-radius: 12px;
-  .form-signin-heading,
-  .checkbox {
-    margin-bottom: 30px;
-  }
-  .checkbox {
+      .form-signin-heading,
+      .checkbox {
+        margin-bottom: 30px;
+      }
+      .checkbox {
     font-weight: normal;
-  }
+    }
   .form-control {
     position: relative;
     font-size: 16px;
@@ -53,4 +62,5 @@ body {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
   }
+
 }
