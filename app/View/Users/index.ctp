@@ -1,6 +1,6 @@
 <div>
 
-				
+
 					<div id="page-wrapper">
 
 									<div class="container-fluid">
@@ -33,7 +33,7 @@
 																					<tr>
 
 																							<th><?php echo $this->Paginator->sort('Usuario'); ?></th>
-																							<th><?php echo $this->Paginator->sort('Password'); ?></th>
+																							<!--<th><?php echo $this->Paginator->sort('Password'); ?></th>-->
 																							<th><?php echo $this->Paginator->sort('Grupo'); ?></th>
 																							<th><?php echo $this->Paginator->sort('Creado'); ?></th>
 																							<th class="actions"><?php echo __('Acciones'); ?></th>
@@ -46,7 +46,7 @@
 
 
 																				<td><?php echo h($user['User']['username']); ?>&nbsp;</td>
-																				<td><?php echo h($user['User']['password']); ?>&nbsp;</td>
+																				<!--<td><?php echo h($user['User']['password']); ?>&nbsp;</td>-->
 																				<td><?php echo $this->Html->link($user['Group']['name'], array('controller' => 'groups', 'action' => 'view', $user['Group']['id'])); ?>&nbsp;</td>
 																				<td><?php echo h($user['User']['created']); ?>&nbsp;</td>
 																				<td class="actions">
