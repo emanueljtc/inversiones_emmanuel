@@ -1,4 +1,4 @@
-
+<?php $this->layout = 'p_login'; ?>
  <div class="wrapper">
 
 
@@ -25,7 +25,7 @@
                     <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Recuerdame
                   </label>
               </div>
-              
+
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Acceder</button>
 
 
