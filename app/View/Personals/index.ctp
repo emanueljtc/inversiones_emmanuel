@@ -86,7 +86,7 @@
 
 				<?php echo $this->Html->link(__('Añadir Empleado'), array('action' => 'add'), array('class' => 'btn btn-info')); ?>
 				<?php echo $this->Html->link(__('Exportar Lista del Personal'), array('action' => 'lista_pdf' , $personal['Personal']['id'].'.pdf' ), array('class' => 'btn btn-danger')); ?>
-				<?php echo $this->Html->link(__('Registrar Pago'), array('controller' => 'documents', 'action' => 'add'), array('class' => 'btn btn-primary')); ?>
+				<?php echo $this->Html->link(__('Registrar Pago'), array('controller' => 'wakes', 'action' => 'add'), array('class' => 'btn btn-primary')); ?>
 
 </div>
 <!-- <div class="personals index">
