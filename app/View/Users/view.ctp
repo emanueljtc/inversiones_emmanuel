@@ -1,3 +1,48 @@
+<div class="panel panel-primary">
+				<div class="panel-heading">
+					<center>
+						<h4>Datos del Usuario</h4>
+
+					</center>
+				</div>
+			<div class="bloque">
+				<div class="row">
+					<div class="col col-sm-4">
+						<?php if($user['User']['group_id']== 1){
+								echo $this->Html->image('../img/administrador.gif');
+
+						}else if($user['User']['group_id']== 2){
+								echo $this->Html->image('../img/secretaria.gif');
+						} ?>
+					</div>
+					<div class="clol col-sm-5">
+							<br>
+
+							<strong>Nombre y Apellido : <?php echo h($user['User']['fullname']); ?> </strong>
+							<br>
+							<strong>Nombre de Usuario : <?php echo h($user['User']['username']); ?> </strong>
+							<br>
+							<strong>Tipo de Usuario : <?php echo $this->Html->link($user['Group']['name'], array('controller' => 'positions', 'action' => 'view', $user['Group']['id'])); ?></strong>
+							<br>
+							<strong>Creado : <?php echo h($user['User']['created']); ?> </strong>
+
+							<br><br>
+
+					</div>
+
+		  </div>
+
+
+		</div>
+
+</div>
+<div class="btn-group btn-group-justified">
+
+				<?php echo $this->Html->link(__('Editar Usuario'), array('action' => 'edit', $user['User']['id']), array('class' => 'btn btn-info')); ?>
+				<?php echo $this->Html->link(__('Lista de Usuarios'), array('action' => 'index'), array('class' => 'btn btn-danger')); ?>
+				<?php echo $this->Html->link(__('Nuevo UsuarioUser'), array('action' => 'add'), array('class' => 'btn btn-primary')); ?>
+
+</div>
 <!-- <div class="users view">
 <h2><?php echo __('User'); ?></h2>
 	<dl>
