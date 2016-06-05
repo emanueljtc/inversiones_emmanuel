@@ -42,7 +42,7 @@ class UsersController extends AppController {
 	        if ($this->Auth->login()) {
 	            return $this->redirect($this->Auth->redirectUrl());
 	        }
-	        $this->Session->setFlash(__('Nombre de Usuario o Clave Invalidas'), 'alert-box', array('class'=>'alert-warning'));
+	        $this->Session->setFlash(__('Usuario y/o Contraseña incorrectos!'), 'alert-box', array('class'=>'alert-warning'));
 
 	    }
 	}
@@ -152,9 +152,11 @@ class UsersController extends AppController {
 
     // For CakePHP 2.1 and up
 
-    $this->Auth->allow('login','logout','initDB');
+    $this->Auth->allow('login','logout','peligro');
 }
-	public function initDB() {
+	//PARA ACTUALIZAR LOS PERMISOS DEBO RECORRER DESDE EL NAVEGADOR
+	//ESTA FUNCION users/peligro
+	public function peligro() {
     $group = $this->User->Group;
 
     // Acceso al grupo de administadores
@@ -163,9 +165,13 @@ class UsersController extends AppController {
 
     // Acceso al Grupo de Secretari@s
     $group->id = 2;
+
     $this->Acl->deny($group, 'controllers');
-    $this->Acl->deny($group, 'controllers/Personals');
-    $this->Acl->allow($group, 'controllers/Wakes');
+		$this->Acl->deny($group, 'controllers/Personals/delete');
+		$this->Acl->deny($group, 'controllers/Wakes/delete');
+		$this->Acl->allow($group, 'controllers/Personals/index');
+		$this->Acl->allow($group, 'controllers/Wakes');
+
 
 
 
