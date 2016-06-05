@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html>
     <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,8 +8,10 @@
           <!--Llamado CSS-->
           <?php
           echo $this->Html->css(array('login.css'));
-           	echo $this->Html->css(array('bootstrap.min'));
-          ?>
+          echo $this->Html->css(array('bootstrap.min'));
+          echo $this->Html->script(array('bootstrap.min.js'));
+          echo $this->Html->script(array('jquery.js'));
+   			  ?>
           <title>->
           <?php echo $this->fetch('title'); ?>
           </title>
