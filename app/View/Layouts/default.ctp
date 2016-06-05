@@ -177,7 +177,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
 											<?php echo $this->Form->create('Personal', array('type' => 'GET','class' => 'nav navbar-rigth', 'url' => array('controller' => 'personals', 'action' => 'search'))); ?>
 											<div class="form-group">
-												<?php echo  $this->Form->input('search',array('label'=> false, 'div' => false, 'id' => 's', 'class' => 'form-control s', 'placeholder' => 'Buscar Empleado...','list'=>'empleado','onkeypress'=>'return IsCedula(event);','maxlength'=>'10')); ?>
+												<?php echo  $this->Form->input('search',array('label'=> false, 'div' => false, 'id' => 's', 'class' => 'form-control s', 'placeholder' => 'Buscar Empleado...','list'=>'empleado','onkeypress'=>'return IsCedula(event);','maxlength'=>'10','required')); ?>
 												<!--<select id="listap"></select>-->
 												<datalist id="empleado"></datalist>
 											</div>
