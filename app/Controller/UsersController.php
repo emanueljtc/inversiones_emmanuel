@@ -19,7 +19,7 @@ class UsersController extends AppController {
 			'limit' => 5,
 			'order' => array('Documento.id' => 'asc')
 			);
-	//public $layout = 'p_login';
+	public $layout = 'p_login';
 
 /**
  * index method
@@ -34,18 +34,21 @@ class UsersController extends AppController {
 
     if ($this->request->is('post')) {
 	    	if ($this->Session->read('Auth.User')) {
-	        $this->Session->setFlash('Ya esta Logueado');
+	        $this->Session->setFlash(__('Ya esta Logueado'), 'alert-box', array('class'=>'alert-success'));
+
+
 	        return $this->redirect('/');
 	    }
 	        if ($this->Auth->login()) {
 	            return $this->redirect($this->Auth->redirectUrl());
 	        }
-	        $this->Session->setFlash(__('Nombre de Usuario o Clave Invalidas'));
+	        $this->Session->setFlash(__('Nombre de Usuario o Clave Invalidas'), 'alert-box', array('class'=>'alert-warning'));
+
 	    }
 	}
 
 	public function logout() {
-	    $this->Session->setFlash('Cerrada la Sesion');
+	    $this->Session->setFlash(__('Cerrada la Sesion'), 'alert-box', array('class'=>'alert-success'));
 		$this->redirect($this->Auth->logout());
 	}
 	public function index() {
