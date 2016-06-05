@@ -112,7 +112,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 												</li>
 												<li class="divider"></li>
 												<li>
-														<a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+														<a href="http://localhost/inversiones_emmanuel/users/logout"><i class="fa fa-fw fa-power-off"></i> Salir</a>
 												</li>
 										</ul>
 								</li>
