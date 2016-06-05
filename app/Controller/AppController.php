@@ -56,7 +56,8 @@ class AppController extends Controller {
        'controller' => 'pages',
        'action' => 'home'
      );
-    $this->Auth->allow('display');
+     $this->set('current_user', $this->Auth->user());
+     $this->Auth->allow('display');
  }
 
 }
