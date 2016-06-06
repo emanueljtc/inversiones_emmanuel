@@ -19,7 +19,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		<?php
 	   /* Llamado de los CSS */
 
-       	echo $this->Html->css(array('bootstrap.min.css'));
+       	echo $this->Html->css(array('bootstrap.min'));
         echo $this->Html->css(array('sb-admin.css'));
         echo $this->Html->css(array('plugins/morris.css'));
         echo $this->Html->css(array('font-awesome.min.css'));
@@ -33,9 +33,8 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
        /* -------------------------------------------*/
 			 /* Llamado de los JS */
 
+       echo $this->Html->script(array('jquery.js'));
 			 echo $this->Html->script(array('bootstrap.min.js'));
-			 echo $this->Html->script(array('jquery.js'));
-			 echo $this->Html->script(array('jquery.min.js'));
 			 echo $this->Html->script(array('jscal2.js'));
 			 echo $this->Html->script(array('es.js'));
 			 echo $this->Html->script(array('jquery-ui.min.js'));
@@ -78,7 +77,18 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 												<li>
 														<a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
 												</li>
-												
+												<li>
+														<a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
+												</li>
+												<li>
+														<a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
+												</li>
+												<li>
+														<a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
+												</li>
+												<li>
+														<a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
+												</li>
 												<li class="divider"></li>
 												<li>
 														<a href="#">View All</a>
@@ -110,9 +120,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 								</li>
 						</ul>
 						<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-
 							<?php echo $this->element('menu'); ?>
-
 						<!-- /.navbar-collapse -->
 				</nav>
 
