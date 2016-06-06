@@ -4,7 +4,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<?php
 		echo $this->Html->script(array('jquery', 'highcharts','exporting'));
-				
+
 		 ?>
 
     <style type="text/css">
@@ -97,64 +97,65 @@
 
 
 	</head>
-  <script type="text/javascript">
-            $(function () {
+	<script type="text/javascript">
+						$(function () {
 
-                $('#container').highcharts({
-                    chart: {
-                        plotBackgroundColor: null,
-                        plotBorderWidth: 1,//null,
-                        plotShadow: false
-                    },
-                    title: {
-                        text: 'Personal Registrado'
-                    },
-                    tooltip: {
-                        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-                    },
-                    plotOptions: {
-                        pie: {
-                            allowPointSelect: true,
-                            cursor: 'pointer',
-                            dataLabels: {
-                                enabled: true,
-                                format: '<b>{point.name}</b>: {point.percentage:.1f} %',
-                                style: {
-                                    color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
-                                }
-                            }
-                        }
-                    },
-                    series: [{
-                        type: 'pie',
-                        name: 'Empleado',
-                        data: [
-                            //['Ricardo Perez',   12.0],
-                     <?php
-                        // Conectando, seleccionando la base de datos
-                        $link = mysql_connect('localhost', 'root', '')
-                            or die('No se pudo conectar: ' . mysql_error());
-                        //echo 'Connected successfully';
-                        mysql_select_db('arte_cristal') or die('No se pudo seleccionar la base de datos');
-                        // Realizar una consulta MySQL
-                        $query = 'SELECT * FROM personals';
-                        $result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
+								$('#container').highcharts({
+										chart: {
+												plotBackgroundColor: null,
+												plotBorderWidth: 1,//null,
+												plotShadow: false
+										},
+										title: {
+												text: 'Personal Registrado'
+										},
+										tooltip: {
+												pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+										},
+										plotOptions: {
+												pie: {
+														allowPointSelect: true,
+														cursor: 'pointer',
+														dataLabels: {
+																enabled: true,
+																format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+																style: {
+																		color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+																}
+														}
+												}
+										},
+										series: [{
+												type: 'pie',
+												name: 'Empleado',
+												data: [
+														//['Ricardo Perez',   12.0],
+										 <?php
+												// Conectando, seleccionando la base de datos
+												$link = mysql_connect('localhost', 'root', 'ema18787')
+														or die('No se pudo conectar: ' . mysql_error());
+												//echo 'Connected successfully';
+												mysql_select_db('arte_cristal') or die('No se pudo seleccionar la base de datos');
+												// Realizar una consulta MySQL
+												$query = 'SELECT * FROM personals';
+												$result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
 
-                            for ($i=0; $i<mysql_num_rows($result);$i++){
-                                $dato=mysql_fetch_array($result);
-                            ?>
-                            ['<?=$dato["name"]." ".$dato["last_name"]."<br>"?>', 1000],
-                            <?php
-                    }
-                    ?>
+														for ($i=0; $i<mysql_num_rows($result);$i++){
+																$dato=mysql_fetch_array($result);
+														?>
+														['<?=$dato["name"]." ".$dato["last_name"]."<br>"?>', 1000],
+														<?php
+										}
+										?>
 
-                        ]
-                    }]
-                });
-            });
+												]
+										}]
+								});
+						});
 
 
-  </script>
+	</script>
+
 	<body>
 
 <div id="container" style="min-width: 310px; height: 500px; max-width: 600px; margin: 0 auto"></div>
