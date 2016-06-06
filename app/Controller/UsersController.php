@@ -17,7 +17,7 @@ class UsersController extends AppController {
 	public $components = array('Paginator', 'Session','RequestHandler');
 	public $paginate = array (
 			'limit' => 5,
-			'order' => array('Documento.id' => 'asc')
+			'order' => array('User.fullname' => 'asc')
 			);
 	//public $layout = 'p_login';
 

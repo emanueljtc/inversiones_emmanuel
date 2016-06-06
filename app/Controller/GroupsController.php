@@ -14,8 +14,12 @@ class GroupsController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator', 'Session');
-
+ public $helpers = array('Html','Form','Time','Js');
+ public $components = array('Paginator', 'Session','RequestHandler');
+ public $paginate = array (
+		 'limit' => 5,
+		 'order' => array('Group.name' => 'asc')
+		 );
 /**
  * index method
  *
