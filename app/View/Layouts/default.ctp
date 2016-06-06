@@ -33,8 +33,9 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
        /* -------------------------------------------*/
 			 /* Llamado de los JS */
 
-       echo $this->Html->script(array('jquery.js'));
 			 echo $this->Html->script(array('bootstrap.min.js'));
+			 echo $this->Html->script(array('jquery.js'));
+			 echo $this->Html->script(array('jquery.min.js'));
 			 echo $this->Html->script(array('jscal2.js'));
 			 echo $this->Html->script(array('es.js'));
 			 echo $this->Html->script(array('jquery-ui.min.js'));
