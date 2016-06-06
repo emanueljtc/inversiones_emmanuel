@@ -28,7 +28,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
         echo $this->Html->css(array('gold/gold.css'));
 				echo $this->Html->css(array('jquery-ui.min'));
 				echo $this->Html->css(array('http://fonts.googleapis.com/css?family=Righteous'));
-
+				echo $this->Html->css(array('style'));
 
        /* -------------------------------------------*/
 			 /* Llamado de los JS */
@@ -68,9 +68,6 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 						</div>
 						<!-- Top Menu Items -->
 						<ul class="nav navbar-right top-nav">
-
-
-
 								<li class="dropdown">
 										<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
 										<ul class="dropdown-menu alert-dropdown">
@@ -99,100 +96,33 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 										</ul>
 								</li>
 								<li class="dropdown">
-										<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user">
+										</i>
+									<?php	echo $this->Session->read('Auth.User.fullname')?>
+
+										<b class="caret">
+
+										</b></a>
 										<ul class="dropdown-menu">
 												<li>
 														<a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
 												</li>
-												<li>
-														<a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
-												</li>
-												<li>
-														<a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
-												</li>
+												<?php  if($current_user['group_id'] == '1'):?>
+														<li>
+																<a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+														</li>
+												<?php endif; ?>
 												<li class="divider"></li>
 												<li>
-														<a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+														<a href="http://localhost/inversiones_emmanuel/users/logout"><i class="fa fa-fw fa-power-off"></i> Salir</a>
 												</li>
 										</ul>
 								</li>
 						</ul>
 						<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-						<div class="collapse navbar-collapse navbar-ex1-collapse">
 
-								<ul class="nav navbar-nav side-nav">
-										<li class="header">MENU DE NAVEGACION</li>
-										<li class="active">
-												<?php echo $this->Html->link(__(' Inicio'), array('controller' => 'pages', 'action' => 'index'), array('class'=>'glyphicon glyphicon-home')); ?>
-										</li>
-										<li>
-											<a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="glyphicon glyphicon-user"></i> Personal <i class="glyphicon glyphicon-menu-down"></i></a>
-											<ul id="demo" class="collapse">
-													<li class="menu">
-															<?php echo $this->Html->link(__(' Personal Registrado'), array('controller' => 'personals', 'action' => 'index'), array('class'=>'glyphicon glyphicon-list')); ?>
-													</li>
-													<li class="menu">
-														<?php echo $this->Html->link(__(' Nuevo Empleado'), array('controller' => 'personals', 'action' => 'add'), array('class'=>'glyphicon glyphicon-plus')); ?>
-												</li>
+							<?php echo $this->element('menu'); ?>
 
-											</ul>
-										</li>
-
-										<li>
-											<a href="javascript:;" data-toggle="collapse" data-target="#demo2"><i class="glyphicon glyphicon-briefcase"></i> Cargo <i class="glyphicon glyphicon-menu-down"></i></a>
-											<ul id="demo2" class="collapse">
-													<li class="menu">
-															<?php echo $this->Html->link(__(' Listado de Cargos'), array('controller' => 'positions', 'action' => 'index'), array('class'=>'glyphicon glyphicon-list')); ?>
-													</li>
-													<li class="menu">
-														<?php echo $this->Html->link(__(' Nuevo Cargo'), array('controller' => 'positions', 'action' => 'add'), array('class'=>'glyphicon glyphicon-plus')); ?>
-												</li>
-											</ul>
-										</li>
-
-										<li>
-											<a href="javascript:;" data-toggle="collapse" data-target="#demo3"><i class="glyphicon glyphicon-usd"></i> Salarios <i class="glyphicon glyphicon-menu-down"></i></a>
-											<ul id="demo3" class="collapse">
-													<li class="menu">
-															<?php echo $this->Html->link(__(' Listado de Salarios'), array('controller' => 'wakes', 'action' => 'index'), array('class'=>'glyphicon glyphicon-list')); ?>
-													</li>
-													<li class="menu">
-														<?php echo $this->Html->link(__(' Nuevo Pago'), array('controller' => 'wakes', 'action' => 'add'), array('class'=>'glyphicon glyphicon-plus')); ?>
-												</li>
-											</ul>
-										</li>
-
-										<li>
-											<a href="javascript:;" data-toggle="collapse" data-target="#demo4"><i class="glyphicon glyphicon-lock"></i> Usuarios <i class="glyphicon glyphicon-menu-down"></i></a>
-											<ul id="demo4" class="collapse">
-													<li class="menu">
-															<?php echo $this->Html->link(__(' Listado de Usuarios'), array('controller' => 'users', 'action' => 'index'), array('class'=>'glyphicon glyphicon-list')); ?>
-													</li>
-													<li class="menu">
-														<?php echo $this->Html->link(__(' Nuevo Usuario'), array('controller' => 'users', 'action' => 'add'), array('class'=>'glyphicon glyphicon-plus')); ?>
-												</li>
-											</ul>
-											<br>
-										</li>
-
-											<?php echo $this->Form->create('Personal', array('type' => 'GET','class' => 'nav navbar-rigth', 'url' => array('controller' => 'personals', 'action' => 'search'))); ?>
-											<div class="form-group">
-												<?php echo  $this->Form->input('search',array('label'=> false, 'div' => false, 'id' => 's', 'class' => 'form-control s', 'placeholder' => 'Buscar Empleado...','list'=>'empleado','onkeypress'=>'return IsCedula(event);','maxlength'=>'10','required')); ?>
-												<!--<select id="listap"></select>-->
-												<datalist id="empleado"></datalist>
-											</div>
-											<center>
-												<?php echo $this->Form->button('Buscar', array('div'=> false, 'class'=> 'btn btn-primary')) ?>
-											</center>
-										
-											<?php echo $this->Form->end(); ?>
-
-
-
-
-							</ul>
-
-						</div>
 						<!-- /.navbar-collapse -->
 				</nav>
 
@@ -222,7 +152,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 																<!--CONTENIDO DE CAKE-->
 																<?php echo $this->fetch('content'); ?>
 														</div>
-
+														<!--<?php echo debug($current_user);  ?>-->
 										</div>
 								</div>
 								<!-- /.row -->

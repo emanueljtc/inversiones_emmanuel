@@ -2,9 +2,11 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<?php
+		echo $this->Html->script(array('jquery', 'highcharts','exporting'));
+				
+		 ?>
 
-    <?php echo $this->Html->css(array('style')); ?>
-    <?php echo $this->Html->script(array('jquery', 'highcharts','exporting')); ?>
     <style type="text/css">
       ${demo.css}
 		</style>
