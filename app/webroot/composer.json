@@ -1,0 +1,10 @@
+{
+    "name": "lordsystem/webroot",
+    "authors": [
+        {
+            "name": "emanueljtc",
+            "email": "emanueljtc@gmail.com"
+        }
+    ],
+    "require": {}
+}
