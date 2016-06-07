@@ -7,9 +7,9 @@
 
 		<tr class="cabezera">
 			<th class="cabezera">
-				<div class="imagen">
-					<img src="/var/www/html/inversiones_emmanuel/app/webroot/img/foto2.jpg" width="210px" height="150px" alt="Inversiones Emmanuel"> <!-- INSERTANDO LOGO-->
- 				<!-- INSERTANDO LOGO-->
+				<div class="destacada">
+					 <!--<img src="/var/www/html/inversiones_emmanuel/app/webroot/img/foto2.jpg" width="210px" height="150px" alt="Inversiones Emmanuel"> INSERTANDO LOGO-->
+					 <?php	echo $this->Html->image(('../img/foto2.jpg'),array('class'=>'img'));?>
 				</div>
 			</th>
 			<th class="cabezera">
