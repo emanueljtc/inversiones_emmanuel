@@ -3,7 +3,7 @@
 <div class="panel panel-primary">
 		<div class="panel-heading">
 			<center>
-				<h4>Añadir Usuario</h4>
+				<h4>Editar Usuario</h4>
 
 			</center>
 		</div>
@@ -22,11 +22,11 @@
 		 						<?php echo $this->Form->input('username', array(
 		 							'label'=>'','placeholder' => 'Ingrese un Nombre de Usuario','class'=>'form-control')); ?>
  					   </div>
- 					<label class="control-label col-xs-3" >Contraseña:</label>
+ 					<!--<label class="control-label col-xs-3" >Contraseña:</label>
  					<div class="col-xs-7">
- 						<?php echo $this->Form->input('password', array(
- 						'label'=>'','placeholder' => 'Ingrese una Contraseña','class'=>'form-control')); ?>
- 					</div>
+ 						<?php //echo $this->Form->input('password', array(
+ 						//'label'=>'','placeholder' => 'Ingrese una Contraseña','class'=>'form-control')); ?>
+ 					</div>-->
 					<label class="control-label col-xs-3" >Tipo de Usuario:</label>
  					<div class="col-xs-7">
  						<?php echo $this->Form->input('group_id', array('type'=>'select','label'=>'','placeholder' => 'Seleccione Tipo de Usuario','class'=>'form-control')); ?>

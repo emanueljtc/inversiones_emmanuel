@@ -122,6 +122,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 						<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
 							<?php echo $this->element('menu'); ?>
 						<!-- /.navbar-collapse -->
+						
 				</nav>
 
 				<div id="page-wrapper">

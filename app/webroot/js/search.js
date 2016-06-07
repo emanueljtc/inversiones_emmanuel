@@ -1,11 +1,11 @@
 $(document).ready(function(){
 
 $("#s").keyup(function(e){		
-	var cedula = $(this).val();
-		
-		$.ajax({
+	var cedula = $("#s").val();
+  
+   $.ajax({
    type: "POST",
-   url:'Personals/getPalabraByPersonal',
+   url: 'Personals/getPalabraByPersonal',
    data: "dni="+cedula,
    dataType: 'json',
    success: function(data){
@@ -16,9 +16,9 @@ $("#s").keyup(function(e){
 
       var idp = items.Personal.idpersonal;
       var nombre = items.Personal.full_name;
-	  var cedula= items.Personal.cedula;
+	    var cedula= items.Personal.cedula;
       
-	  $('#empleado').html('');
+	    $('#empleado').html('');
       $("<option value='"+cedula+"'>"+nombre+"</option>").appendTo("#empleado");
 
       //var salario = items.Position.salario;
