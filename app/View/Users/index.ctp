@@ -82,7 +82,7 @@
 
 									<?php echo $this->Html->link(__('Nuevo Usuario'), array('action' => 'add'), array('class' => 'btn btn-info')); ?>
 									<?php echo $this->Html->link(__('Lista de Grupos'), array('controller'=>'groups','action' ), array('class' => 'btn btn-danger')); ?>
-									<?php echo $this->Html->link(__('Nuevo Grupo'), array('controller' => 'groups', 'action' => 'add'), array('class' => 'btn btn-primary')); ?>
+									<?php echo $this->Html->link(__('Lista de Personal'), array('controller' => 'personals', 'action' => 'add'), array('class' => 'btn btn-primary')); ?>
 
 					</div>
 </div>

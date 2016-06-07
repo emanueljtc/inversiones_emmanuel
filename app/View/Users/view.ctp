@@ -40,7 +40,7 @@
 
 				<?php echo $this->Html->link(__('Editar Usuario'), array('action' => 'edit', $user['User']['id']), array('class' => 'btn btn-info')); ?>
 				<?php echo $this->Html->link(__('Lista de Usuarios'), array('action' => 'index'), array('class' => 'btn btn-danger')); ?>
-				<?php echo $this->Html->link(__('Nuevo UsuarioUser'), array('action' => 'add'), array('class' => 'btn btn-primary')); ?>
+				<?php echo $this->Html->link(__('Nuevo Usuario'), array('action' => 'add'), array('class' => 'btn btn-primary')); ?>
 
 </div>
 <!-- <div class="users view">
