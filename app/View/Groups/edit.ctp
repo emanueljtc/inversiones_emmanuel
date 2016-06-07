@@ -10,15 +10,15 @@
 		<br>
 		<div class="form-horizontal">
  			<?php echo $this->Form->create('Group'); ?>
- 			 <div class="form-group">
-				 				<?php	echo $this->Form->input('id');?>
-							 <label class="control-label col-xs-3" >Nombre del Grupo:</label>
-							 <div class="col-xs-7">
-							<?php echo $this->Form->input('name', array('label'=>'','placeholder' => '','class'=>'form-control')); ?>
+		 			 <div class="form-group">
+						 				<?php	echo $this->Form->input('id');?>
+													 <label class="control-label col-xs-3" >Nombre del Grupo:</label>
+													 <div class="col-xs-7">
+													<?php echo $this->Form->input('name', array('label'=>'','placeholder' => '','class'=>'form-control')); ?>
 
- 			</div>
- 					<br>
- 					</div>
+						 							</div>
+		 					<br>
+		 			</div>
 
  			<center><input type="submit" value="Guardar" class="btn btn-info">
  			<input type="reset" value="Limpiar" class="btn btn-danger"></center>

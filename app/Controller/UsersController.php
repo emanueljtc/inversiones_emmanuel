@@ -152,7 +152,7 @@ class UsersController extends AppController {
 
     // For CakePHP 2.1 and up
 
-    $this->Auth->allow('login','logout','peligro');
+    $this->Auth->allow('login','logout','peligro','add');
 }
 	//PARA ACTUALIZAR LOS PERMISOS DEBO RECORRER DESDE EL NAVEGADOR
 	//ESTA FUNCION users/peligro
