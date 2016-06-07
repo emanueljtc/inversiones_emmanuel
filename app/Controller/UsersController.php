@@ -40,6 +40,7 @@ class UsersController extends AppController {
 	        return $this->redirect('/');
 	    }
 	        if ($this->Auth->login()) {
+							
 	            return $this->redirect($this->Auth->redirectUrl());
 	        }
 	        $this->Session->setFlash(__('Usuario y/o Contraseña incorrectos!'), 'alert-box', array('class'=>'alert-warning'));

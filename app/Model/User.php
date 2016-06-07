@@ -91,6 +91,7 @@ class User extends AppModel {
 			'order' => ''
 		)
 	);
+	
 	public $actsAs = array('Acl' => array('type' => 'requester'));
 
     public function parentNode() {
@@ -107,5 +108,5 @@ class User extends AppModel {
         }
         return array('Group' => array('id' => $groupId));
     }
-	
+
 }
