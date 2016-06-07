@@ -176,10 +176,8 @@ class UsersController extends AppController {
 		$this->Acl->allow($group, 'controllers/Personals/search');
 		$this->Acl->allow($group, 'controllers/Personals/searchjson');
 		$this->Acl->allow($group,'controllers/Personals/getPalabraByPersonal');
+		$this->Acl->allow($group, 'controllers/Positions/view');
 		$this->Acl->allow($group, 'controllers/Wakes');
-
-
-
 
     // Acceso a otros grupos
     /*$group->id = 3;
@@ -192,8 +190,8 @@ class UsersController extends AppController {
     // allow basic users to log out
     $this->Acl->allow($group, 'controllers/users/logout');
 
-    // we add an exit to avoid an ugly "missing views" error message
-    echo "todo listo";
+    // si muestra este mensaje  no hubo error en obtener los nuevos permisos
+    echo "Permisos Concedidos";
     exit;
 }
 
