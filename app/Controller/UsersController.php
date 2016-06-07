@@ -170,6 +170,12 @@ class UsersController extends AppController {
 		$this->Acl->deny($group, 'controllers/Personals/delete');
 		$this->Acl->deny($group, 'controllers/Wakes/delete');
 		$this->Acl->allow($group, 'controllers/Personals/index');
+		$this->Acl->allow($group, 'controllers/Personals/add');
+		$this->Acl->allow($group, 'controllers/Personals/view');
+		$this->Acl->allow($group, 'controllers/Personals/edit');
+		$this->Acl->allow($group, 'controllers/Personals/search');
+		$this->Acl->allow($group, 'controllers/Personals/searchjson');
+		$this->Acl->allow($group,'controllers/Personals/getPalabraByPersonal');
 		$this->Acl->allow($group, 'controllers/Wakes');
 
 
