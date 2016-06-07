@@ -29,6 +29,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 				echo $this->Html->css(array('jquery-ui.min'));
 				echo $this->Html->css(array('http://fonts.googleapis.com/css?family=Righteous'));
 				echo $this->Html->css(array('style'));
+				echo $this->Html->css('/notifications/css/notifications');
 
        /* -------------------------------------------*/
 			 /* Llamado de los JS */
@@ -43,6 +44,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
        echo $this->Html->script(array('plugins/morris/morris.min.js'));
        echo $this->Html->script(array('plugins/morris/morris-data.js'));
        echo $this->Html->script(array('validaciones.js'));
+			 echo $this->Html->script('/notifications/js/notifications'); 
 
 
 
@@ -122,7 +124,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 						<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
 							<?php echo $this->element('menu'); ?>
 						<!-- /.navbar-collapse -->
-						
+
 				</nav>
 
 				<div id="page-wrapper">
