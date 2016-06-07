@@ -75,7 +75,8 @@ table#datos {
 
 				<div class="title">
 					<div class="imagen">
-					<img src="/var/www/html/inversiones_emmanuel/app/webroot/img/foto2.jpg" width="210px" height="150px" alt="Inversiones Emmanuel"> <!-- INSERTANDO LOGO-->
+						<!-- INSERTANDO LOGO-->
+						<?php	echo $this->Html->image(('../img/foto2.jpg'),array('class'=>'img'));?>
 					</div>
 					<h3>RECIBO DE PAGO</h3>
 					<h2><span class="izquierda">Factura Nº: 000<?php echo h($wake['Wake']['id']); ?></span> <span class="derecha"><?php echo h($wake['Wake']['start']); ?> al <?php echo h($wake['Wake']['end']); ?></span></h2>

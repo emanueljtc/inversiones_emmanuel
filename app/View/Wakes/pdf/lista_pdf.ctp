@@ -10,7 +10,8 @@
 			<tr class="cabezera">
 				<th class="cabezera">
 					<div class="imagen">
-					<img src="/var/www/html/inversiones_emmanuel/app/webroot/img/foto2.jpg" width="300px" height="200px" alt="Texto Alternativo"> <!-- INSERTANDO LOGO-->
+						<!-- INSERTANDO LOGO-->
+						<?php	echo $this->Html->image(('../img/foto2.jpg'),array('class'=>'img'));?>
 					</div>
 				</th>
 				<th class="cabezera">
