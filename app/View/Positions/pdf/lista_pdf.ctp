@@ -11,7 +11,7 @@
 				<th class="cabezera">
 					<div class="imagen">
 						<!-- INSERTANDO LOGO-->
-						<img src="/var/www/html/inversiones_emmanuel/app/webroot/img/foto2.jpg" width="210px" height="150px" alt="Inversiones Emmanuel"> <!-- INSERTANDO LOGO-->
+						<?php	echo $this->Html->image(('../img/foto2.jpg'),array('class'=>'img'));?>
 					</div>
 				</th>
 				<th class="cabezera">
