@@ -34,7 +34,7 @@
 
 																							<th><?php echo $this->Paginator->sort('Nombre'); ?></th>
 																							<th><?php echo $this->Paginator->sort('Creado'); ?></th>
-																							<th class="actions"><?php echo __('Acciones'); ?></th>
+																							<!-- <th class="actions"><?php echo __('Acciones'); ?></th> -->
 																					</tr>
 																			</thead>
 																			<tbody>
@@ -43,11 +43,11 @@
 																				<!-- <td><?php echo h($group['Group']['id']); ?>&nbsp;</td> -->
 																				<td><?php echo h($group['Group']['name']); ?>&nbsp;</td>
 																				<td><?php echo h($group['Group']['created']); ?>&nbsp;</td>
-																				<td class="actions">
+																				<!-- <td class="actions">
 																					<?php echo $this->Html->link(__(''), array('action' => 'view', $group['Group']['id']), array('class' => 'glyphicon glyphicon-search')); ?>
 																					<?php echo $this->Html->link(__(''), array('action' => 'edit', $group['Group']['id']), array('class' => 'glyphicon glyphicon-edit')); ?>
 																					<?php echo $this->Form->postLink('<i class="fa fa-trash-o fa-fw"></i> ' . __(''), array('action' => 'delete', $group['Group']['id']), array('escape' => false), __('Seguro quieres eliminar el grupo %s?', $group['Group']['name'])); ?>
-																				</td>
+																				</td> -->
 																			</tr>
 																		<?php endforeach; ?>
 																	</table>
