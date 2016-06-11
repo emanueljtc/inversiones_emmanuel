@@ -1,116 +1,111 @@
 <style>
-.title{
-	background-color: #fafafa;
-  margin: 1rem;
-  padding: 1rem;
-	position: relative;
-  /*border: 2px solid #ccc;*/
-  /* IMPORTANTE */
-  text-align: center;
-	z-index: 2;
+.titulo{
+	font-size:40px;
+	font-weight:bold;
 }
-.imagen{
-	background: red;
-  width: 210px;
-  /*IMPORTANTE*/
-  height: 150px;
-  position: absolute;
-  top: 10%;
-  transform: translateY(-50%);
-	z-index: 1;
-}
-table#cabezera {
-    width: 80%;
-		text-align: center;
-		border-collapse: separate;
-		text-decoration: none;
 
-}
-th.cabezera{
-	padding: 2px;
-	background-color: #ffffff;
-	border: white 1px solid;
-}
-tr.cabezera {
-    padding: 2px;
-		border: white 1px solid;
-}
 h3{
-	background:#fff;
-	color: #000;
 	font-family:'Gill Sans','lucida grande', helvetica, arial, sans-serif;;
 	font-size: 180%;
-
-
 }
+
 h4{
-	background: #fff;
-	color: #000;
-	text-decoration: underline;
+	
 
 }
-table#datos {
-    width: 100%;
+table {
+    	width: 100%;
 		text-align: center;
 		border-collapse: collapse;
-		border: 1px solid #ddd;
 		text-decoration: none;
 }
 
-.bloque1{
+table .cabeza
+{
+	background-color:#85A6B1;
+}
+
+table .contenido
+{
+	background-color:#8BD7D1;
+}
+
+table .subtitulo
+{
+	background-color:#CAEDDE;
+}
+
+.centrar
+{
 	text-align:center;
-	font-size:17px;
-	line-height: normal;
-
 }
 
-
-.derecha{
-	float:right;
-}
 
 </style>
 
 
+<table class="tabla">
+	<tr class="cabeza">
+		<td class="centrar titulo" colspan="3">RECIBO DE PAGO</td>
+	</tr>
+	<tr class="contenido">
+		<td class="centrar"><?php	echo $this->Html->image(('../img/foto2.jpg'),array(''=>''));?></td>
+		<td class="centrar"><h2>FACTURA Nº: 000<?php echo h($wake['Wake']['id']); ?></h2></td>
+		<td class="centrar"><h2><?php echo h($wake['Wake']['start']); ?> al <?php echo h($wake['Wake']['end']); ?></h2></td>
+	</tr>
+	<tr class="cabeza">
+		<td><strong>EMPLEADO :</strong></td>
+		<td><strong>CEDULA :</strong></td>
+		<td><strong>FECHA DE PAGO: </strong>:</td>
+	</tr>
+	<tr class="contenido">
+		<td><strong><?php echo h($wake['Personal']['full_name']); ?></strong></td>
+		<td><strong><?php echo h($wake['Personal']['dni']); ?></strong></td>
+		<td><strong><?php echo h($wake['Wake']['payment_day']); ?> </strong></td>
+	</tr>
+	<tr class="cabeza">
+		<td><strong>CARGO : </strong></td>
+		<td><strong>SALARIO DIARIO :</strong></td>
+		<td><strong>TIPO DE PAGO :</strong></td>
+	</tr>
+	<tr class="contenido">
+		<td><strong><?php echo h($wake['Position']['position']); ?></strong></td>
+		<td><strong><?php echo h($wake['Position']['daily_salary']); ?> Bs.</strong></td>
+		<td><strong><?php echo h($wake['Wake']['payment_type']); ?></strong></td>
+	</tr>
+	<tr class="subtitulo">
+		<td colspan="3"><h4>PAGO POR HORAS EXTRAS Y DIAS FERIADOS: </h4></td>
+	</tr>
+	<tr class="cabeza">
+		<td><strong>HORAS EXTRAS :</strong></td>
+		<td><strong>DIAS FERIADOS :</strong></td>
+		<td><strong>PAGO:</strong></td>
+	</tr>
+	<tr class="contenido">
+		<td><strong><?php echo h($wake['Wake']['extra_hours']); ?>Horas</strong></td>
+		<td><strong><?php echo h($wake['Wake']['holiday']); ?>Dias</strong></td>
+		<td><strong><?php echo h($wake['Wake']['amount']); ?> Bs.</strong></td>
+	</tr>
+	<tr class="subtitulo">
+		<td colspan="3"><h4>PAGO POR RANGO DE TIEMPO: </h4></td>
+	</tr>
+	<tr class="cabeza">
+		<td><strong>FECHA INICIO :</strong></td>
+		<td><strong>FECHA FIN : </strong></td>
+		<td><strong>PAGO: </strong></td>
+	</tr>
+	<tr class="contenido">
+		<td><strong><?php echo h($wake['Wake']['start']); ?></strong></td>
+		<td><strong><?php echo h($wake['Wake']['end']); ?></strong></td>
+		<td><strong><?php echo h($wake['Wake']['salary_date']); ?> Bs.</strong></td>
+	</tr>
+	<tr class="contenido"><?php $montototal = $wake['Wake']['amount'] + $wake['Wake']['salary_date'];?>
+		<td></td>
+		<td><h4>MONTO TOTAL: </h4></td>
+		<td><strong> <?php echo h($montototal); ?> Bs.</strong></td>
+	</tr>
+</table>
 
-				<div class="title">
-					<div class="imagen">
-						<!-- INSERTANDO LOGO-->
-						<?php	echo $this->Html->image(('../img/foto2.jpg'),array('class'=>'img'));?>
-					</div>
-					<h3>RECIBO DE PAGO</h3>
-					<h2><span class="izquierda">Factura Nº: 000<?php echo h($wake['Wake']['id']); ?></span> <span class="derecha"><?php echo h($wake['Wake']['start']); ?> al <?php echo h($wake['Wake']['end']); ?></span></h2>
-				</div>
-<div class="bloque1">
-<strong>Fecha de Pago : <?php echo h($wake['Wake']['payment_day']); ?> </strong>
-<br>
-<strong>Empleado : <?php echo h($wake['Personal']['full_name']); ?></strong>
-<br>
-<strong>Cedula : <?php echo h($wake['Personal']['dni']); ?></strong>
-<br>
-<strong>Cargo : <?php echo h($wake['Position']['position']); ?></strong>
-<br>
-<strong>Salario Diario : <?php echo h($wake['Position']['daily_salary']); ?> Bs.</strong>
-<br>
-<strong>Tipo de Pago : <?php echo h($wake['Wake']['payment_type']); ?></strong>
-<br>
-<h4>Pago por Horas Extras y Dias Feriados: </h4>
-<strong>Horas Extras : <?php echo h($wake['Wake']['extra_hours']); ?>Horas</strong>
-<br>
-<strong>Dias Feriados : <?php echo h($wake['Wake']['holiday']); ?>Dias</strong>
-<br>
-<strong>Pago: <?php echo h($wake['Wake']['amount']); ?> Bs.</strong>
-<br>
-<h4>Pago por Rango de Tiempo: </h4>
-<strong>Fecha Inicio : <?php echo h($wake['Wake']['start']); ?></strong>
-<br>
-<strong>Fecha Fin : <?php echo h($wake['Wake']['end']); ?></strong>
-<br>
-<strong>Pago: <?php echo h($wake['Wake']['salary_date']); ?> Bs.</strong>
-<br>
-<h4>Monto Total: </h4>
-<?php $montototal = $wake['Wake']['amount'] + $wake['Wake']['salary_date'];?>
-<strong> <?php echo h($montototal); ?> Bs.</strong>
 
 	<!-- <strong>DATOS DE FACTURA:
 
