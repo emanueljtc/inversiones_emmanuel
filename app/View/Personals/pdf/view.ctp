@@ -1,4 +1,6 @@
-
+<?php
+	
+ ?>
 <div class="fecha">
 <?php echo "" . date("d") . "/" . date("m") . "/" . date("Y"); ?>
 </div >
