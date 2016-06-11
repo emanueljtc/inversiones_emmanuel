@@ -23,6 +23,8 @@ class PersonalsController extends AppController {
 		 'order' => array('Personal.name' => 'asc')
 		 );
 
+
+
 /**
  * index method
  *
@@ -32,9 +34,10 @@ class PersonalsController extends AppController {
    public function lista_pdf($id = null){
      $this->Personal->recursive = 0;
      $this->pdfConfig = array(
-     	'download' => true,
-     	'filename' => 'personal'.$id.'.pdf',
-       );
+     	//'download' => true,
+      //'orientation' => 'portrait',
+     	'filename' => 'personal'.$id.'.pdf'
+    );
      $this->Paginator->settings = $this->paginate = array('limit' => 6);
 	 		$this->set('personals', $this->paginate('Personal'));
    }
@@ -58,7 +61,7 @@ class PersonalsController extends AppController {
 		}
 		$options = array('conditions' => array('Personal.' . $this->Personal->primaryKey => $id));
     $this->pdfConfig = array(
-    	'download' => true,
+    	'orientation' => 'portrait',
     	'filename' => 'personal'.$id.'.pdf'
     );
     $this->set('personal', $this->Personal->find('first', $options));
@@ -157,8 +160,8 @@ $personal = $this->Personal->find('all',array(
    echo json_encode ( $personal );
  }
 }
-	
-	
+
+
   public function searchjson()
   {
     $term = null;
