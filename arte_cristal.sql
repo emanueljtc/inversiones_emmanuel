@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 05-06-2016 a las 17:25:24
+-- Tiempo de generación: 08-06-2016 a las 07:19:55
 -- Versión del servidor: 5.5.49-0ubuntu0.14.04.1
 -- Versión de PHP: 5.5.9-1ubuntu4.17
 
@@ -48,14 +48,14 @@ CREATE TABLE IF NOT EXISTS `acos` (
   PRIMARY KEY (`id`),
   KEY `idx_acos_lft_rght` (`lft`,`rght`),
   KEY `idx_acos_alias` (`alias`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=51 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=50 ;
 
 --
 -- Volcado de datos para la tabla `acos`
 --
 
 INSERT INTO `acos` (`id`, `parent_id`, `model`, `foreign_key`, `alias`, `lft`, `rght`) VALUES
-(1, NULL, NULL, NULL, 'controllers', 1, 96),
+(1, NULL, NULL, NULL, 'controllers', 1, 98),
 (2, 1, NULL, NULL, 'Groups', 2, 13),
 (3, 2, NULL, NULL, 'index', 3, 4),
 (4, 2, NULL, NULL, 'view', 5, 6),
@@ -64,47 +64,46 @@ INSERT INTO `acos` (`id`, `parent_id`, `model`, `foreign_key`, `alias`, `lft`, `
 (7, 2, NULL, NULL, 'delete', 11, 12),
 (8, 1, NULL, NULL, 'Pages', 14, 17),
 (9, 8, NULL, NULL, 'display', 15, 16),
-(10, 1, NULL, NULL, 'Personals', 18, 35),
+(10, 1, NULL, NULL, 'Personals', 18, 37),
 (11, 10, NULL, NULL, 'lista_pdf', 19, 20),
 (12, 10, NULL, NULL, 'index', 21, 22),
 (13, 10, NULL, NULL, 'view', 23, 24),
 (14, 10, NULL, NULL, 'add', 25, 26),
 (15, 10, NULL, NULL, 'edit', 27, 28),
 (16, 10, NULL, NULL, 'delete', 29, 30),
-(17, 10, NULL, NULL, 'searchjson', 31, 32),
-(18, 10, NULL, NULL, 'search', 33, 34),
-(19, 1, NULL, NULL, 'Positions', 36, 49),
-(20, 19, NULL, NULL, 'lista_pdf', 37, 38),
-(21, 19, NULL, NULL, 'index', 39, 40),
-(22, 19, NULL, NULL, 'view', 41, 42),
-(23, 19, NULL, NULL, 'add', 43, 44),
-(24, 19, NULL, NULL, 'edit', 45, 46),
-(25, 19, NULL, NULL, 'delete', 47, 48),
-(26, 1, NULL, NULL, 'Users', 50, 67),
-(27, 26, NULL, NULL, 'index', 51, 52),
-(28, 26, NULL, NULL, 'view', 53, 54),
-(29, 26, NULL, NULL, 'add', 55, 56),
-(30, 26, NULL, NULL, 'edit', 57, 58),
-(31, 26, NULL, NULL, 'delete', 59, 60),
-(32, 26, NULL, NULL, 'login', 61, 62),
-(33, 26, NULL, NULL, 'logout', 63, 64),
-(34, 1, NULL, NULL, 'Wakes', 68, 83),
-(35, 34, NULL, NULL, 'lista_pdf', 69, 70),
-(36, 34, NULL, NULL, 'index', 71, 72),
-(37, 34, NULL, NULL, 'view', 73, 74),
-(38, 34, NULL, NULL, 'getCargoByPersonal', 75, 76),
-(39, 34, NULL, NULL, 'add', 77, 78),
-(40, 34, NULL, NULL, 'edit', 79, 80),
-(41, 34, NULL, NULL, 'delete', 81, 82),
-(42, 1, NULL, NULL, 'AclExtras', 84, 85),
-(43, 1, NULL, NULL, 'CakePdf', 86, 87),
-(44, 1, NULL, NULL, 'DebugKit', 88, 95),
-(45, 44, NULL, NULL, 'ToolbarAccess', 89, 94),
-(46, 45, NULL, NULL, 'history_state', 90, 91),
-(47, 45, NULL, NULL, 'sql_explain', 92, 93),
-(48, 26, NULL, NULL, 'initDB', 65, 66),
-(49, NULL, NULL, NULL, 'controllers', 97, 98),
-(50, NULL, NULL, NULL, 'controllers', 99, 100);
+(17, 10, NULL, NULL, 'getPalabraByPersonal', 31, 32),
+(18, 10, NULL, NULL, 'searchjson', 33, 34),
+(19, 10, NULL, NULL, 'search', 35, 36),
+(20, 1, NULL, NULL, 'Positions', 38, 51),
+(21, 20, NULL, NULL, 'lista_pdf', 39, 40),
+(22, 20, NULL, NULL, 'index', 41, 42),
+(23, 20, NULL, NULL, 'view', 43, 44),
+(24, 20, NULL, NULL, 'add', 45, 46),
+(25, 20, NULL, NULL, 'edit', 47, 48),
+(26, 20, NULL, NULL, 'delete', 49, 50),
+(27, 1, NULL, NULL, 'Users', 52, 69),
+(28, 27, NULL, NULL, 'login', 53, 54),
+(29, 27, NULL, NULL, 'logout', 55, 56),
+(30, 27, NULL, NULL, 'index', 57, 58),
+(31, 27, NULL, NULL, 'view', 59, 60),
+(32, 27, NULL, NULL, 'add', 61, 62),
+(33, 27, NULL, NULL, 'edit', 63, 64),
+(34, 27, NULL, NULL, 'delete', 65, 66),
+(35, 27, NULL, NULL, 'peligro', 67, 68),
+(36, 1, NULL, NULL, 'Wakes', 70, 85),
+(37, 36, NULL, NULL, 'lista_pdf', 71, 72),
+(38, 36, NULL, NULL, 'index', 73, 74),
+(39, 36, NULL, NULL, 'view', 75, 76),
+(40, 36, NULL, NULL, 'getCargoByPersonal', 77, 78),
+(41, 36, NULL, NULL, 'add', 79, 80),
+(42, 36, NULL, NULL, 'edit', 81, 82),
+(43, 36, NULL, NULL, 'delete', 83, 84),
+(44, 1, NULL, NULL, 'AclExtras', 86, 87),
+(45, 1, NULL, NULL, 'CakePdf', 88, 89),
+(46, 1, NULL, NULL, 'DebugKit', 90, 97),
+(47, 46, NULL, NULL, 'ToolbarAccess', 91, 96),
+(48, 47, NULL, NULL, 'history_state', 92, 93),
+(49, 47, NULL, NULL, 'sql_explain', 94, 95);
 
 -- --------------------------------------------------------
 
@@ -123,18 +122,21 @@ CREATE TABLE IF NOT EXISTS `aros` (
   PRIMARY KEY (`id`),
   KEY `idx_aros_lft_rght` (`lft`,`rght`),
   KEY `idx_aros_alias` (`alias`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
 -- Volcado de datos para la tabla `aros`
 --
 
 INSERT INTO `aros` (`id`, `parent_id`, `model`, `foreign_key`, `alias`, `lft`, `rght`) VALUES
-(1, NULL, 'Group', 1, NULL, 1, 6),
+(1, NULL, 'Group', 1, NULL, 1, 4),
 (2, 1, 'User', 1, NULL, 2, 3),
-(3, NULL, 'Group', 2, NULL, 7, 10),
-(7, 3, 'User', 5, NULL, 8, 9),
-(8, 1, 'User', 6, NULL, 4, 5);
+(6, NULL, 'Group', 4, NULL, 5, 6),
+(8, NULL, 'Group', 5, NULL, 7, 8),
+(9, NULL, 'Group', 1, NULL, 9, 12),
+(10, NULL, 'Group', 2, NULL, 13, 16),
+(11, 9, 'User', 4, NULL, 10, 11),
+(12, 10, 'User', 5, NULL, 14, 15);
 
 -- --------------------------------------------------------
 
@@ -153,7 +155,7 @@ CREATE TABLE IF NOT EXISTS `aros_acos` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `ARO_ACO_KEY` (`aro_id`,`aco_id`),
   KEY `idx_aco_id` (`aco_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
 
 --
 -- Volcado de datos para la tabla `aros_acos`
@@ -161,15 +163,20 @@ CREATE TABLE IF NOT EXISTS `aros_acos` (
 
 INSERT INTO `aros_acos` (`id`, `aro_id`, `aco_id`, `_create`, `_read`, `_update`, `_delete`) VALUES
 (1, 1, 1, '1', '1', '1', '1'),
-(2, 3, 1, '-1', '-1', '-1', '-1'),
-(3, 3, 10, '1', '1', '1', '1'),
-(4, 3, 34, '1', '1', '1', '1'),
-(5, 3, 33, '1', '1', '1', '1'),
-(6, 1, 50, '1', '1', '1', '1'),
-(7, 3, 50, '-1', '-1', '-1', '-1'),
-(8, 3, 16, '-1', '-1', '-1', '-1'),
-(9, 3, 12, '1', '1', '1', '1'),
-(10, 3, 41, '-1', '-1', '-1', '-1');
+(2, 9, 1, '1', '1', '1', '1'),
+(3, 10, 1, '-1', '-1', '-1', '-1'),
+(4, 10, 16, '-1', '-1', '-1', '-1'),
+(5, 10, 43, '-1', '-1', '-1', '-1'),
+(6, 10, 12, '1', '1', '1', '1'),
+(7, 10, 36, '1', '1', '1', '1'),
+(8, 10, 29, '1', '1', '1', '1'),
+(9, 10, 13, '1', '1', '1', '1'),
+(10, 10, 15, '1', '1', '1', '1'),
+(11, 10, 14, '1', '1', '1', '1'),
+(12, 10, 19, '1', '1', '1', '1'),
+(13, 10, 18, '1', '1', '1', '1'),
+(14, 10, 17, '1', '1', '1', '1'),
+(15, 10, 23, '1', '1', '1', '1');
 
 -- --------------------------------------------------------
 
@@ -178,7 +185,7 @@ INSERT INTO `aros_acos` (`id`, `aro_id`, `aco_id`, `_create`, `_read`, `_update`
 --
 
 CREATE TABLE IF NOT EXISTS `groups` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(2) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
@@ -190,8 +197,8 @@ CREATE TABLE IF NOT EXISTS `groups` (
 --
 
 INSERT INTO `groups` (`id`, `name`, `created`, `modified`) VALUES
-(1, 'Administrador', '2016-06-03 04:17:57', '2016-06-03 04:17:57'),
-(2, 'Secretari@', '2016-06-03 04:19:51', '2016-06-03 04:19:51');
+(1, 'Administrador', '2016-06-07 04:54:08', '2016-06-07 04:54:08'),
+(2, 'Secretaria(o)', '2016-06-07 04:54:17', '2016-06-07 04:54:17');
 
 -- --------------------------------------------------------
 
@@ -259,24 +266,24 @@ INSERT INTO `positions` (`id`, `position`, `hour_worked`, `time_value`, `daily_s
 
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `fullname` varchar(150) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` char(40) NOT NULL,
   `group_id` int(11) NOT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
+  `fullname` varchar(150) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`id`, `fullname`, `username`, `password`, `group_id`, `created`, `modified`) VALUES
-(1, '', 'usuario', 'af2c788d78eeb431c402511d1831279a28ad173c', 1, '2016-06-03 04:18:31', '2016-06-03 04:18:31'),
-(5, 'Juan David', 'juan', '0351173e3db051b8a42fbbf85ea62403fb54303a', 2, '2016-06-03 05:27:45', '2016-06-05 05:23:32'),
-(6, 'Emanuel Torres', 'emanuel', 'd143986d124c2041066b4888b2492736fd1d1aa2', 1, '2016-06-05 05:16:01', '2016-06-05 05:16:01');
+INSERT INTO `users` (`id`, `username`, `password`, `group_id`, `created`, `modified`, `fullname`) VALUES
+(1, 'emanuel', 'd143986d124c2041066b4888b2492736fd1d1aa2', 1, '2016-06-07 04:28:19', '2016-06-07 04:32:29', 'Emanuel Torres'),
+(4, 'alba', '0351173e3db051b8a42fbbf85ea62403fb54303a', 1, '2016-06-07 05:15:44', '2016-06-07 05:15:44', 'Alba Pedraza'),
+(5, 'MariaJ', '21a2980e99efa92a403db974e7873c8bf137ded1', 2, '2016-06-07 05:17:10', '2016-06-07 05:17:10', 'Maria Jimenez');
 
 -- --------------------------------------------------------
 
@@ -297,14 +304,15 @@ CREATE TABLE IF NOT EXISTS `wakes` (
   `end` varchar(15) NOT NULL,
   `salary_date` varchar(60) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
 -- Volcado de datos para la tabla `wakes`
 --
 
 INSERT INTO `wakes` (`id`, `personal_id`, `position_id`, `payment_day`, `holiday`, `extra_hours`, `amount`, `payment_type`, `start`, `end`, `salary_date`) VALUES
-(8, 7, 3, '2016-06-03', 1, 0, 540, 'Reglamentario', '01-06-2016', '15-06-2016', '5040');
+(8, 7, 3, '2016-06-03', 1, 0, 540, 'Reglamentario', '01-06-2016', '15-06-2016', '5040'),
+(9, 7, 3, '2016-06-07', 3, 0, 1620, 'Adelantado', '01-06-2016', '15-06-2016', '5040');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
