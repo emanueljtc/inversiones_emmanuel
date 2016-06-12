@@ -36,8 +36,8 @@ img{
 		 titular de la cedula de identidad <strong>Nº <?php echo $this->Html->link($personal['Personal']['dni'], array('controller' => 'Personals', 'action' => 'view', $personal['Personal']['id']));?></strong>, mayor de edad,
 		 domiciliado en <strong><?php echo $this->Html->link($personal['Personal']['address'], array('controller' => 'Personals', 'action' => 'view', $personal['Personal']['id']));?></strong>, desempeña el cargo de
 		 <strong><?php echo $this->Html->link($personal['Position']['position'], array('controller' => 'positions', 'action' => 'view', $personal['Position']['id']));?></strong> dentro de nuestra empresa desde el
-		 <strong><?php echo $this->Html->link($personal['Personal']['date_reg'], array('controller' => 'Personals', 'action' => 'view', $personal['Personal']['id'])); ?></strong>, podemos dar fé de su excelente desempeño en
-		 sus funciones.
+		 <strong><?php echo $this->Html->link($personal['Personal']['date_reg'], array('controller' => 'Personals', 'action' => 'view', $personal['Personal']['id'])); ?></strong>, y demuestra ser una persona servicial, puntual
+		 y responsable en las labores encomendadas.
 </p>
 <br>
 <p>
@@ -50,11 +50,10 @@ img{
 
 											   _______________________
 												 		      <br>
-										 <strong>Genesis Peralta</strong>
+															 Presidente
 										 						  <br>
-										 					C.I-8994567
+											<strong>Jaime G. Romero</strong>
 																	<br>
-															  Gerente
 
 															 </center>
 
