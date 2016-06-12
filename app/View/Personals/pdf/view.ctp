@@ -1,6 +1,22 @@
-<?php
-	
- ?>
+														<center>
+								<h1>Inversiones Emmanuel 1108 A.C</h1>
+												<h2>RIF. J-40136924-3</h2>
+																<br>
+												<h3>Constancia de Trabajo</h3>
+
+														</center>
+
+
+
+
+
+
+
+
+
+
+
+<!--
 <div class="fecha">
 <?php echo "" . date("d") . "/" . date("m") . "/" . date("Y"); ?>
 </div >
@@ -10,7 +26,7 @@
 		<tr class="cabezera">
 			<th class="cabezera">
 				<div class="destacada">
-					 <!--<img src="/var/www/html/inversiones_emmanuel/app/webroot/img/foto2.jpg" width="210px" height="150px" alt="Inversiones Emmanuel"> INSERTANDO LOGO-->
+					 <img src="/var/www/html/inversiones_emmanuel/app/webroot/img/foto2.jpg" width="210px" height="150px" alt="Inversiones Emmanuel"> INSERTANDO LOGO
 					 <?php	echo $this->Html->image(('../img/foto2.jpg'),array('class'=>'img'));?>
 				</div>
 			</th>
@@ -66,4 +82,4 @@
 							 </td>
 				</tr>
 
-		</table>
+		</table> -->
