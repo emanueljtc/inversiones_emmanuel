@@ -22,11 +22,20 @@ a:link {
 															<br>
 									  <h3>Constancia de Trabajo</h3>
 														</center>
+<br>
 <p>
-		Hacemos constar por medio de la presente que <strong><?php echo $this->Html->link($personal['Personal']['full_name'], array('controller' => 'Personals', 'action' => 'view', $personal['Personal']['id'])); ?></strong>,
- titular de la cedula de identidad <strong>Nº <?php echo $this->Html->link($personal['Personal']['dni'], array('controller' => 'Personals', 'action' => 'view', $personal['Personal']['id']));?></strong>, mayor de edad,
- domiciliado en <strong><?php echo $this->Html->link($personal['Personal']['address'], array('controller' => 'Personals', 'action' => 'view', $personal['Personal']['id']));?></strong>,
-
+				Hacemos constar por medio de la presente que <strong><?php echo $this->Html->link($personal['Personal']['full_name'], array('controller' => 'Personals', 'action' => 'view', $personal['Personal']['id'])); ?></strong>,
+		 titular de la cedula de identidad <strong>Nº <?php echo $this->Html->link($personal['Personal']['dni'], array('controller' => 'Personals', 'action' => 'view', $personal['Personal']['id']));?></strong>, mayor de edad,
+		 domiciliado en <strong><?php echo $this->Html->link($personal['Personal']['address'], array('controller' => 'Personals', 'action' => 'view', $personal['Personal']['id']));?></strong>, el cual desempeña el cargo de
+		 <strong><?php echo $this->Html->link($personal['Position']['position'], array('controller' => 'positions', 'action' => 'view', $personal['Position']['id']));?></strong> dentro de nuestra empresa desde el
+		 <strong><?php echo $this->Html->link($personal['Personal']['date_reg'], array('controller' => 'Personals', 'action' => 'view', $personal['Personal']['id'])); ?></strong>. Manifestamos su excelente desempeño en
+		 sus funciones.
+</p>
+<br>
+<p>
+				Se expide la presente constancia a la parte interesada en Maracay, Estado Aragua Venezuela
+			a los <?php echo date("d"); ?> dias del mes <?php echo date("m"); ?> del
+			<?php echo date("Y"); ?>.
 </p>
 
 
