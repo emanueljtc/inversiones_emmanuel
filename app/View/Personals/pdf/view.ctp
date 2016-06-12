@@ -15,8 +15,14 @@ a:link {
     color: #000;
 		text-decoration: none;
 }
+img{
+	width: 150px;
+	height: 130px;
+	float: left;
+}
 </style>
-<br><br>
+<br>
+<?php	echo $this->Html->image(('../img/foto2.jpg'),array('class'=>'img'));?>
 
 														<center>
 								<h1>Inversiones Emmanuel 1108 A.C</h1>
