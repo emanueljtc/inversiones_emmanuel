@@ -1,12 +1,19 @@
+<style>
+h3{
+			text-decoration: underline;
+			font-family: "Times New Roman", Georgia, Serif;
+}
+</style>
 														<center>
 								<h1>Inversiones Emmanuel 1108 A.C</h1>
-												<h2>RIF. J-40136924-3</h2>
-																<br>
-												<h3>Constancia de Trabajo</h3>
-
+											<h2>RIF. J-40136924-3</h2>
+															<br>
+									  <h3>Constancia de Trabajo</h3>
 														</center>
+<p>
+		Hacemos constar por medio de la presente que <strong><<?php echo $this->Html->link($personal['Personal']['name'], array('controller' => 'Personals', 'action' => 'view', $personal['Personal']['id'])); ?></strong>
 
-
+</p>
 
 
 
