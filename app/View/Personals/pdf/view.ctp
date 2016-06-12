@@ -16,6 +16,7 @@ a:link {
 		text-decoration: none;
 }
 </style>
+<br><br><br><br>
 														<center>
 								<h1>Inversiones Emmanuel 1108 A.C</h1>
 											<h2>RIF. J-40136924-3</h2>
@@ -26,9 +27,9 @@ a:link {
 <p>
 				Hacemos constar por medio de la presente que <strong><?php echo $this->Html->link($personal['Personal']['full_name'], array('controller' => 'Personals', 'action' => 'view', $personal['Personal']['id'])); ?></strong>,
 		 titular de la cedula de identidad <strong>Nº <?php echo $this->Html->link($personal['Personal']['dni'], array('controller' => 'Personals', 'action' => 'view', $personal['Personal']['id']));?></strong>, mayor de edad,
-		 domiciliado en <strong><?php echo $this->Html->link($personal['Personal']['address'], array('controller' => 'Personals', 'action' => 'view', $personal['Personal']['id']));?></strong>, el cual desempeña el cargo de
+		 domiciliado en <strong><?php echo $this->Html->link($personal['Personal']['address'], array('controller' => 'Personals', 'action' => 'view', $personal['Personal']['id']));?></strong>, desempeña el cargo de
 		 <strong><?php echo $this->Html->link($personal['Position']['position'], array('controller' => 'positions', 'action' => 'view', $personal['Position']['id']));?></strong> dentro de nuestra empresa desde el
-		 <strong><?php echo $this->Html->link($personal['Personal']['date_reg'], array('controller' => 'Personals', 'action' => 'view', $personal['Personal']['id'])); ?></strong>. Manifestamos su excelente desempeño en
+		 <strong><?php echo $this->Html->link($personal['Personal']['date_reg'], array('controller' => 'Personals', 'action' => 'view', $personal['Personal']['id'])); ?></strong>, podemos dar fé de su excelente desempeño en
 		 sus funciones.
 </p>
 <br>
@@ -37,7 +38,18 @@ a:link {
 			a los <?php echo date("d"); ?> dias del mes <?php echo date("m"); ?> del
 			<?php echo date("Y"); ?>.
 </p>
+<br><br><br>
+															  <center>
 
+											   _______________________
+												 		      <br>
+										 <strong>Genesis Peralta</strong>
+										 						  <br>
+										 					C.I-8994567
+																	<br>
+															  Gerente
+
+															 </center>
 
 
 
