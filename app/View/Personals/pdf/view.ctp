@@ -2,6 +2,13 @@
 h3{
 			text-decoration: underline;
 			font-family: "Times New Roman", Georgia, Serif;
+
+}
+p{
+	text-decoration: none;
+	text-align: justify;
+	font-family: "Times New Roman", Georgia, Serif;
+	font-size: 130%;
 }
 </style>
 														<center>
@@ -11,7 +18,8 @@ h3{
 									  <h3>Constancia de Trabajo</h3>
 														</center>
 <p>
-		Hacemos constar por medio de la presente que <strong><<?php echo $this->Html->link($personal['Personal']['name'], array('controller' => 'Personals', 'action' => 'view', $personal['Personal']['id'])); ?></strong>
+		Hacemos constar por medio de la presente que <strong><?php echo $this->Html->link($personal['Personal']['full_name'], array('controller' => 'Personals', 'action' => 'view', $personal['Personal']['id'])); ?></strong>
+titular de la cedula de identidad <strong>Nº <?php echo $this->Html->link($personal['Personal']['dni'], array('controller' => 'Personals', 'action' => 'view', $personal['Personal']['id']));?></strong>
 
 </p>
 
