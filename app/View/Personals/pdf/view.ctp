@@ -54,7 +54,9 @@ img{
 										 						  <br>
 											<strong>Jaime G. Romero</strong>
 																	<br>
-
+													  C.I.:V-13.619.202
+														      <br>
+												 Tlf:(0414)-458.66.51
 															 </center>
 
 
