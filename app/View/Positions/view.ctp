@@ -17,7 +17,10 @@
 								echo $this->Html->image('../img/secretaria.png');
 						}else if($position['Position']['position']=="Tecnico"){
 								echo $this->Html->image('../img/tecnico.png');
-						}  ?>
+						}else if($position['Position']['position']=="Obrero") {
+							echo $this->Html->image('../img/obrero.png');
+
+						} ?>
 					</div>
 					<div class="clol col-sm-4" style="text-align:left; font-size:18px;">
 								<br>
