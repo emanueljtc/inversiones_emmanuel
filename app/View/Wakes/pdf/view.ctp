@@ -10,7 +10,7 @@ h3{
 }
 
 h4{
-	
+
 
 }
 table {
@@ -42,14 +42,12 @@ table .subtitulo
 
 
 </style>
-
-
 <table class="tabla">
 	<tr class="cabeza">
 		<td class="centrar titulo" colspan="3">RECIBO DE PAGO</td>
 	</tr>
 	<tr class="contenido">
-		<td class="centrar"><?php	echo $this->Html->image(('../img/foto2.jpg'),array(''=>''));?></td>
+		<td class="centrar" style="background-color: fff;"><?php	echo $this->Html->image(('../img/foto2.jpg'),array(''=>''));?></td>
 		<td class="centrar"><h2>FACTURA Nº: 000<?php echo h($wake['Wake']['id']); ?></h2></td>
 		<td class="centrar"><h2><?php echo h($wake['Wake']['start']); ?> al <?php echo h($wake['Wake']['end']); ?></h2></td>
 	</tr>

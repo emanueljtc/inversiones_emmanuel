@@ -104,14 +104,14 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
 										</b></a>
 										<ul class="dropdown-menu">
-												<li>
+												<!-- <li>
 														<a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
 												</li>
 												<?php  if($current_user['group_id'] == '1'):?>
 														<li>
 																<a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
 														</li>
-												<?php endif; ?>
+												<?php endif; ?> -->
 												<li class="divider"></li>
 												<li>
 														<a href="http://localhost/inversiones_emmanuel/users/logout"><i class="fa fa-fw fa-power-off"></i> Salir</a>
