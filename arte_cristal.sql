@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 08-06-2016 a las 07:19:55
+-- Tiempo de generación: 13-06-2016 a las 08:07:21
 -- Versión del servidor: 5.5.49-0ubuntu0.14.04.1
 -- Versión de PHP: 5.5.9-1ubuntu4.17
 
@@ -220,19 +220,20 @@ CREATE TABLE IF NOT EXISTS `personals` (
   `phone` varchar(20) NOT NULL,
   `email` varchar(250) NOT NULL,
   `address` varchar(250) NOT NULL,
+  `status` varchar(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
 
 --
 -- Volcado de datos para la tabla `personals`
 --
 
-INSERT INTO `personals` (`id`, `position_id`, `date_reg`, `dni`, `name`, `last_name`, `born_date`, `sex`, `age`, `cell_phone`, `phone`, `email`, `address`) VALUES
-(3, 1, '2009-01-03', 19221592, 'Luis', 'Mendez ', '1989-04-12', 'Masculino', 22, '04120486034', '02460002222', 'luismedezinfomatica@gmail.com', 'Pariapan Bloque 2'),
-(7, 3, '2016-05-31', 18971787, 'Emanuel', 'Torres', '1990-07-04', 'Masculino', 26, '04165615973', '02464315404', 'emanueljtc@gmail.com', 'Las Palmas Calle Vargas Numero 9 - San Juan de los Morros'),
-(10, 3, '2016-05-31', 8444567, 'Teresa', 'MuÃ±oz', '1990-04-15', 'Femenino', 26, '0412234567', '2323242144', 'j@h.com', 'Pariapan Bloque 2'),
-(11, 1, '02-06-2016', 18971789, 'Luis', 'Teran', '25-05-1995', 'Masculino', 21, '0412567999', '02464315404', 'j@h.com', 'Banco Obrero'),
-(13, 2, '21-06-2007', 18978654, 'Luisa', 'Moronta', '05-06-1987', 'Femenino', 29, '0412345698', '0244567893', 'luisa32m@gmail.com', 'Maracay - El Limon');
+INSERT INTO `personals` (`id`, `position_id`, `date_reg`, `dni`, `name`, `last_name`, `born_date`, `sex`, `age`, `cell_phone`, `phone`, `email`, `address`, `status`) VALUES
+(3, 1, '2009-01-03', 19221592, 'Luis', 'Mendez ', '1989-04-12', 'Masculino', 22, '04120486034', '02460002222', 'luismedezinfomatica@gmail.com', 'San Juan de los Morros, Urb. Pariapan Bloque 2', 'Activo'),
+(7, 3, '2016-05-31', 18971787, 'Emanuel', 'Torres', '1990-07-04', 'Masculino', 26, '04165615973', '02464315404', 'emanueljtc@gmail.com', 'Las Palmas Calle Vargas Numero 9 - San Juan de los Morros', 'Activo'),
+(11, 1, '02-06-2016', 18971789, 'Luis', 'Teran', '25-05-1995', 'Masculino', 21, '0412567999', '02464315404', 'j@h.com', 'Banco Obrero', 'Inactivo'),
+(13, 2, '21-06-2007', 18978654, 'Luisa', 'Moronta', '05-06-1987', 'Femenino', 29, '0412345698', '0244567893', 'luisa32m@gmail.com', 'Maracay - El Limon', 'Activo'),
+(14, 4, '12-06-2016', 5678456, 'Petra', 'Barrios', '14-04-1955', 'Femenino', 61, '0424567876', '', '', 'Maracay - Barrio Bolivar', 'Activo');
 
 -- --------------------------------------------------------
 
@@ -247,7 +248,7 @@ CREATE TABLE IF NOT EXISTS `positions` (
   `time_value` decimal(10,0) NOT NULL,
   `daily_salary` decimal(10,0) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Volcado de datos para la tabla `positions`
@@ -256,7 +257,8 @@ CREATE TABLE IF NOT EXISTS `positions` (
 INSERT INTO `positions` (`id`, `position`, `hour_worked`, `time_value`, `daily_salary`) VALUES
 (1, 'Gerente', 6, 30, 180),
 (2, 'Secretaria', 8, 25, 200),
-(3, 'Tecnico', 8, 45, 360);
+(3, 'Tecnico', 8, 45, 360),
+(4, 'Obrero', 5, 30, 150);
 
 -- --------------------------------------------------------
 
@@ -283,7 +285,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 INSERT INTO `users` (`id`, `username`, `password`, `group_id`, `created`, `modified`, `fullname`) VALUES
 (1, 'emanuel', 'd143986d124c2041066b4888b2492736fd1d1aa2', 1, '2016-06-07 04:28:19', '2016-06-07 04:32:29', 'Emanuel Torres'),
 (4, 'alba', '0351173e3db051b8a42fbbf85ea62403fb54303a', 1, '2016-06-07 05:15:44', '2016-06-07 05:15:44', 'Alba Pedraza'),
-(5, 'MariaJ', '21a2980e99efa92a403db974e7873c8bf137ded1', 2, '2016-06-07 05:17:10', '2016-06-07 05:17:10', 'Maria Jimenez');
+(5, 'MariaJo', 'fc7f678b2389480bca36411d0e25442890df5e9f', 2, '2016-06-07 05:17:10', '2016-06-12 13:07:57', 'Maria Jimenez');
 
 -- --------------------------------------------------------
 
