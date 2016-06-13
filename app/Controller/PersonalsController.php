@@ -20,8 +20,10 @@ class PersonalsController extends AppController {
  public $components = array('Paginator', 'Session','RequestHandler');
  public $paginate = array (
 		 'limit' => 5,
-		 'order' => array('Personal.name' => 'asc')
+		 'order' => array('Personal.name' => 'asc'),
+     //'conditions'=>array('Personal.status'=>'Activo'),
 		 );
+
 
 /**
  * index method
@@ -38,12 +40,14 @@ class PersonalsController extends AppController {
      $this->Paginator->settings = $this->paginate = array('limit' => 6);
 	 		$this->set('personals', $this->paginate('Personal'));
    }
+
 	public function index() {
 		$this->Personal->recursive = 0;
 
 		$this->Paginator->settings = $this->paginate;
 			$this->set('personals', $this->paginate());
 	}
+
 
 /**
  * view method
@@ -127,7 +131,8 @@ class PersonalsController extends AppController {
  * @param string $id
  * @return void
  */
-	public function delete($id = null) {
+
+public function delete($id = null) {
 		$this->Personal->id = $id;
 		if (!$this->Personal->exists()) {
 			throw new NotFoundException(__('Error intente de nuevo'));
@@ -141,7 +146,7 @@ class PersonalsController extends AppController {
 
 		}
 		return $this->redirect(array('action' => 'index'));
-	}
+}
 
 public function getPalabraByPersonal() {
  if ($this->request->is('ajax')) {

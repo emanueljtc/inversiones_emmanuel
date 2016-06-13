@@ -20,6 +20,7 @@ public $virtualFields = array(
         'idcargo'   => 'Personal.position_id',
         'idpersonal'   => 'Personal.id',
 		'cedula'   => 'Personal.dni',
+		'estatus'   => 'Personal.status',
     );
 
 
@@ -167,6 +168,16 @@ public $virtualFields = array(
 			'notBlank' => array(
 				'rule' => array('notBlank'),
 				'message' => 'Campo Vacio, Ingrese Direccion',
+				//'allowEmpty' => false,
+				'required' => true,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'status' => array(
+			'notBlank' => array(
+				'rule' => array('notBlank'),
+				'message' => 'Campo Vacio, Ingrese Estatus',
 				//'allowEmpty' => false,
 				'required' => true,
 				//'last' => false, // Stop validation after this rule

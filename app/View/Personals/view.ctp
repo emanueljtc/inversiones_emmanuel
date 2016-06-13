@@ -37,6 +37,8 @@
 							<strong>Email : <?php echo h($personal['Personal']['email']); ?></strong>
 							<br>
 							<strong>Direccion : <?php echo h($personal['Personal']['address']); ?></strong>
+							<br>
+							<strong>Estatus : <?php echo h($personal['Personal']['status']); ?></strong>
 							<br><br>
 
 					</div>

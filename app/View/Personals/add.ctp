@@ -46,6 +46,12 @@ function calcularEdad()
     }
 }
 </script>
+
+<style>
+            .estatus{
+              display:none;
+            }
+      </style>
  <div id="general">
 
   <div class="panel panel-primary">
@@ -147,6 +153,16 @@ function calcularEdad()
    							?>
    							<br>
    					</div>
+
+            <label class="control-label col-xs-3 estatus" >Estatus:</label>
+            <div class="col-xs-7">
+                <?php
+                   echo $this->Form->input('status', array(
+                    'label'=>'','placeholder' => 'Estatus','value'=>'Activo','class'=>'form-control estatus','maxlength'=>'150'));
+                ?>
+                <br>
+            </div>
+
 
 
 

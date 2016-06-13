@@ -70,7 +70,7 @@ public function getCargoByPersonal() {
 
 $servidor = "localhost";
 $usuar = "root";
-$contrase = "ema18787";
+$contrase = "";
 $bd = "arte_cristal";
 
 $conexion = mysql_connect($servidor,$usuar,$contrase) or die ("No se puede establecer la conexion");
@@ -144,7 +144,14 @@ function funajax(){
 				$this->Session->setFlash(__('El salario no pudo ser registrado. Por favor, intente de nuevo.'),'alert-box', array('class'=>'alert-danger'));
 			}
 		}
-		$personals = $this->Wake->Personal->find('list');
+		//$personals = $this->Wake->Personal->find('list');
+		$personals = $this->Wake->Personal->find('list', [
+			'conditions'=>array('Personal.status'=>'Activo'),
+		           'recursive' => 0,
+		           'fields' => [
+               'Personal.id',
+               'Personal.full_name'
+          ]]);
 		$this->set(compact('personals'));
 	}
 
@@ -170,7 +177,13 @@ function funajax(){
 			$options = array('conditions' => array('Wake.' . $this->Wake->primaryKey => $id));
 			$this->request->data = $this->Wake->find('first', $options);
 		}
-		$personals = $this->Wake->Personal->find('list');
+		$personals = $this->Wake->Personal->find('list', [
+			'conditions'=>array('Personal.status'=>'Activo'),
+		           'recursive' => 0,
+		           'fields' => [
+               'Personal.id',
+               'Personal.full_name'
+          ]]);
 		$positions = $this->Wake->Position->find('list');
 		$this->set(compact('personals', 'positions'));
 	}

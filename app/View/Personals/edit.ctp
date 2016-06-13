@@ -147,8 +147,16 @@ function calcularEdad()
 									 'label'=>'','placeholder' => 'Direccion','class'=>'form-control','maxlength'=>'150'
 								 ));
 							 ?>
-							 <br>
 					 </div>
+
+
+				<label class="control-label col-xs-3 estatus" >Estatus:</label>
+	            <div class="col-xs-7">
+	                <?php
+							 echo $this->Form->input('status',
+								array('class'=>'form-control','label'=>'','type'=>'select','options'=>array('Activo'=>'Activo','Inactivo'=>'Inactivo')));
+					?>
+	            </div>
 
 
 
