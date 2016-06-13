@@ -37,7 +37,6 @@
 																		<th><?php echo $this->Paginator->sort('Cedula'); ?></th>
 																		<th><?php echo $this->Paginator->sort('Celular'); ?></th>
 																		<th><?php echo $this->Paginator->sort('Cargo');?></th>
-																		<th><?php echo $this->Paginator->sort('Status');?></th>
 																		<th class="actions"><?php echo __('Acciones'); ?></th>
 																</tr>
 														</thead>
@@ -46,20 +45,21 @@
 														<tr>
 															<!-- <td><?php echo h($personal['Personal']['id']); ?>&nbsp;</td> -->
 
-														<?php// if($personal['Personal']['status'] == "Activo"){ ?>
 
 															<td><?php echo h($personal['Personal']['name']); ?>&nbsp;</td>
 															<td><?php echo h($personal['Personal']['last_name']); ?>&nbsp;</td>
 															<td><?php echo h($personal['Personal']['dni']); ?>&nbsp;</td>
 															<td><?php echo h($personal['Personal']['cell_phone']);?>&nbsp;</td>
-															<td><?php echo $this->Html->link($personal['Position']['position'], array('controller' => 'positions', 'action' => 'view', $personal['Position']['id'])); ?></td>
-															<td><?php echo h($personal['Personal']['status']);?>&nbsp;</td>
+														<td>
+																<?php echo $this->Html->link($personal['Position']['position'], array('controller' => 'positions', 'action' => 'view', $personal['Position']['id'])); ?>
+															</td>
 															<td class="actions">
 																<?php echo $this->Html->link(__(''), array('action' => 'view', $personal['Personal']['id']), array('class' => 'glyphicon glyphicon-search')); ?>
 																<?php echo $this->Html->link(__(''), array('action' => 'view', $personal['Personal']['id'], 'ext' => 'pdf' ), array('class' => 'glyphicon glyphicon-print')); ?>
 																<?php echo $this->Html->link(__(''), array('action' => 'edit', $personal['Personal']['id']), array('class' => 'glyphicon glyphicon-edit')); ?>
-
-														<?php //} ?>
+																<?php  if($current_user['group_id'] == '1'):?>
+																		<?php echo $this->Form->postLink('<i class="fa fa-trash-o fa-fw"></i> ' . __(''), array('action' => 'delete', $personal['Personal']['id']), array('escape' => false), __('Seguro quieres eliminar al empleado %s?', $personal['Personal']['name'])); ?>
+															  <?php endif; ?>
 															</td>
 														</tr>
 													<?php endforeach; ?>
