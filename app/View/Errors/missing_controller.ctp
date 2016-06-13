@@ -8,7 +8,7 @@ $pluginDot = empty($plugin) ? null : $plugin . '.';
 	<strong><?php echo __d('cake_dev', 'Noticia: ¡¡¡Intentas acceder a un sitio no existente!!!'); ?> </strong>
 	<!--<?php echo __d('cake_dev', 'If you want to customize this error message, create %s', APP_DIR . DS . 'View' . DS . 'Errors' . DS . 'missing_controller.ctp'); ?>-->
 </p>
-<meta http-equiv="refresh" content="5; url=http://localhost/inversiones_emmanuel/" />
+<!--<meta http-equiv="refresh" content="5; url=http://localhost/inversiones_emmanuel/" />-->
 
 
 
