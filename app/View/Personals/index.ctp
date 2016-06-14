@@ -37,7 +37,7 @@
 																		<th><?php echo $this->Paginator->sort('Cedula'); ?></th>
 																		<th><?php echo $this->Paginator->sort('Celular'); ?></th>
 																		<th><?php echo $this->Paginator->sort('Cargo');?></th>
-																		<th><?php echo $this->Paginator->sort('Cargo');?></th>
+																		<th><?php echo $this->Paginator->sort('Status');?></th>
 																		<th class="actions"><?php echo __('Acciones'); ?></th>
 																</tr>
 														</thead>
