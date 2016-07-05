@@ -22,8 +22,13 @@ body {
 
 #page-wrapper {
     width: 100%;
-    padding: 0;
-    background-color: #fff;
+    padding: 300;
+    /*background-color: #fff;*/
+    background-image: url('../img/foto2.png');
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 390px 180px;
 }
 
 .huge {
