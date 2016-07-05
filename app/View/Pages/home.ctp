@@ -132,7 +132,7 @@
 														//['Ricardo Perez',   12.0],
 										 <?php
 												// Conectando, seleccionando la base de datos
-												$link = mysql_connect('localhost', 'root', 'ema18787')
+												$link = mysql_connect('localhost', 'root', '')
 														or die('No se pudo conectar: ' . mysql_error());
 												//echo 'Connected successfully';
 												mysql_select_db('arte_cristal') or die('No se pudo seleccionar la base de datos');

@@ -36,6 +36,7 @@
 				</tr>
 		</thead>
 		<tbody>
+			<?php $acumulador = 0; ?>
 
 			<?php foreach ($wake as $wake): ?>
 			<tr>
@@ -49,7 +50,19 @@
 				<td><?php echo h($wake['Wake']['payment_type']);?>&nbsp;</td>
 				<td><?php echo h($wake['Wake']['amount']);?>&nbsp;</td>
 
+				<?php $acumulador += $wake['Wake']['amount']; ?>
 
 			</tr>
+				
 		<?php endforeach; ?>
+		
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td><strong>TOTAL</strong></td>
+			<td><?php echo $acumulador; ?></td>
+		</tr>
+		
 </table>
