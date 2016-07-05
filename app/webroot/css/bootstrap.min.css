@@ -1050,7 +1050,7 @@ th
     font-size: 10px;-webkit-tap-highlight-color: rgba(0,0,0,0);
 }body
 {
-    font-family: 'Source Sans Pro', sans-serif;font-size: 14px;line-height: 1.42857143;color: #333;
+    font-family: 'Source Sans Pro', sans-serif; font-weight: bold; font-size: 14px;line-height: 1.42857143;color: #333;
 }button,
 input,
 select,
@@ -4780,7 +4780,7 @@ button.list-group-item-danger.active:hover
     margin-bottom: 0;
 }.panel
 {
-    margin-bottom: 20px;border: 1px solid transparent;border-radius: 4px;background-color: #fff;-webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    margin-bottom: 20px;border: 1px solid transparent;border-radius: 4px;background-color: rgba(255, 0, 0, 0);-webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);box-shadow: 0 1px 1px rgba(0,0,0,.05);
 }.panel-body
 {
     padding: 15px;
