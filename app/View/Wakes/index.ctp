@@ -39,7 +39,6 @@
 																		<th><?php echo $this->Paginator->sort('Horas Extras'); ?></th>
 																		<th><?php echo $this->Paginator->sort('Tipo de Pago'); ?></th>
 																		<th><?php echo $this->Paginator->sort('Monto Total');?></th>
-
 																		<th class="actions"><?php echo __('Acciones'); ?></th>
 																</tr>
 														</thead>
@@ -57,6 +56,8 @@
 															<?php $montot = $wake['Wake']['amount'] + $wake['Wake']['salary_date'];?>
 															<td><?php echo h($montot);?>&nbsp;</td>
 
+)
+
 															<td class="actions">
 																<?php echo $this->Html->link(__(''), array('action' => 'view', $wake['Wake']['id']), array('class' => 'glyphicon glyphicon-search')); ?>
 																<?php echo $this->Html->link(__(''), array('action' => 'view', $wake['Wake']['id'], 'ext' => 'pdf' ), array('class' => 'glyphicon glyphicon-print')); ?>
@@ -65,9 +66,11 @@
 																		<?php echo $this->Form->postLink('<i class="fa fa-trash-o fa-fw"></i> ' . __(''), array('action' => 'delete', $wake['Wake']['id']), array('escape' => false), __('Seguro quieres eliminar la factura Nº 000%s?', $wake['Wake']['id'])); ?>
 																<?php endif ?>
 															</td>
+
 														</tr>
 													<?php endforeach; ?>
 												</table>
+												
 										</div>
 								</div>
 

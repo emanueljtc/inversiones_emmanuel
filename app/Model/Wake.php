@@ -14,7 +14,7 @@ class Wake extends AppModel {
  *
  * @var string
  */
-
+	
 	public $displayField = 'id';
 
 /**
