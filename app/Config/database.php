@@ -75,6 +75,7 @@ class DATABASE_CONFIG {
 		'database' => 'arte_cristal',
 		'prefix' => '',
 		//'encoding' => 'utf8',
+		
 	);
 
 	public $test = array(

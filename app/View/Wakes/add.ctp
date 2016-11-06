@@ -142,7 +142,8 @@
  					<br>
  					</div>
 
- 			<center><input type="submit" value="Guardar" class="btn btn-info">
+ 			<center>
+        <input type="submit" value="Guardar" class="btn btn-info">
  			<input type="reset" value="Limpiar" class="btn btn-danger"></center>
 			<br>
  	</div>

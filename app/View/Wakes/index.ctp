@@ -56,7 +56,7 @@
 															<?php $montot = $wake['Wake']['amount'] + $wake['Wake']['salary_date'];?>
 															<td><?php echo h($montot);?>&nbsp;</td>
 
-)
+
 
 															<td class="actions">
 																<?php echo $this->Html->link(__(''), array('action' => 'view', $wake['Wake']['id']), array('class' => 'glyphicon glyphicon-search')); ?>
@@ -70,7 +70,7 @@
 														</tr>
 													<?php endforeach; ?>
 												</table>
-												
+
 										</div>
 								</div>
 

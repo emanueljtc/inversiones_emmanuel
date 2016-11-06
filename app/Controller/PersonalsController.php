@@ -83,6 +83,7 @@ class PersonalsController extends AppController {
 
         $this->Session->setFlash(__('Empleado registrado con exito.'), 'alert-box', array('class'=>'alert-success'));
         
+
 				return $this->redirect(array('action' => 'index'));
 			} else {
         $this->Session->setFlash(__('El empleado no pudo ser registrado. Por favor, intente de nuevo.'),'alert-box', array('class'=>'alert-danger'));
