@@ -25,8 +25,8 @@ img{
 <?php	echo $this->Html->image(('../img/foto2.jpg'),array('class'=>'img'));?>
 
 														<center>
-								<h1>Inversiones Emmanuel 1108 A.C</h1>
-											<h2>RIF. J-40136924-3</h2>
+								<h1>System Security C.A</h1>
+											<h2>RIF. J-40145924-2</h2>
 															<br><br>
 									  <h3>Constancia de Trabajo</h3>
 														</center>
@@ -52,11 +52,11 @@ img{
 												 		      <br>
 															 Presidente
 										 						  <br>
-											<strong>Jaime G. Romero</strong>
+											<strong>Miguel Mendez</strong>
 																	<br>
-													  C.I.:V-13.619.202
+													  C.I.:V-12.349.202
 														      <br>
-												 Tlf:(0414)-458.66.51
+												 Tlf:(0416)-428.66.51
 															 </center>
 
 
