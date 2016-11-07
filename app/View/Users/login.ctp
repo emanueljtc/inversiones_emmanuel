@@ -5,7 +5,7 @@
         <div class="form-signin">
           <marquee loop="1" SCROLLAMOUNT="25" behavior = "slide" direction="right">
 
-              <h3 style="font-size:24">Inversiones Emmanuel 1108 A.C</h3>
+              <h3 style="font-size:24">____System Security C.A____</h3>
               </marquee>
               <div class="col-xs-12">
                     <?php echo $this->Form->create('User'); ?>
@@ -31,5 +31,8 @@
 
 
         </div>
-
+        <br><br><br>
+        <center>
+    <h4>Hecho por Emanuel Torres C.</h4>
+  </center>
 </div>

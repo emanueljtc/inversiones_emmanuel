@@ -114,7 +114,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 												<?php endif; ?> -->
 												<li class="divider"></li>
 												<li>
-														<a href="http://localhost/inversiones_emmanuel/users/logout"><i class="fa fa-fw fa-power-off"></i> Salir</a>
+														<a href="http://localhost/system_security/users/logout"><i class="fa fa-fw fa-power-off"></i> Salir</a>
 												</li>
 										</ul>
 								</li>

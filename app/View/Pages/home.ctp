@@ -15,11 +15,13 @@
 
     				<div class="row">
     					<div class="col-md-12">
+    					<div class="col-md-12">
+                <div class="page-title">
                 <div class="page-title">
                     <marquee loop="1" SCROLLAMOUNT="25" behavior = "slide" direction="left">
 
                           <Titulo>
-                              <h3>Sistema Control de Pagos Inversiones Emmanuel 1108 C.A</h3><hr>
+                              <h3>Sistema Control de Pagos System Security C.A</h3><hr>
                           </Titulo>
               				</marquee>
                 </div>
@@ -41,7 +43,7 @@
     												</div>
     											</div>
                           <center>
-    											<a href="http://127.0.0.1/inversiones_emmanuel/personals" class="block-anchor panel-footer">Acceder <i class="fa fa-arrow-right"></i></a>
+    											<a href="http://127.0.0.1/system_security/personals" class="block-anchor panel-footer">Acceder <i class="fa fa-arrow-right"></i></a>
                         </center>
                         </div>
     									</div>
@@ -57,7 +59,7 @@
                               </div>
     												</div>
     											</div>
-    											<a href="http://127.0.0.1/inversiones_emmanuel/positions" class="block-anchor panel-footer text-center">Acceder &nbsp; <i class="fa fa-arrow-right"></i></a>
+    											<a href="http://127.0.0.1/system_security/positions" class="block-anchor panel-footer text-center">Acceder &nbsp; <i class="fa fa-arrow-right"></i></a>
     										</div>
     									</div>
     									<div class="col-md-3">
@@ -72,7 +74,7 @@
                               </div>
     												</div>
     											</div>
-    											<a href="http://127.0.0.1/inversiones_emmanuel/wakes" class="block-anchor panel-footer text-center">Acceder &nbsp; <i class="fa fa-arrow-right"></i></a>
+    											<a href="http://127.0.0.1/system_security/wakes" class="block-anchor panel-footer text-center">Acceder &nbsp; <i class="fa fa-arrow-right"></i></a>
     										</div>
     									</div>
     									<div class="col-md-3">
@@ -87,7 +89,7 @@
                               </div>
     												</div>
     											</div>
-    											<a href="http://127.0.0.1/inversiones_emmanuel/users" class="block-anchor panel-footer text-center">Acceder &nbsp; <i class="fa fa-arrow-right"></i></a>
+    											<a href="http://127.0.0.1/system_security/users" class="block-anchor panel-footer text-center">Acceder &nbsp; <i class="fa fa-arrow-right"></i></a>
     										</div>
     									</div>
     								</div>
